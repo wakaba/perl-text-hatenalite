@@ -39,3 +39,120 @@ id:hatenahogefuga@DSi*aa
 id id:hatenahogefuga@DSi
  hatenahogefuga@DSi
 text *aa
+
+#data
+<script>alert('hello')</script>
+#results
+text <script>alert('hello')</script>
+
+#data
+http://hoge.hoge="><script>alert("hoge")</script>
+#results
+http http://hoge.hoge=
+text "><script>alert("hoge")</script>
+
+#data
+f:id:cho45:20100103163715j:image
+#results
+fotolife f:id:cho45:20100103163715j:image
+ cho45
+ 20100103163715
+ j
+
+#data
+f:id:cho-45:20100103163715j:image
+#results
+fotolife f:id:cho-45:20100103163715j:image
+ cho-45
+ 20100103163715
+ j
+
+#data
+f:id:CHO-45:20100103163715j:image
+#results
+fotolife f:id:CHO-45:20100103163715j:image
+ CHO-45
+ 20100103163715
+ j
+
+#data
+f:id:CHO_45:20100103163715j:image
+#results
+fotolife f:id:CHO_45:20100103163715j:image
+ CHO_45
+ 20100103163715
+ j
+
+#data
+land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
+#results
+land land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
+ 080c02e06d4d0ca450f2d25496be0903356f1cbf
+ jpg
+
+#data
+ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+#results
+ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+
+#data
+flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+#results
+ugomemo flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+
+#data
+market://search?q=pname:com.hatena.android.coco
+#results
+text market://search?q=pname:com.hatena.android.coco
+
+#data
+f:id:cho45:20100103163715j"hoge":image
+#results
+text f:
+id id:cho45
+ cho45
+text :20100103163715j"hoge":image
+
+#data
+map:45:45
+#results
+map map:45:45
+ 45
+ 45
+
+#data
+map:45.132:45.453
+#results
+map map:45.132:45.453
+ 45.132
+ 45.453
+
+#data
+map:-45.132:-45.453
+#results
+map map:-45.132:-45.453
+ -45.132
+ -45.453
+
+#data
+map:-94.132:-181.453
+#results
+map map:-94.132:-181.453
+ -94.132
+ -181.453
+
+#data
+map:94.132:181.453
+#results
+map map:94.132:181.453
+ 94.132
+ 181.453
+
+#data
+map:"<p>
+#results
+text map:"<p>
