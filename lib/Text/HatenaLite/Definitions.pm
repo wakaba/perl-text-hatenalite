@@ -37,6 +37,12 @@ our $Notations = [
     {
         type => 'land',
         pattern => q<land:image:([a-fA-F0-9]{40}):([0-9A-Za-z_-]+)>,
+        to_object_url => sub {
+            my $v = $_[0];
+            return sprintf q<http://l.hatena.ne.jp/images/%s.%s>,
+                $v->[1], $v->[2];
+        },
+        to_text => sub { $_[0]->{to_object_url}->($_[1]) },
     },
     {
         type => 'map',

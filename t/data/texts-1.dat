@@ -25,6 +25,8 @@ id:hatena
 #parsed
 id id:hatena
  hatena
+#html
+<a href="http://www.hatena.ne.jp/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena/" class="user">id:hatena</a>
 
 #data
 id:hatena120-_ abc
@@ -32,6 +34,8 @@ id:hatena120-_ abc
 id id:hatena120-_
  hatena120-_
 text  abc
+#html
+<a href="http://www.hatena.ne.jp/hatena120-_/" class="user"><img src="http://n.hatena.com/hatena120-_/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena120-_/" class="user">id:hatena120-_</a> abc
 
 #data
 id:hatenahogefuga@DSi*aa
@@ -39,6 +43,8 @@ id:hatenahogefuga@DSi*aa
 id id:hatenahogefuga@DSi
  hatenahogefuga@DSi
 text *aa
+#html
+<a href="http://www.hatena.ne.jp/hatenahogefuga@DSi/" class="user"><img src="http://n.hatena.com/hatenahogefuga@DSi/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatenahogefuga@DSi/" class="user">id:hatenahogefuga@DSi</a>*aa
 
 #data
 <script>alert('hello')</script>
@@ -101,6 +107,10 @@ land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
 land land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
  080c02e06d4d0ca450f2d25496be0903356f1cbf
  jpg
+#plaintext
+http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg
+#html
+<a href="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg"><img src="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg" alt="land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg"></a>
 
 #data
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -111,6 +121,8 @@ ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  DA0D36_0A0CDA47CF483_027
 #plaintext
 http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+#html
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
 
 #data
 flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -121,6 +133,8 @@ ugomemo flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  DA0D36_0A0CDA47CF483_027
 #plaintext
 http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+#html
+<object data="http://flipnote.hatena.com/js/flipplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://flipnote.hatena.com/js/flipplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
 
 #data
 market://search?q=pname:com.hatena.android.coco
@@ -135,7 +149,7 @@ id id:cho45
  cho45
 text :20100103163715j"hoge":image
 #html
-f:id:cho45:20100103163715j&#34;hoge&#34;:image
+f:<a href="http://www.hatena.ne.jp/cho45/" class="user"><img src="http://n.hatena.com/cho45/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/cho45/" class="user">id:cho45</a>:20100103163715j&#34;hoge&#34;:image
 
 #data
 map:45:45
