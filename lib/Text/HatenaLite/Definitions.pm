@@ -3,6 +3,8 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 
+my $http_pattern = q<[Hh][Tt][Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+>;
+
 our $Notations = [
     {
         type => 'id',
@@ -10,7 +12,13 @@ our $Notations = [
     },
     {
         type => 'http',
-        pattern => q<[Hh][Tt][Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+>,
+        pattern => $http_pattern,
+    },
+    {
+        type => 'httptitle',
+        pattern => q<\[(> . $http_pattern . q<):[Tt][Ii][Tt][Ll][Ee]=([^\]]+)\]>,
+        to_url => sub { $_[0]->[1] },
+        to_text => sub { $_[1]->[2] . ' ' . $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'idea',

@@ -91,6 +91,13 @@ sub url_to_page_link {
         htescape $title;
 }
 
+sub httptitle_notation_to_html {
+    my $values = $_[2];
+    return sprintf q{<a href="%s">%s</a>},
+        htescape $values->[1],
+        htescape $values->[2];
+}
+
 sub idea_notation_to_html {
     return $_[0]->url_to_page_link($_[2]->[0] => $_[1]->{to_url}->($_[2]));
 }
