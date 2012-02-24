@@ -6,18 +6,30 @@ our $VERSION = '1.0';
 our $Notations = [
     {
         type => 'id',
-        pattern => q<id:([0-9a-zA-Z_\@-]+)>,
+        pattern => q<[Ii][Dd]:([0-9a-zA-Z_\@-]+)>,
+    },
+    {
+        type => 'http',
+        pattern => q<[Hh][Tt][Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+>,
+    },
+    {
+        type => 'idea',
+        pattern => q<[Ii][Dd][Ee][Aa]:([0-9]+)(?::[Tt][Ii][Tt][Ll][Ee])?>,
+        to_url => sub {
+            return q<http://i.hatena.ne.jp/idea/> . $_[0]->[1];
+        },
+        to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'fotolife',
-        pattern => q<f:id:([a-zA-Z][-_a-zA-Z0-9]*):([0-9]+)([pjg]):image>,
+        pattern => q<[Ff]:[Ii][Dd]:([-_a-zA-Z0-9]+):([0-9]+)([PpJjGg]):[Ii][Mm][Aa][Gg][Ee]>,
         to_object_url => sub {
             my $v = $_[0];
             my $ext = 'jpg';
             if (my $e = $v->[3]) {
-                if ($e eq 'p') {
+                if ($e eq 'p' or $e eq 'P') {
                     $ext = 'png';
-                } elsif ($e eq 'g') {
+                } elsif ($e eq 'g' or $e eq 'G') {
                     $ext = 'gif';
                 }
             }
@@ -31,12 +43,8 @@ our $Notations = [
         to_text => sub { $_[0]->{to_object_url}->($_[1]) },
     },
     {
-        type => 'http',
-        pattern => q<https?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+>,
-    },
-    {
         type => 'land',
-        pattern => q<land:image:([a-fA-F0-9]{40}):([0-9A-Za-z_-]+)>,
+        pattern => q<[Ll][Aa][Nn][Dd]:[Ii][Mm][Aa][Gg][Ee]:([a-fA-F0-9]{40}):([0-9A-Za-z_-]+)>,
         to_object_url => sub {
             my $v = $_[0];
             return sprintf q<http://l.hatena.ne.jp/images/%s.%s>,
@@ -46,20 +54,34 @@ our $Notations = [
     },
     {
         type => 'map',
-        pattern => q<map:([0-9+.-]+):([0-9+.-]+)>,
+        pattern => q<[Mm][Aa][Pp]:([0-9+.-]+):([0-9+.-]+)>,
     },
     {
         type => 'ugomemo',
-        pattern => q<(ugomemo|flipnote):([0-9A-F]{16}):([0-9A-F_]+)>,
+        pattern => q<([Uu][Gg][Oo][Mm][Ee][Mm][Oo]|[Ff][Ll][Ii][Pp][Nn][Oo][Tt][Ee]):([0-9A-F]{16}):([0-9A-F_]+)>,
         to_url => sub {
             my $v = $_[0];
             return sprintf q<http://%s/%s@DSi/movie/%s>,
-                $v->[1] eq 'ugomemo'
-                    ? 'ugomemo.hatena.ne.jp' : 'flipnote.hatena.com',
+                ($v->[1] =~ /[Uu]/
+                    ? 'ugomemo.hatena.ne.jp' : 'flipnote.hatena.com'),
                 $v->[2],
                 $v->[3];
         },
         to_text => sub { $_[0]->{to_url}->($_[1]) },
+    },
+    {
+        type => 'keyword',
+        pattern => q<\[[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
+        to_text => sub { $_[1]->[1] },
+    },
+    {
+        type => 'keyword',
+        pattern => q<\[\[([^\]]+)\]\]>,
+        to_text => sub { $_[1]->[1] },
+    },
+    {
+        type => 'mailto',
+        pattern => q<[Mm][Aa][Ii][Ll][Tt][Oo]:([0-9A-Za-z_\.-]+\@[0-9A-Za-z_][0-9A-Za-z_\.\-]*[0-9A-Za-z_])>,
     },
 ];
 

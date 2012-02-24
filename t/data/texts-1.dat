@@ -1,29 +1,23 @@
 #data
+#parsed
+
+#data
 0
 #parsed
 text 0
 
 #data
-0 http://hoge/
-#parsed escaped
-text 0\u0020
-http http://hoge/
-
-#data
-http://hoge/fuga
-#parsed
-http http://hoge/fuga
-
-#data
-http://hoge/fuga abc
-#parsed
-http http://hoge/fuga
-text  abc
-
-#data
 id:hatena
 #parsed
 id id:hatena
+ hatena
+#html
+<a href="http://www.hatena.ne.jp/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena/" class="user">id:hatena</a>
+
+#data
+ID:hatena
+#parsed
+id ID:hatena
  hatena
 #html
 <a href="http://www.hatena.ne.jp/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena/" class="user">id:hatena</a>
@@ -62,9 +56,235 @@ text "><script>alert("hoge")</script>
 http://hoge.hoge=&#34;&gt;&lt;script&gt;alert(&#34;hoge&#34;)&lt;/script&gt;
 
 #data
+a[[]]b
+#parsed
+text a[[]]b
+
+#data
+a[keyword:]b
+#parsed
+text a[keyword:]b
+
+#data escaped
+abc[[xyz\u4E00]]\u5000aba
+#parsed escaped
+text abc
+keyword [[xyz\u4E00]]
+ xyz\u4E00
+text \u5000aba
+#plaintext escaped
+abcxyz\u4E00\u5000aba
+#html escaped
+abc<a href="http://d.hatena.ne.jp/keyword/xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+
+#data escaped
+abc[keyword:xyz\u4E00]\u5000aba
+#parsed escaped
+text abc
+keyword [keyword:xyz\u4E00]
+ xyz\u4E00
+text \u5000aba
+#plaintext escaped
+abcxyz\u4E00\u5000aba
+#html escaped
+abc<a href="http://d.hatena.ne.jp/keyword/xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+
+#data escaped
+abc[KEYWORD:xyz\u4E00]\u5000aba
+#parsed escaped
+text abc
+keyword [KEYWORD:xyz\u4E00]
+ xyz\u4E00
+text \u5000aba
+#plaintext escaped
+abcxyz\u4E00\u5000aba
+#html escaped
+abc<a href="http://d.hatena.ne.jp/keyword/xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+
+#data escaped
+abc[[keyword:xyz\u4E00]]\u5000aba
+#parsed escaped
+text abc
+keyword [[keyword:xyz\u4E00]]
+ keyword:xyz\u4E00
+text \u5000aba
+#plaintext escaped
+abckeyword:xyz\u4E00\u5000aba
+#html escaped
+abc<a href="http://d.hatena.ne.jp/keyword/keyword%3Axyz%E4%B8%80" class="keyword">keyword:xyz\u4E00</a>\u5000aba
+
+#data
+[[a<&">b]]
+#parsed
+keyword [[a<&">b]]
+ a<&">b
+#plaintext
+a<&">b
+#html
+<a href="http://d.hatena.ne.jp/keyword/a%3C%26%22%3Eb" class="keyword">a&lt;&amp;&#34;&gt;b</a>
+
+#data escaped
+[[\uFFFF]]
+#parsed escaped
+keyword [[\uFFFF]]
+ \uFFFF
+#plaintext escaped
+\uFFFF
+#html escaped
+<a href="http://d.hatena.ne.jp/keyword/%EF%BF%BD" class="keyword">\uFFFF</a>
+
+#data
+0 http://hoge/
+#parsed escaped
+text 0\u0020
+http http://hoge/
+
+#data
+http://hoge/fuga
+#parsed
+http http://hoge/fuga
+
+#data
+http://hoge/fuga abc
+#parsed
+http http://hoge/fuga
+text  abc
+
+#data
+HTTP://hoge/fuga
+#parsed
+http HTTP://hoge/fuga
+
+#data
+https://hoge/fuga
+#parsed
+http https://hoge/fuga
+
+#data
+HttpS://hoge/fuga
+#parsed
+http HttpS://hoge/fuga
+
+#data
+idea:0
+#parsed
+idea idea:0
+ 0
+#plaintext
+http://i.hatena.ne.jp/idea/0
+#html
+<a href="http://i.hatena.ne.jp/idea/0"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F0" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/0">idea:0</a>
+
+#data
+idea:12345
+#parsed
+idea idea:12345
+ 12345
+#plaintext
+http://i.hatena.ne.jp/idea/12345
+#html
+<a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345</a>
+
+#data
+idea:12345abc
+#parsed
+idea idea:12345
+ 12345
+text abc
+#plaintext
+http://i.hatena.ne.jp/idea/12345abc
+#html
+<a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345</a>abc
+
+#data
+IDEA:12345abc
+#parsed
+idea IDEA:12345
+ 12345
+text abc
+#plaintext
+http://i.hatena.ne.jp/idea/12345abc
+#html
+<a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">IDEA:12345</a>abc
+
+#data
+idea:12345:title
+#parsed
+idea idea:12345:title
+ 12345
+#plaintext
+http://i.hatena.ne.jp/idea/12345
+#html
+<a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345:title</a>
+
+#data
+idea:12345:TITLE
+#parsed
+idea idea:12345:TITLE
+ 12345
+#plaintext
+http://i.hatena.ne.jp/idea/12345
+#html
+<a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345:TITLE</a>
+
+#data
+mailto:foo@bar
+#parsed
+mailto mailto:foo@bar
+ foo@bar
+#html
+<a href="mailto:foo@bar">foo@bar</a>
+
+#data
+MailTo:foo@bar
+#parsed
+mailto MailTo:foo@bar
+ foo@bar
+#html
+<a href="mailto:foo@bar">foo@bar</a>
+
+#data
+mailto:foo@bar.
+#parsed
+mailto mailto:foo@bar
+ foo@bar
+text .
+#html
+<a href="mailto:foo@bar">foo@bar</a>.
+
+#data
+mailto:foo@bar.baz
+#parsed
+mailto mailto:foo@bar.baz
+ foo@bar.baz
+#html
+<a href="mailto:foo@bar.baz">foo@bar.baz</a>
+
+#data
+mailto:foo@bar.baz>abx
+#parsed
+mailto mailto:foo@bar.baz
+ foo@bar.baz
+text >abx
+#plaintext
+mailto:foo@bar.baz>abx
+#html
+<a href="mailto:foo@bar.baz">foo@bar.baz</a>&gt;abx
+
+#data
 f:id:cho45:20100103163715j:image
 #parsed
 fotolife f:id:cho45:20100103163715j:image
+ cho45
+ 20100103163715
+ j
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+
+#data
+F:ID:cho45:20100103163715j:IMAGE
+#parsed
+fotolife F:ID:cho45:20100103163715j:IMAGE
  cho45
  20100103163715
  j
@@ -113,6 +333,17 @@ http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg
 <a href="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg"><img src="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg" alt="land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg"></a>
 
 #data
+LAND:IMAGE:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
+#parsed
+land LAND:IMAGE:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
+ 080c02e06d4d0ca450f2d25496be0903356f1cbf
+ jpg
+#plaintext
+http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg
+#html
+<a href="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg"><img src="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg" alt="LAND:IMAGE:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg"></a>
+
+#data
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 #parsed
 ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -125,10 +356,34 @@ http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
 
 #data
+UGOMEMO:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+#parsed
+ugomemo UGOMEMO:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ UGOMEMO
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+#plaintext
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+#html
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+
+#data
 flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 #parsed
 ugomemo flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  flipnote
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+#plaintext
+http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+#html
+<object data="http://flipnote.hatena.com/js/flipplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://flipnote.hatena.com/js/flipplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+
+#data
+FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+#parsed
+ugomemo FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ FLIPNOTE
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
 #plaintext
@@ -157,6 +412,8 @@ map:45:45
 map map:45:45
  45
  45
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=45,45"><img src="http://maps.google.com/maps/api/staticmap?markers=45,45&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:45:45"></a></div>
 
 #data
 map:45.132:45.453
@@ -164,6 +421,8 @@ map:45.132:45.453
 map map:45.132:45.453
  45.132
  45.453
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=45.132,45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=45.132,45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:45.132:45.453"></a></div>
 
 #data
 map:-45.132:-45.453
@@ -171,6 +430,17 @@ map:-45.132:-45.453
 map map:-45.132:-45.453
  -45.132
  -45.453
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=-45.132,-45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:-45.132:-45.453"></a></div>
+
+#data
+MAP:-45.132:-45.453
+#parsed
+map MAP:-45.132:-45.453
+ -45.132
+ -45.453
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=-45.132,-45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="MAP:-45.132:-45.453"></a></div>
 
 #data
 map:-94.132:-181.453
@@ -178,6 +448,8 @@ map:-94.132:-181.453
 map map:-94.132:-181.453
  -94.132
  -181.453
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=-90,-180"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:-94.132:-181.453"></a></div>
 
 #data
 map:94.132:181.453
@@ -185,6 +457,8 @@ map:94.132:181.453
 map map:94.132:181.453
  94.132
  181.453
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:94.132:181.453"></a></div>
 
 #data
 map:"<p>
