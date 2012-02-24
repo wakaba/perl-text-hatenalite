@@ -44,12 +44,16 @@ text *aa
 <script>alert('hello')</script>
 #parsed
 text <script>alert('hello')</script>
+#html
+&lt;script&gt;alert('hello')&lt;/script&gt;
 
 #data
 http://hoge.hoge="><script>alert("hoge")</script>
 #parsed
 http http://hoge.hoge=
 text "><script>alert("hoge")</script>
+#html
+http://hoge.hoge=&#34;&gt;&lt;script&gt;alert(&#34;hoge&#34;)&lt;/script&gt;
 
 #data
 f:id:cho45:20100103163715j:image
@@ -130,6 +134,8 @@ text f:
 id id:cho45
  cho45
 text :20100103163715j"hoge":image
+#html
+f:id:cho45:20100103163715j&#34;hoge&#34;:image
 
 #data
 map:45:45
@@ -170,3 +176,5 @@ map map:94.132:181.453
 map:"<p>
 #parsed
 text map:"<p>
+#html
+map:&#34;&lt;p&gt;
