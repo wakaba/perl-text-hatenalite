@@ -9,6 +9,8 @@ for my $def (@$Text::HatenaLite::Definitions::Notations) {
     $Notations->{$def->{type}} = $def;
 }
 
+$Notations->{text} = $Text::HatenaLite::Definitions::TextNotation;
+
 sub new {
     my $class = shift;
     return bless {}, $class;
@@ -27,13 +29,10 @@ sub as_text {
 
     my @l;
     for my $node (@$data) {
-        if ($node->{type} eq 'fotolife') {
-            push @l, $Notations->{fotolife}->{to_object_url}->($node->{values});
-        } elsif ($node->{type} eq 'ugomemo') {
-            push @l, $Notations->{ugomemo}->{to_url}->($node->{values});
-        } else {
-            push @l, $node->{values}->[0];
-        }
+        my $def = $Notations->{$node->{type}}
+            or die "Definition for |$node->{type}| not found";
+        my $code = $def->{to_text} || sub { $_[1]->[0] };
+        push @l, $code->($def, $node->{values});
     }
 
     return join '', @l;

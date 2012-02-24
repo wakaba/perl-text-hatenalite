@@ -28,6 +28,7 @@ our $Notations = [
                 $v->[2],
                 $ext;
         },
+        to_text => sub { $_[0]->{to_object_url}->($_[1]) },
     },
     {
         type => 'http',
@@ -52,7 +53,12 @@ our $Notations = [
                 $v->[2],
                 $v->[3];
         },
+        to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
 ];
+
+our $TextNotation = {
+    to_text => sub { $_[1]->[0] },
+};
 
 1;
