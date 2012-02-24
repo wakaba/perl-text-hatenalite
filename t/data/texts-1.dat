@@ -1,117 +1,131 @@
 #data
 0
-#results
+#parsed
 text 0
 
 #data
 0 http://hoge/
-#results escaped
+#parsed escaped
 text 0\u0020
 http http://hoge/
 
 #data
 http://hoge/fuga
-#results
+#parsed
 http http://hoge/fuga
 
 #data
 http://hoge/fuga abc
-#results
+#parsed
 http http://hoge/fuga
 text  abc
 
 #data
 id:hatena
-#results
+#parsed
 id id:hatena
  hatena
 
 #data
 id:hatena120-_ abc
-#results
+#parsed
 id id:hatena120-_
  hatena120-_
 text  abc
 
 #data
 id:hatenahogefuga@DSi*aa
-#results
+#parsed
 id id:hatenahogefuga@DSi
  hatenahogefuga@DSi
 text *aa
 
 #data
 <script>alert('hello')</script>
-#results
+#parsed
 text <script>alert('hello')</script>
 
 #data
 http://hoge.hoge="><script>alert("hoge")</script>
-#results
+#parsed
 http http://hoge.hoge=
 text "><script>alert("hoge")</script>
 
 #data
 f:id:cho45:20100103163715j:image
-#results
+#parsed
 fotolife f:id:cho45:20100103163715j:image
  cho45
  20100103163715
  j
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 
 #data
 f:id:cho-45:20100103163715j:image
-#results
+#parsed
 fotolife f:id:cho-45:20100103163715j:image
  cho-45
  20100103163715
  j
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho-45/20100103/20100103163715.jpg
 
 #data
 f:id:CHO-45:20100103163715j:image
-#results
+#parsed
 fotolife f:id:CHO-45:20100103163715j:image
  CHO-45
  20100103163715
  j
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO-45/20100103/20100103163715.jpg
 
 #data
 f:id:CHO_45:20100103163715j:image
-#results
+#parsed
 fotolife f:id:CHO_45:20100103163715j:image
  CHO_45
  20100103163715
  j
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO_45/20100103/20100103163715.jpg
 
 #data
 land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
-#results
+#parsed
 land land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
  080c02e06d4d0ca450f2d25496be0903356f1cbf
  jpg
 
 #data
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
-#results
+#parsed
 ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ ugomemo
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
+#plaintext
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 
 #data
 flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
-#results
+#parsed
 ugomemo flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ flipnote
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
+#plaintext
+http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 
 #data
 market://search?q=pname:com.hatena.android.coco
-#results
+#parsed
 text market://search?q=pname:com.hatena.android.coco
 
 #data
 f:id:cho45:20100103163715j"hoge":image
-#results
+#parsed
 text f:
 id id:cho45
  cho45
@@ -119,40 +133,40 @@ text :20100103163715j"hoge":image
 
 #data
 map:45:45
-#results
+#parsed
 map map:45:45
  45
  45
 
 #data
 map:45.132:45.453
-#results
+#parsed
 map map:45.132:45.453
  45.132
  45.453
 
 #data
 map:-45.132:-45.453
-#results
+#parsed
 map map:-45.132:-45.453
  -45.132
  -45.453
 
 #data
 map:-94.132:-181.453
-#results
+#parsed
 map map:-94.132:-181.453
  -94.132
  -181.453
 
 #data
 map:94.132:181.453
-#results
+#parsed
 map map:94.132:181.453
  94.132
  181.453
 
 #data
 map:"<p>
-#results
+#parsed
 text map:"<p>
