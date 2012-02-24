@@ -1,0 +1,41 @@
+#data
+0
+#results
+text 0
+
+#data
+0 http://hoge/
+#results escaped
+text 0\u0020
+http http://hoge/
+
+#data
+http://hoge/fuga
+#results
+http http://hoge/fuga
+
+#data
+http://hoge/fuga abc
+#results
+http http://hoge/fuga
+text  abc
+
+#data
+id:hatena
+#results
+id id:hatena
+ hatena
+
+#data
+id:hatena120-_ abc
+#results
+id id:hatena120-_
+ hatena120-_
+text  abc
+
+#data
+id:hatenahogefuga@DSi*aa
+#results
+id id:hatenahogefuga@DSi
+ hatenahogefuga@DSi
+text *aa
