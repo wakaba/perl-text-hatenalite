@@ -3,6 +3,7 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 use Encode;
+use WebService::ImageURLs;
 use Text::HatenaLite::Definitions;
 use Text::HatenaLite::Formatter::Base;
 push our @ISA, qw(Text::HatenaLite::Formatter::Base);
@@ -27,6 +28,13 @@ sub percent_encode_c ($) {
     my $s = encode ('utf-8', ''.$_[0]);
     $s =~ s/([^0-9A-Za-z._~-])/sprintf '%%%02X', ord $1/ge;
     return $s;
+}
+
+sub percent_decode_b ($) {
+  my $s = ''.$_[0];
+  utf8::encode ($s) if utf8::is_utf8 ($s);
+  $s =~ s/%([0-9A-Fa-f]{2})/pack 'C', hex $1/ge;
+  return $s;
 }
 
 # ------ Links ------
@@ -91,11 +99,50 @@ sub url_to_page_link {
         htescape $title;
 }
 
+sub http_notation_to_html {
+    my $self = $_[0];
+    my $url = $_[2]->[0];
+    if ($url =~ /(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])(?:\?[^\?]*)?$/) {
+        return $self->url_to_linked_image($url, $url, alt => $url);
+    } elsif ($url =~ /[Mm][Pp]3(\?.*)?$/) {
+        return $self->url_to_mp3_player($url);
+    } elsif ($url =~ m{^http://docomo\.ne\.jp/cp/map\.cgi\?lat=([^&]+)&lon=([^&]+)&geo=[Ww][Gg][Ss]84$}) {
+        ## See
+        ## <http://www.nttdocomo.co.jp/service/imode/make/content/browser/html/tag/location_info.html>.
+        my $lat = percent_decode_b $1;
+        my $lon = percent_decode_b $2;
+        if ($lat =~ /^([+-][0-9]+)\.([0-9]+)\.([0-9]+\.[0-9]+)$/) {
+            $lat = $1 + ($2 / 60) + ($3 / 60 / 60);
+        }
+        if ($lon =~ /^([+-][0-9]+)\.([0-9]+)\.([0-9]+\.[0-9]+)$/) {
+            $lon = $1 + ($2 / 60) + ($3 / 60 / 60);
+        }
+        return $self->latlon_to_linked_image($lat, $lon, alt => $url);
+    } else {
+        my $img_url = expand_image_permalink_url $url;
+        if ($img_url) {
+            return $self->url_to_linked_image($img_url, $url, alt => $url);
+        } else {
+            return sprintf '<a href="%s">%s</a>',
+                htescape $url, htescape $url;
+        }
+    }
+}
+
 sub httptitle_notation_to_html {
     my $values = $_[2];
     return sprintf q{<a href="%s">%s</a>},
         htescape $values->[1],
         htescape $values->[2];
+}
+
+sub url_to_linked_image {
+    my ($self, $url, $link_url, %args) = @_;
+    return sprintf '<a href="%s"><img src="%s" alt="%s"%s></a>',
+        htescape($link_url || $url),
+        htescape $url,
+        htescape $args{alt} || $url,
+        $args{additional_attributes} || '';
 }
 
 sub httpimage_notation_to_html {
@@ -107,11 +154,11 @@ sub httpimage_notation_to_html {
         $size = sprintf q< %s="%d">,
             (($1 eq 'h' || $1 eq 'H') ? 'height' : 'width'), $2;
     }
-    return sprintf '<a href="%s"><img src="%s" alt="%s"%s></a>',
-        htescape($link_url || $url),
-        htescape $url,
-        htescape $values->[0],
-        $size;
+    $_[0]->url_to_linked_image(
+        $url, $link_url,
+        alt => $values->[0],
+        additional_attributes => $size,
+    );
 }
 
 sub sound_button_label {
@@ -120,18 +167,24 @@ sub sound_button_label {
 
 sub httpsound_notation_to_html {
     my $values = $_[2];
-    my $url = $values->[1];
+    return $_[0]->url_to_mp3_player(
+        $values->[1],
+        offset => [$values->[2], $values->[3], $values->[4]],
+    );
+}
+
+sub url_to_mp3_player {
+    my ($self, $url, %args) = @_;
     my $eurl = $url;
     $eurl =~ s/([&;='\x22<>\\%])/sprintf '%%%02X', ord $1/ge;
     my $flashvars = "mp3Url=$eurl";
-    if ($values->[2] or $values->[3] or $values->[4]) {
+    if ($args{offset}->[0] or $args{offset}->[1] or $args{offset}->[2]) {
         $flashvars .= sprintf "&timeOffset=%dh%dm%ds",
-            $values->[2] || 0,
-            $values->[3] || 0,
-            $values->[4] || 0;
+            $args{offset}->[0] || 0,
+            $args{offset}->[1] || 0,
+            $args{offset}->[2] || 0;
     }
-    my $label = $_[0]->sound_button_label;
-
+    my $label = $self->sound_button_label;
     return sprintf q{<span style="vertical-align:middle;">
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
 <param name="flashVars" value="%s">
@@ -199,19 +252,26 @@ sub latlon_to_link_url {
         $_[1], $_[2]; # lat, lon
 }
 
-sub map_notation_to_html {
-    my ($self, undef, $values) = @_;
-    my $lat = $values->[1];
-    my $lon = $values->[2];
+sub latlon_to_linked_image {
+    my ($self, $lat, $lon, %args) = @_;
     $lat = $lat > 90 ? 90 : $lat < -90 ? -90 : $lat;
     $lon = $lon > 180 ? 180 : $lon < -180 ? -180 : $lon;
+    $lat =~ s/\+//;
+    $lon =~ s/\+//;
 
     my $image_url = $self->latlon_to_image_url($lat, $lon);
     my $link_url = $self->latlon_to_link_url($lat, $lon);
     return sprintf q{<div class=user-map><a href="%s"><img src="%s" width=140 height=140 alt="%s"></a></div>},
         htescape $link_url,
         htescape $image_url,
-        htescape $values->[0];
+        htescape(defined $args{alt} ? $args{alt} : 'map:' . $lat . ':' . $lon);
+}
+
+sub map_notation_to_html {
+    my $values = $_[2];
+    return $_[0]->latlon_to_linked_image(
+        $values->[1], $values->[2], alt => $values->[0],
+    );
 }
 
 # ------ Serialization ------

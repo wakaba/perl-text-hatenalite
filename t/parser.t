@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Path::Class;
 use lib file(__FILE__)->dir->parent->subdir('lib')->stringify;
-use lib file(__FILE__)->dir->parent->subdir('modules', 'testdataparser', 'lib')->stringify;
+use lib glob file(__FILE__)->dir->parent->subdir('modules', '*', 'lib')->stringify;
 use base qw(Test::Class);
 use Text::HatenaLite::Parser;
 use Test::Differences;
