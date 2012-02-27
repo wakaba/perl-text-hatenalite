@@ -190,6 +190,224 @@ ab cde \u0300 httpS://foo/bar?baz#hogea
 <a href="httpS://foo/bar?baz#hoge">ab cde \u0300</a>a
 
 #data
+[http://foo/bar/baz.mp3:sound]
+#parsed
+httpsound [http://foo/bar/baz.mp3:sound]
+ http://foo/bar/baz.mp3
+#plaintext escape
+http://foo/bar/baz.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[HTTPS://foo/bar/baz.mp3:sound]
+#parsed
+httpsound [HTTPS://foo/bar/baz.mp3:sound]
+ HTTPS://foo/bar/baz.mp3
+#plaintext escape
+HTTPS://foo/bar/baz.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=HTTPS://foo/bar/baz.mp3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=HTTPS://foo/bar/baz.mp3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="HTTPS://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/bazMP3:sound]
+#parsed
+httpsound [http://foo/bar/bazMP3:sound]
+ http://foo/bar/bazMP3
+#plaintext escape
+http://foo/bar/bazMP3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/bazMP3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/bazMP3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/bazMP3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/baz.mp3:sound:00h600m12s]
+#parsed
+httpsound [http://foo/bar/baz.mp3:sound:00h600m12s]
+ http://foo/bar/baz.mp3
+ 00
+ 600
+ 12
+#plaintext escape
+http://foo/bar/baz.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=0h600m12s">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=0h600m12s" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/baz.mp3:sound:0H6M1S]
+#parsed
+httpsound [http://foo/bar/baz.mp3:sound:0H6M1S]
+ http://foo/bar/baz.mp3
+ 0
+ 6
+ 1
+#plaintext escape
+http://foo/bar/baz.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=0h6m1s">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=0h6m1s" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/baz.mp3:sound:1h]
+#parsed escaped
+httpsound [http://foo/bar/baz.mp3:sound:1h]
+ http://foo/bar/baz.mp3
+ 1
+\u0020
+\u0020
+#plaintext escape
+http://foo/bar/baz.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=1h0m0s">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=1h0m0s" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/baz.mp3:sound:6m5s]
+#parsed escaped
+httpsound [http://foo/bar/baz.mp3:sound:6m5s]
+ http://foo/bar/baz.mp3
+\u0020
+ 6
+ 5
+#plaintext escape
+http://foo/bar/baz.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=0h6m5s">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3&amp;timeOffset=0h6m5s" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/baz'xyz'.mp3:sound:6m5s]
+#parsed escaped
+httpsound [http://foo/bar/baz'xyz'.mp3:sound:6m5s]
+ http://foo/bar/baz'xyz'.mp3
+\u0020
+ 6
+ 5
+#plaintext escape
+http://foo/bar/baz'xyz'.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz%27xyz%27.mp3&amp;timeOffset=0h6m5s">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz%27xyz%27.mp3&amp;timeOffset=0h6m5s" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz'xyz'.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/baz.mp3?%&hoge=fuga;abcmp3:sound:6m5s]
+#parsed escaped
+httpsound [http://foo/bar/baz.mp3?%&hoge=fuga;abcmp3:sound:6m5s]
+ http://foo/bar/baz.mp3?%&hoge=fuga;abcmp3
+\u0020
+ 6
+ 5
+#plaintext escape
+http://foo/bar/baz.mp3?%&hoge=fuga;abcmp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3?%25%26hoge%3Dfuga%3Babcmp3&amp;timeOffset=0h6m5s">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3?%25%26hoge%3Dfuga%3Babcmp3&amp;timeOffset=0h6m5s" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3?%&amp;hoge=fuga;abcmp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+
+#data
+[http://foo/bar/baz.mp3?abc=def:sound:6m5s]
+#parsed escaped
+text [
+http http://foo/bar/baz.mp3?abc=def:sound:6m5s
+text ]
+#plaintext
+[http://foo/bar/baz.mp3?abc=def:sound:6m5s]
+#html
+[http://foo/bar/baz.mp3?abc=def:sound:6m5s]
+
+#data
 idea:0
 #parsed
 idea idea:0

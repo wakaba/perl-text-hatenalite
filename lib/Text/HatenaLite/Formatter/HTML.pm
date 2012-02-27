@@ -98,6 +98,43 @@ sub httptitle_notation_to_html {
         htescape $values->[2];
 }
 
+sub sound_button_label {
+    return 'Download';
+}
+
+sub httpsound_notation_to_html {
+    my $values = $_[2];
+    my $url = $values->[1];
+    my $eurl = $url;
+    $eurl =~ s/([&;='\x22<>\\%])/sprintf '%%%02X', ord $1/ge;
+    my $flashvars = "mp3Url=$eurl";
+    if ($values->[2] or $values->[3] or $values->[4]) {
+        $flashvars .= sprintf "&timeOffset=%dh%dm%ds",
+            $values->[2] || 0,
+            $values->[3] || 0,
+            $values->[4] || 0;
+    }
+    my $label = $_[0]->sound_button_label;
+
+    return sprintf q{<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="%s">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="%s" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="%s"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="%s" alt="%s" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>},
+    htescape $flashvars,
+    htescape $flashvars,
+    htescape $url,
+    htescape $label,
+    htescape $label;
+}
+
 sub idea_notation_to_html {
     return $_[0]->url_to_page_link($_[2]->[0] => $_[1]->{to_url}->($_[2]));
 }
