@@ -98,6 +98,22 @@ sub httptitle_notation_to_html {
         htescape $values->[2];
 }
 
+sub httpimage_notation_to_html {
+    my $values = $_[2];
+    my $link_url = undef;
+    my $url = $values->[1];
+    my $size = '';
+    if ($values->[2] and $values->[2] =~ /^([HhWw])([0-9]+)$/) {
+        $size = sprintf q< %s="%d">,
+            (($1 eq 'h' || $1 eq 'H') ? 'height' : 'width'), $2;
+    }
+    return sprintf '<a href="%s"><img src="%s" alt="%s"%s></a>',
+        htescape($link_url || $url),
+        htescape $url,
+        htescape $values->[0],
+        $size;
+}
+
 sub sound_button_label {
     return 'Download';
 }

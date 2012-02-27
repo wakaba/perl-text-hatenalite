@@ -21,6 +21,12 @@ our $Notations = [
         to_text => sub { $_[1]->[2] . ' ' . $_[0]->{to_url}->($_[1]) },
     },
     {
+        type => 'httpimage',
+        pattern => q<\[(> . $http_pattern . q<(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])):[Ii][Mm][Aa][Gg][Ee](?::([HhWw][0-9]+))?\]>,
+        to_url => sub { $_[0]->[1] },
+        to_text => sub { $_[0]->{to_url}->($_[1]) },
+    },
+    {
         type => 'httpsound',
         pattern => q<\[(> . $http_pattern . q<[Mm][Pp]3):[Ss][Oo][Uu][Nn][Dd](?::(?:([0-9]+)[Hh]|())(?:([0-9]+)[Mm]|())(?:([0-9]+)[Ss]|()))?\]>,
         to_url => sub { $_[0]->[1] },

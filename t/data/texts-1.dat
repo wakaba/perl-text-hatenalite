@@ -190,6 +190,130 @@ ab cde \u0300 httpS://foo/bar?baz#hogea
 <a href="httpS://foo/bar?baz#hoge">ab cde \u0300</a>a
 
 #data
+[http://foo/bar/baz.png:image]
+#parsed
+httpimage [http://foo/bar/baz.png:image]
+ http://foo/bar/baz.png
+#plaintext
+http://foo/bar/baz.png
+#html
+<a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image]"></a>
+
+#data
+[HTTPS://foo/bar/baz.png:IMAGE]
+#parsed
+httpimage [HTTPS://foo/bar/baz.png:IMAGE]
+ HTTPS://foo/bar/baz.png
+#plaintext
+HTTPS://foo/bar/baz.png
+#html
+<a href="HTTPS://foo/bar/baz.png"><img src="HTTPS://foo/bar/baz.png" alt="[HTTPS://foo/bar/baz.png:IMAGE]"></a>
+
+#data
+[http://foo/bar/bazjpeg:image]
+#parsed
+httpimage [http://foo/bar/bazjpeg:image]
+ http://foo/bar/bazjpeg
+#plaintext
+http://foo/bar/bazjpeg
+#html
+<a href="http://foo/bar/bazjpeg"><img src="http://foo/bar/bazjpeg" alt="[http://foo/bar/bazjpeg:image]"></a>
+
+#data
+[http://foo/bar/baz.JPEG:image]
+#parsed
+httpimage [http://foo/bar/baz.JPEG:image]
+ http://foo/bar/baz.JPEG
+#plaintext
+http://foo/bar/baz.JPEG
+#html
+<a href="http://foo/bar/baz.JPEG"><img src="http://foo/bar/baz.JPEG" alt="[http://foo/bar/baz.JPEG:image]"></a>
+
+#data
+[http://foo/bar/baz.jpg:image]
+#parsed
+httpimage [http://foo/bar/baz.jpg:image]
+ http://foo/bar/baz.jpg
+#plaintext
+http://foo/bar/baz.jpg
+#html
+<a href="http://foo/bar/baz.jpg"><img src="http://foo/bar/baz.jpg" alt="[http://foo/bar/baz.jpg:image]"></a>
+
+#data
+[http://foo/bar/baz.JPG:image]
+#parsed
+httpimage [http://foo/bar/baz.JPG:image]
+ http://foo/bar/baz.JPG
+#plaintext
+http://foo/bar/baz.JPG
+#html
+<a href="http://foo/bar/baz.JPG"><img src="http://foo/bar/baz.JPG" alt="[http://foo/bar/baz.JPG:image]"></a>
+
+#data
+[http://foo/bar/baz.bmp:image]
+#parsed
+httpimage [http://foo/bar/baz.bmp:image]
+ http://foo/bar/baz.bmp
+#plaintext
+http://foo/bar/baz.bmp
+#html
+<a href="http://foo/bar/baz.bmp"><img src="http://foo/bar/baz.bmp" alt="[http://foo/bar/baz.bmp:image]"></a>
+
+#data
+[http://foo/bar/baz.gif:image]
+#parsed
+httpimage [http://foo/bar/baz.gif:image]
+ http://foo/bar/baz.gif
+#plaintext
+http://foo/bar/baz.gif
+#html
+<a href="http://foo/bar/baz.gif"><img src="http://foo/bar/baz.gif" alt="[http://foo/bar/baz.gif:image]"></a>
+
+#data
+[http://foo/bar/baz.png:image:w120]
+#parsed
+httpimage [http://foo/bar/baz.png:image:w120]
+ http://foo/bar/baz.png
+ w120
+#plaintext
+http://foo/bar/baz.png
+#html
+<a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:w120]" width="120"></a>
+
+#data
+[http://foo/bar/baz.png:image:W120]
+#parsed
+httpimage [http://foo/bar/baz.png:image:W120]
+ http://foo/bar/baz.png
+ W120
+#plaintext
+http://foo/bar/baz.png
+#html
+<a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:W120]" width="120"></a>
+
+#data
+[http://foo/bar/baz.png:image:h13]
+#parsed
+httpimage [http://foo/bar/baz.png:image:h13]
+ http://foo/bar/baz.png
+ h13
+#plaintext
+http://foo/bar/baz.png
+#html
+<a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:h13]" height="13"></a>
+
+#data
+[http://foo/bar/baz.png:image:H13]
+#parsed
+httpimage [http://foo/bar/baz.png:image:H13]
+ http://foo/bar/baz.png
+ H13
+#plaintext
+http://foo/bar/baz.png
+#html
+<a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:H13]" height="13"></a>
+
+#data
 [http://foo/bar/baz.mp3:sound]
 #parsed
 httpsound [http://foo/bar/baz.mp3:sound]
