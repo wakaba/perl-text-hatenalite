@@ -3,7 +3,7 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 
-my $http_pattern = q<[Hh][Tt][Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+>;
+my $http_pattern = q<[Hh][Tt][Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$\(\)\*]+>;
 
 our $Notations = [
     {
@@ -12,7 +12,7 @@ our $Notations = [
     },
     {
         type => 'http',
-        pattern => $http_pattern,
+        pattern => q<[Hh][Tt][Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+>,
     },
     {
         type => 'httptitle',
