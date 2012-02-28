@@ -43,7 +43,7 @@ our $Notations = [
     },
     {
         type => 'fotolife',
-        pattern => q<[Ff]:[Ii][Dd]:([-_a-zA-Z0-9]+):([0-9]+)([PpJjGg]):[Ii][Mm][Aa][Gg][Ee]>,
+        pattern => q<[Ff]:[Ii][Dd]:([-_a-zA-Z0-9]+):([0-9]+)([PpJjGgFf])(?::([Ii][Mm][Aa][Gg][Ee]|[Mm][Oo][Vv][Ii][Ee]))?>,
         to_object_url => sub {
             my $v = $_[0];
             my $ext = 'jpg';
@@ -52,6 +52,8 @@ our $Notations = [
                     $ext = 'png';
                 } elsif ($e eq 'g' or $e eq 'G') {
                     $ext = 'gif';
+                } elsif ($e eq 'f' or $e eq 'F') {
+                    $ext = 'flv';
                 }
             }
             return sprintf q<http://cdn-ak.f.st-hatena.com/images/fotolife/%s/%s/%s/%s.%s>,

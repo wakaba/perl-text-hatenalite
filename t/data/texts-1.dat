@@ -178,6 +178,13 @@ http ftp://hoge/fuga
 <a href="ftp://hoge/fuga">ftp://hoge/fuga</a>
 
 #data
+FTP://hoge/fuga#fyga
+#parsed
+http FTP://hoge/fuga#fyga
+#html
+<a href="FTP://hoge/fuga#fyga">FTP://hoge/fuga#fyga</a>
+
+#data
 https://hoge/fuga()
 #parsed
 http https://hoge/fuga
@@ -772,6 +779,7 @@ fotolife f:id:cho45:20100103163715j:image
  cho45
  20100103163715
  j
+ image
 #plaintext
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 
@@ -782,6 +790,7 @@ fotolife F:ID:cho45:20100103163715j:IMAGE
  cho45
  20100103163715
  j
+ IMAGE
 #plaintext
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 
@@ -792,6 +801,7 @@ fotolife f:id:cho-45:20100103163715j:image
  cho-45
  20100103163715
  j
+ image
 #plaintext
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho-45/20100103/20100103163715.jpg
 
@@ -802,6 +812,7 @@ fotolife f:id:CHO-45:20100103163715j:image
  CHO-45
  20100103163715
  j
+ image
 #plaintext
 http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO-45/20100103/20100103163715.jpg
 
@@ -812,8 +823,74 @@ fotolife f:id:CHO_45:20100103163715j:image
  CHO_45
  20100103163715
  j
+ image
 #plaintext
 http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO_45/20100103/20100103163715.jpg
+
+#data
+f:id:cho45:20100103163715j
+#parsed
+fotolife f:id:cho45:20100103163715j
+ cho45
+ 20100103163715
+ j
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+
+#data
+f:id:cho45:20100103163715j:movie
+#parsed
+fotolife f:id:cho45:20100103163715j:movie
+ cho45
+ 20100103163715
+ j
+ movie
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+
+#data
+f:id:cho45:20100103163715j:MOVIE
+#parsed
+fotolife f:id:cho45:20100103163715j:MOVIE
+ cho45
+ 20100103163715
+ j
+ MOVIE
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+
+#data
+f:id:cho45:20100103163715f:image
+#parsed
+fotolife f:id:cho45:20100103163715f:image
+ cho45
+ 20100103163715
+ f
+ image
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.flv
+
+#data
+f:id:cho45:20100103163715F:image
+#parsed
+fotolife f:id:cho45:20100103163715F:image
+ cho45
+ 20100103163715
+ F
+ image
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.flv
+
+#data
+f:id:cho45:20100103163715f:movie
+#parsed
+fotolife f:id:cho45:20100103163715f:movie
+ cho45
+ 20100103163715
+ f
+ movie
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.flv
 
 #data
 land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
@@ -893,12 +970,15 @@ text market://search?q=pname:com.hatena.android.coco
 #data
 f:id:cho45:20100103163715j"hoge":image
 #parsed
-text f:
-id id:cho45
+fotolife f:id:cho45:20100103163715j
  cho45
-text :20100103163715j"hoge":image
+ 20100103163715
+ j
+text "hoge":image
+#plaintext
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg"hoge":image
 #html
-f:<a href="http://www.hatena.ne.jp/cho45/" class="user"><img src="http://n.hatena.com/cho45/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/cho45/" class="user">id:cho45</a>:20100103163715j&#34;hoge&#34;:image
+f:id:cho45:20100103163715j&#34;hoge&#34;:image
 
 #data
 map:45:45
