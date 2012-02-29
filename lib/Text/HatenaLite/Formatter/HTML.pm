@@ -211,16 +211,51 @@ sub idea_notation_to_html {
 # ------ Media ------
 
 sub image_url_to_html {
-    my (undef, $orig => $url) = @_;
+    my (undef, $url, $link_url, %args) = @_;
     return sprintf q{<a href="%s"><img src="%s" alt="%s"></a>},
+        htescape($link_url || $url),
         htescape $url,
-        htescape $url,
-        htescape $orig;
+        htescape(defined $args{alt} ? $args{alt} : $url);
+}
+
+sub fotolife_notation_to_html {
+    my $values = $_[2];
+    
+    my $img_url = $_[1]->{to_object_url}->($values);
+    $img_url =~ s/\.flv$/,jpg/;
+
+    my $link_url = sprintf q<http://f.hatena.ne.jp/%s/%s>,
+        $values->[1], $values->[2];
+    
+    my $img = $_[0]->image_url_to_html(
+        $img_url, $link_url,
+        alt => $values->[0],
+    );
+    
+    my $e = $values->[3];
+    my $type = $values->[4] || '';
+    if (($e eq 'f' or $e eq 'F') and $type =~ /^[Mm][Oo][vv][Ii][Ee]$/) {
+        return sprintf q{<object data="http://f.hatena.ne.jp/tools/flvplayer_s.swf" type="application/x-shockwave-flash" width="320" height="276">
+<param name="movie" value="http://f.hatena.ne.jp/tools/flvplayer_s.swf">
+<param name="FlashVars" value="fotoid=%s&amp;user=%s">
+<param name="wmode" value="transparent">
+%s
+</object>},
+        htescape $values->[2],
+        htescape $values->[1],
+        $img;
+    } else {
+        return $img;
+    }
 }
 
 sub land_notation_to_html {
     my $values = $_[2];
-    return $_[0]->image_url_to_html($values->[0] => $_[1]->{to_object_url}->($values));
+    my $image_url = $_[1]->{to_object_url}->($values);
+    return $_[0]->image_url_to_html(
+        $image_url, $image_url,
+        alt => $values->[0],
+    );
 }
 
 sub ugomemo_swf_url {
