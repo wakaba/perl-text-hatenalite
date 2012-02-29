@@ -4,3 +4,6 @@
 [submodule "modules/perl-webservice-imageurls"]
 	path = modules/perl-webservice-imageurls
 	url = git://github.com/wakaba/perl-webservice-imageurls.git
+[submodule "modules/perl-mono"]
+	path = modules/perl-mono
+	url = git://github.com/wakaba/perl-mono

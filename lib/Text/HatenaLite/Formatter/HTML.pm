@@ -3,6 +3,7 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 use Encode;
+use Mono::ID;
 use WebService::ImageURLs;
 use Text::HatenaLite::Definitions;
 use Text::HatenaLite::Formatter::Base;
@@ -206,6 +207,41 @@ sub url_to_mp3_player {
 
 sub idea_notation_to_html {
     return $_[0]->url_to_page_link($_[2]->[0] => $_[1]->{to_url}->($_[2]));
+}
+
+sub asin_to_html {
+    my (undef, $asin, %args) = @_;
+    my $icon_url = sprintf q<http://h.hatena.ne.jp/asin/%s/image.icon>,
+        $asin;
+    my $link_url = sprintf q<http://h.hatena.ne.jp/asin/%s>,
+        $asin;
+    my $label = defined $args{label} ? $args{label} : 'ASIN:' . $asin;
+    return sprintf q{<a href="%s"><img src="%s" class=favicon width=16 height=16 alt=""></a><a href="%s">%s</a>},
+        htescape $link_url,
+        htescape $icon_url,
+        htescape $link_url,
+        htescape $label;
+}
+
+sub isbn_to_html {
+    my $isbn = $_[1];
+    my $asin = isbn_to_asin $isbn;
+    return $_[0]->asin_to_html($asin, label => 'ISBN:' . $isbn) if $asin;
+    return htescape('ISBN:' . $isbn);
+}
+
+sub asin_notation_to_html {
+    my $asin = $_[2]->[1];
+    $asin =~ tr/a-z-/A-Z/d;
+    return htescape $_[2]->[0] unless is_asin $asin;
+    return $_[0]->asin_to_html($asin);
+}
+
+sub isbn_notation_to_html {
+    my $isbn = $_[2]->[1];
+    $isbn =~ tr/a-z-/A-Z/d;
+    return htescape $_[2]->[0] unless is_isbn $isbn;
+    return $_[0]->isbn_to_html($isbn);
 }
 
 # ------ Media ------

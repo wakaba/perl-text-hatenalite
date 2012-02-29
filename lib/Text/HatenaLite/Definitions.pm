@@ -42,6 +42,14 @@ our $Notations = [
         to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
+        type => 'isbn',
+        pattern => q<[Ii][Ss][Bb][Nn]:([a-zA-Z0-9\-]+)>,
+    },
+    {
+        type => 'asin',
+        pattern => q<[Aa][Ss][Ii][Nn]:([a-zA-Z0-9\-]+)>,
+    },
+    {
         type => 'fotolife',
         pattern => q<[Ff]:[Ii][Dd]:([-_a-zA-Z0-9]+):([0-9]+)([PpJjGgFf])(?::([Ii][Mm][Aa][Gg][Ee]|[Mm][Oo][Vv][Ii][Ee]))?>,
         to_object_url => sub {
