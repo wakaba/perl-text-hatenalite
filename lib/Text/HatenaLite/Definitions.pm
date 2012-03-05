@@ -12,8 +12,13 @@ our $Notations = [
     },
     {
         type => 'http',
-        pattern => q<(?:[Hh][Tt]|[Ff])[Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+>,
-        to_url => sub { $_[0]->[0] },
+        pattern => q<((?:[Hh][Tt]|[Ff])[Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$]+)>,
+        postprocess => sub {
+            if ($_[0]->[1] =~ s/:([Mm][Oo][Vv][Ii][Ee])\z//) {
+                $_[0]->[2] = $1;
+            }
+        },
+        to_url => sub { $_[0]->[1] },
     },
     {
         type => 'httptitle',

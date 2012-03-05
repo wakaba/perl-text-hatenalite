@@ -13,6 +13,7 @@ for (@$Patterns) {
 }
 
 my $PatternToType = {map { $_->{pattern} => $_->{type} } @$Patterns};
+my $PatternToPP = {map { $_->{pattern} => $_->{postprocess} } @$Patterns};
 
 sub parse_string {
     my (undef, $str) = @_;
@@ -32,6 +33,9 @@ sub parse_string {
             type => ($PatternToType->{$pattern} || die "Unknown pattern: |$pattern|"),
             values => $Regexp->mvar,
         };
+        if (my $pp = $PatternToPP->{$pattern}) {
+            $pp->($token[-1]->{values});
+        }
         
         $str = substr($str, $Regexp->mend->[0]);
     }

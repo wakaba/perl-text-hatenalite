@@ -105,8 +105,18 @@ sub http_notation_to_html {
     my $url = $_[2]->[0];
     if ($url =~ /(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])(?:\?[^\?]*)?$/) {
         return $self->url_to_linked_image($url, $url, alt => $url);
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp][Ss]?://[0-9A-Za-z-]+\.[Yy][Oo][Uu][Tt][Uu][Bb][Ee]\.[Cc][Oo][Mm]/watch\?v=([0-9A-Za-z_-]+)}) {
+        return $self->youtube_id_to_html($1, alt => $url);
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Yy][Oo][Uu][Tt][Uu]\.[Bb][Ee]/([A-Za-z0-9_-]+)}) {
+        return $self->youtube_id_to_html($1, alt => $url);
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Ww][Ww][Ww]\.[Nn][Ii][Cc][Oo][Vv][Ii][Dd][Ee][Oo]\.[Jj][Pp]/watch/([0-9A-Za-z_]+)}) {
+        return $self->nicovideo_id_to_html($1, alt => $url);
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Nn][Ii][Cc][Oo]\.[Mm][Ss]/([0-9A-Za-z_]+)}) {
+        return $self->nicovideo_id_to_html($1, alt => $url);
     } elsif ($url =~ /[Mm][Pp]3(\?.*)?$/) {
         return $self->url_to_mp3_player($url);
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]?://(?:[0-9A-Za-z-]\.)?(?:[Uu][Gg][Oo][Mm][Ee][Mm][Oo]|[Ff][Ll][Ii][Pp][Nn][Oo][Tt][Ee])\.[Hh][Aa][Tt][Ee][Nn][Aa]\.(?:[Nn][Ee]\.[Jj][Pp]|[Cc][Oo][Mm])/([0-9A-Fa-f]+)(?:\@|%40)DSi/movie/([0-9A-Za-z_-]+)(?:$|\?)}) {
+        return $self->ugomemo_movie_to_html($1, $2, alt => $url);
     } elsif ($url =~ m{^http://docomo\.ne\.jp/cp/map\.cgi\?lat=([^&]+)&lon=([^&]+)&geo=[Ww][Gg][Ss]84$}) {
         ## See
         ## <http://www.nttdocomo.co.jp/service/imode/make/content/browser/html/tag/location_info.html>.
@@ -223,6 +233,34 @@ sub asin_to_html {
         htescape $label;
 }
 
+sub nicovideo_id_to_html {
+    my (undef, $vid, %args) = @_;
+    my $id = sprintf('nicovideo%d', int(rand(10000)));
+    return sprintf q{<div id="%s"></div>
+<script type="text/javascript"><!--
+    function write%s(player) {
+        var container = document.getElementById('%s');
+        if (typeof player == 'string') {
+            container.innerHTML = player;
+        } else {
+            container.innerHTML = player.getHTML();
+        }
+    }
+//--></script>
+<script src="http://www.nicovideo.jp/thumb_watch/%s?w=300&amp;h=238&amp;cb=write%s&amp;eb=write%s" charset="utf-8"></script>},
+        $id, $id, $id, 
+        htescape $vid,
+        $id, $id;
+}
+
+sub youtube_id_to_html {
+    my (undef, $vid, %args) = @_;
+    return sprintf q{<div class="video-body">
+<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/%s"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/%s" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
+</div>},
+        htescape $vid, htescape $vid;
+}
+
 sub isbn_to_html {
     my $isbn = $_[1];
     my $asin = isbn_to_asin $isbn;
@@ -295,19 +333,25 @@ sub land_notation_to_html {
 }
 
 sub ugomemo_swf_url {
-    return $_[1]->[1] =~ /[Uu]/
-        ? q<http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf>
-        : q<http://flipnote.hatena.com/js/flipplayer_s.swf>;
+    return q<http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf>;
+    #q<http://flipnote.hatena.com/js/flipplayer_s.swf>;
+}
+
+sub ugomemo_movie_to_html {
+    my ($self, $dsi_id, $file_name, %args) = @_;
+    my $swf_url = $self->ugomemo_swf_url;
+    return sprintf q{<object data="%s" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="%s"><param name="FlashVars" value="did=%s&amp;file=%s"></object>},
+        htescape $swf_url,
+        htescape $swf_url,
+        htescape $dsi_id,
+        htescape $file_name;
 }
 
 sub ugomemo_notation_to_html {
     my $values = $_[2];
-    my $swf_url = $_[0]->ugomemo_swf_url($values);
-    return sprintf q{<object data="%s" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="%s"><param name="FlashVars" value="did=%s&amp;file=%s"></object>},
-        htescape $swf_url,
-        htescape $swf_url,
-        htescape $values->[2],
-        htescape $values->[3];
+    return $_[0]->ugomemo_movie_to_html(
+        $values->[2], $values->[3], alt => $values->[0],
+    );
 }
 
 sub latlon_to_image_url {

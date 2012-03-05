@@ -16,10 +16,16 @@ sub _tests : Tests {
         html => {is_prefixed => 1},
     }, sub {
         my $test = shift;
+        my $expected = ($test->{html} || $test->{data})->[0];
         my $parsed = Text::HatenaLite::Parser->parse_string($test->{data}->[0]);
         my $parser = Text::HatenaLite::Formatter::HTML->new;
         $parser->parsed_data($parsed);
-        eq_or_diff $parser->as_text, ($test->{html} || $test->{data})->[0];
+        my $text = $parser->as_text;
+        if ($text =~ /(nicovideo[0-9]+)/) {
+            my $id = $1;
+            $expected =~ s/nicovideo99999/$id/g;
+        }
+        eq_or_diff $text, $expected;
     };
 }
 
