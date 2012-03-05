@@ -79,6 +79,8 @@ sub mailto_notation_to_html {
 
 # ------ Web pages ------
 
+sub max_object_count { 4 }
+
 sub url_to_page_title {
     return undef;
 }
@@ -104,7 +106,7 @@ sub http_notation_to_html {
     my $self = $_[0];
     my $url = $_[2]->[0];
     if ($url =~ /(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])(?:\?[^\?]*)?$/) {
-        return $self->url_to_linked_image($url, $url, alt => $url);
+        return $self->image_url_to_html($url, $url, alt => $url);
     } elsif ($url =~ m{^[Hh][Tt][Tt][Pp][Ss]?://[0-9A-Za-z-]+\.[Yy][Oo][Uu][Tt][Uu][Bb][Ee]\.[Cc][Oo][Mm]/watch\?v=([0-9A-Za-z_-]+)}) {
         return $self->youtube_id_to_html($1, alt => $url);
     } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Yy][Oo][Uu][Tt][Uu]\.[Bb][Ee]/([A-Za-z0-9_-]+)}) {
@@ -128,11 +130,11 @@ sub http_notation_to_html {
         if ($lon =~ /^([+-][0-9]+)\.([0-9]+)\.([0-9]+\.[0-9]+)$/) {
             $lon = $1 + ($2 / 60) + ($3 / 60 / 60);
         }
-        return $self->latlon_to_linked_image($lat, $lon, alt => $url);
+        return $self->latlon_to_html($lat, $lon, alt => $url);
     } else {
         my $img_url = expand_image_permalink_url $url;
         if ($img_url) {
-            return $self->url_to_linked_image($img_url, $url, alt => $url);
+            return $self->image_url_to_html($img_url, $url, alt => $url);
         } else {
             return sprintf '<a href="%s">%s</a>',
                 htescape $url, htescape $url;
@@ -147,15 +149,6 @@ sub httptitle_notation_to_html {
         htescape $values->[2];
 }
 
-sub url_to_linked_image {
-    my ($self, $url, $link_url, %args) = @_;
-    return sprintf '<a href="%s"><img src="%s" alt="%s"%s></a>',
-        htescape($link_url || $url),
-        htescape $url,
-        htescape $args{alt} || $url,
-        $args{additional_attributes} || '';
-}
-
 sub httpimage_notation_to_html {
     my $values = $_[2];
     my $link_url = undef;
@@ -165,7 +158,7 @@ sub httpimage_notation_to_html {
         $size = sprintf q< %s="%d">,
             (($1 eq 'h' || $1 eq 'H') ? 'height' : 'width'), $2;
     }
-    $_[0]->url_to_linked_image(
+    $_[0]->image_url_to_html(
         $url, $link_url,
         alt => $values->[0],
         additional_attributes => $size,
@@ -285,11 +278,19 @@ sub isbn_notation_to_html {
 # ------ Media ------
 
 sub image_url_to_html {
-    my (undef, $url, $link_url, %args) = @_;
-    return sprintf q{<a href="%s"><img src="%s" alt="%s"></a>},
-        htescape($link_url || $url),
-        htescape $url,
-        htescape(defined $args{alt} ? $args{alt} : $url);
+    my ($self, $url, $link_url, %args) = @_;
+    $self->{object_count}++;
+    if ($self->{object_count} > $self->max_object_count) {
+        return sprintf '<a href="%s">%s</a>',
+            htescape($link_url || $url),
+            htescape(defined $args{alt} ? $args{alt} : $url);
+    } else {
+        return sprintf '<a href="%s"><img src="%s" alt="%s"%s></a>',
+            htescape($link_url || $url),
+            htescape $url,
+            htescape(defined $args{alt} ? $args{alt} : $url),
+            $args{additional_attributes} || '';
+    }
 }
 
 sub fotolife_notation_to_html {
@@ -367,7 +368,7 @@ sub latlon_to_link_url {
         $_[1], $_[2]; # lat, lon
 }
 
-sub latlon_to_linked_image {
+sub latlon_to_html {
     my ($self, $lat, $lon, %args) = @_;
     $lat = $lat > 90 ? 90 : $lat < -90 ? -90 : $lat;
     $lon = $lon > 180 ? 180 : $lon < -180 ? -180 : $lon;
@@ -384,7 +385,7 @@ sub latlon_to_linked_image {
 
 sub map_notation_to_html {
     my $values = $_[2];
-    return $_[0]->latlon_to_linked_image(
+    return $_[0]->latlon_to_html(
         $values->[1], $values->[2], alt => $values->[0],
     );
 }

@@ -426,6 +426,77 @@ http://foo/bar/baz.png
 <a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:H13]" height="13"></a>
 
 #data
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+#parsed escaped
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+#html
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a>
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a>
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a>
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a>
+<a href="http://foo.bar/baz.png">http://foo.bar/baz.png</a>
+
+#data
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+[http://foo.bar/baz.png:image]
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+f:id:cho45:20100103163715j:image
+#parsed escaped
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+httpimage [http://foo.bar/baz.png:image]
+ http://foo.bar/baz.png
+text \u000A
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+http http://foo.bar/baz.png
+ http://foo.bar/baz.png
+text \u000A
+fotolife f:id:cho45:20100103163715j:image
+ cho45
+ 20100103163715
+ j
+ image
+#plaintext
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+http://foo.bar/baz.png
+http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#html
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a>
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a>
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="[http://foo.bar/baz.png:image]"></a>
+<a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a>
+<a href="http://foo.bar/baz.png">http://foo.bar/baz.png</a>
+<a href="http://f.hatena.ne.jp/cho45/20100103163715">f:id:cho45:20100103163715j:image</a>
+
+#data
 [http://foo/bar/baz.mp3:sound]
 #parsed
 httpsound [http://foo/bar/baz.mp3:sound]
