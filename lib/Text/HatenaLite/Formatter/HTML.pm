@@ -466,7 +466,10 @@ sub as_text {
         my $def = $Notations->{$node->{type}}
             or die "Definition for |$node->{type}| not found";
         my $code = $self->can($node->{type} . '_notation_to_html') || sub {
-            return htescape $_[2]->[0];
+            my $text = htescape $_[2]->[0];
+            $text =~ s/\x0D\x0A?/<br>/g;
+            $text =~ s/\x0A/<br>/g;
+            $text;
         };
         push @l, $self->$code($def, $node->{values});
     }
