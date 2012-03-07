@@ -750,6 +750,90 @@ text ]
 </span>]
 
 #data
+http://foo/bar/baz.mp3
+http://foo/bar/baz.mp3
+[http://foo/bar/baz.mp3:sound]
+http://foo/bar/baz.mp3
+http://foo/bar/baz.mp3
+[http://foo/bar/baz.mp3:sound]
+#parsed escaped
+http http://foo/bar/baz.mp3
+ http://foo/bar/baz.mp3
+text \u000A
+http http://foo/bar/baz.mp3
+ http://foo/bar/baz.mp3
+text \u000A
+httpsound [http://foo/bar/baz.mp3:sound]
+ http://foo/bar/baz.mp3
+text \u000A
+http http://foo/bar/baz.mp3
+ http://foo/bar/baz.mp3
+text \u000A
+http http://foo/bar/baz.mp3
+ http://foo/bar/baz.mp3
+text \u000A
+httpsound [http://foo/bar/baz.mp3:sound]
+ http://foo/bar/baz.mp3
+#plaintext escape
+http://foo/bar/baz.mp3
+http://foo/bar/baz.mp3
+http://foo/bar/baz.mp3
+http://foo/bar/baz.mp3
+http://foo/bar/baz.mp3
+http://foo/bar/baz.mp3
+#html
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo/bar/baz.mp3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo/bar/baz.mp3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
+
+#data
 http://copie.hatelabo.jp/-gYC-x53el_-UIQ
 #parsed
 http http://copie.hatelabo.jp/-gYC-x53el_-UIQ
@@ -904,6 +988,36 @@ http http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded&a=b
 <a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
+http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA
+#parsed escaped
+http http://www.youtube.com/watch?v=Hi4_LySCtbA
+ http://www.youtube.com/watch?v=Hi4_LySCtbA
+text \u0020
+http http://www.youtube.com/watch?v=Hi4_LySCtbA
+ http://www.youtube.com/watch?v=Hi4_LySCtbA
+text \u0020
+http http://www.youtube.com/watch?v=Hi4_LySCtbA
+ http://www.youtube.com/watch?v=Hi4_LySCtbA
+text \u0020
+http http://www.youtube.com/watch?v=Hi4_LySCtbA
+ http://www.youtube.com/watch?v=Hi4_LySCtbA
+text \u0020
+http http://www.youtube.com/watch?v=Hi4_LySCtbA
+ http://www.youtube.com/watch?v=Hi4_LySCtbA
+#html
+<div class="video-body">
+<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
+</div> <div class="video-body">
+<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
+</div> <div class="video-body">
+<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
+</div> <div class="video-body">
+<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
+</div> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
+#htmlmobile
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> http://www.youtube.com/watch?v=Hi4_LySCtbA
+
+#data
 http://nico.ms/sm9754737
 #parsed
 http http://nico.ms/sm9754737
@@ -966,6 +1080,83 @@ http http://www.nicovideo.jp/watch/sm9754737:movie
 <script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
 #mobilehtml
 <a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://www.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+
+#data
+http://www.nicovideo.jp/watch/sm9754737
+http://nico.ms/sm9754737
+http://www.nicovideo.jp/watch/sm9754737
+http://www.nicovideo.jp/watch/sm9754737
+http://www.nicovideo.jp/watch/sm9754737
+http://nico.ms/sm9754737
+#parsed escaped
+http http://www.nicovideo.jp/watch/sm9754737
+ http://www.nicovideo.jp/watch/sm9754737
+text \u000A
+http http://nico.ms/sm9754737
+ http://nico.ms/sm9754737
+text \u000A
+http http://www.nicovideo.jp/watch/sm9754737
+ http://www.nicovideo.jp/watch/sm9754737
+text \u000A
+http http://www.nicovideo.jp/watch/sm9754737
+ http://www.nicovideo.jp/watch/sm9754737
+text \u000A
+http http://www.nicovideo.jp/watch/sm9754737
+ http://www.nicovideo.jp/watch/sm9754737
+text \u000A
+http http://nico.ms/sm9754737
+ http://nico.ms/sm9754737
+#html
+<div id="nicovideo99999"></div>
+<script type="text/javascript"><!--
+    function writenicovideo99999(player) {
+        var container = document.getElementById('nicovideo99999');
+        if (typeof player == 'string') {
+            container.innerHTML = player;
+        } else {
+            container.innerHTML = player.getHTML();
+        }
+    }
+//--></script>
+<script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
+<div id="nicovideo99999"></div>
+<script type="text/javascript"><!--
+    function writenicovideo99999(player) {
+        var container = document.getElementById('nicovideo99999');
+        if (typeof player == 'string') {
+            container.innerHTML = player;
+        } else {
+            container.innerHTML = player.getHTML();
+        }
+    }
+//--></script>
+<script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
+<div id="nicovideo99999"></div>
+<script type="text/javascript"><!--
+    function writenicovideo99999(player) {
+        var container = document.getElementById('nicovideo99999');
+        if (typeof player == 'string') {
+            container.innerHTML = player;
+        } else {
+            container.innerHTML = player.getHTML();
+        }
+    }
+//--></script>
+<script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
+<div id="nicovideo99999"></div>
+<script type="text/javascript"><!--
+    function writenicovideo99999(player) {
+        var container = document.getElementById('nicovideo99999');
+        if (typeof player == 'string') {
+            container.innerHTML = player;
+        } else {
+            container.innerHTML = player.getHTML();
+        }
+    }
+//--></script>
+<script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
+<a href="http://www.nicovideo.jp/watch/sm9754737">http://www.nicovideo.jp/watch/sm9754737</a>
+<a href="http://www.nicovideo.jp/watch/sm9754737">http://nico.ms/sm9754737</a>
 
 #data
 http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000
@@ -1408,6 +1599,70 @@ http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
 
 #data
+ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+http://hoge/fuga.png
+#parsed escaped
+ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ ugomemo
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+text \u000A
+ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ ugomemo
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+text \u000A
+ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ ugomemo
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+text \u000A
+ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ ugomemo
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+text \u000A
+ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ ugomemo
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+text \u000A
+http http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+ http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+text \u000A
+ugomemo flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
+ flipnote
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027
+text \u000A
+http http://hoge/fuga.png
+ http://hoge/fuga.png
+#plaintext
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
+http://hoge/fuga.png
+#html
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+<a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36/movie/DA0D36_0A0CDA47CF483_027">ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a>
+<a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36/movie/DA0D36_0A0CDA47CF483_027">http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027</a>
+<a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36/movie/DA0D36_0A0CDA47CF483_027">flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a>
+<a href="http://hoge/fuga.png">http://hoge/fuga.png</a>
+
+#data
 market://search?q=pname:com.hatena.android.coco
 #parsed
 text market://search?q=pname:com.hatena.android.coco
@@ -1509,3 +1764,39 @@ http http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=-90,-180"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=-94.132&amp;lon=%2D181.453&amp;geo=wgs84"></a></div>
+
+#data
+map:94.132:181.453
+http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+map:94.132:181.453
+http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+map:94.132:181.453
+http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+#parsed escaped
+map map:94.132:181.453
+ 94.132
+ 181.453
+text \u000A
+http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+ http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+text \u000A
+map map:94.132:181.453
+ 94.132
+ 181.453
+text \u000A
+http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+ http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+text \u000A
+map map:94.132:181.453
+ 94.132
+ 181.453
+text \u000A
+http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+ http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:94.132:181.453"></a></div>
+<div class=user-map><a href="http://maps.google.com/?ll=14.132,11.453"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div>
+<div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:94.132:181.453"></a></div>
+<div class=user-map><a href="http://maps.google.com/?ll=14.132,11.453"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div>
+<div class=user-map><a href="http://maps.google.com/?ll=90,180">map:94.132:181.453</a></div>
+<div class=user-map><a href="http://maps.google.com/?ll=14.132,11.453">http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84</a></div>

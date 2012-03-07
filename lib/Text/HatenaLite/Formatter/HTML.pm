@@ -179,6 +179,13 @@ sub httpsound_notation_to_html {
 
 sub url_to_mp3_player {
     my ($self, $url, %args) = @_;
+    $self->{object_count}++;
+    if ($self->{object_count} > $self->max_object_count) {
+        return sprintf '<a href="%s">%s</a>',
+            htescape $url,
+            htescape($args{alt} || $url);
+    }
+
     my $eurl = $url;
     $eurl =~ s/([&;='\x22<>\\%])/sprintf '%%%02X', ord $1/ge;
     my $flashvars = "mp3Url=$eurl";
@@ -226,10 +233,22 @@ sub asin_to_html {
         htescape $label;
 }
 
+sub nicovideo_id_to_url {
+    my ($self, $vid) = @_;
+    return sprintf q<http://www.nicovideo.jp/watch/%s>, $vid;
+}
+
 sub nicovideo_id_to_html {
-    my (undef, $vid, %args) = @_;
-    my $id = sprintf('nicovideo%d', int(rand(10000)));
-    return sprintf q{<div id="%s"></div>
+    my ($self, $vid, %args) = @_;
+    $self->{object_count}++;
+    if ($self->{object_count} > $self->max_object_count) {
+        my $nicovideo_url = $self->nicovideo_id_to_url($vid);
+        return sprintf '<a href="%s">%s</a>',
+            htescape($nicovideo_url),
+            htescape($args{alt} || $nicovideo_url);
+    } else {
+        my $id = sprintf('nicovideo%d', int(rand(10000)));
+        return sprintf q{<div id="%s"></div>
 <script type="text/javascript"><!--
     function write%s(player) {
         var container = document.getElementById('%s');
@@ -241,17 +260,36 @@ sub nicovideo_id_to_html {
     }
 //--></script>
 <script src="http://www.nicovideo.jp/thumb_watch/%s?w=300&amp;h=238&amp;cb=write%s&amp;eb=write%s" charset="utf-8"></script>},
-        $id, $id, $id, 
-        htescape $vid,
-        $id, $id;
+            $id, $id, $id, 
+            htescape $vid,
+            $id, $id;
+    }
+}
+
+sub youtube_id_to_url {
+    my ($self, $vid) = @_;
+    return sprintf q<http://www.youtube.com/watch?v=%s>, $vid;
+}
+
+sub youtube_id_to_thumbnail_url {
+    my ($self, $vid) = @_;
+    return sprintf q<http://i4.ytimg.com/vi/%s/default.jpg>, $vid;
 }
 
 sub youtube_id_to_html {
-    my (undef, $vid, %args) = @_;
-    return sprintf q{<div class="video-body">
+    my ($self, $vid, %args) = @_;
+    $self->{object_count}++;
+    if ($self->{object_count} > $self->max_object_count) {
+        my $youtube_url = $self->youtube_id_to_url($vid);
+        return sprintf '<a href="%s">%s</a>',
+            htescape($youtube_url),
+            htescape($args{alt} || $youtube_url);
+    } else {
+        return sprintf q{<div class="video-body">
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/%s"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/%s" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>},
-        htescape $vid, htescape $vid;
+            htescape $vid, htescape $vid;
+    }
 }
 
 sub isbn_to_html {
@@ -338,14 +376,34 @@ sub ugomemo_swf_url {
     #q<http://flipnote.hatena.com/js/flipplayer_s.swf>;
 }
 
+sub ugomemo_movie_to_url {
+    my ($self, $dsi_id, $file_name) = @_;
+    return sprintf q<http://ugomemo.hatena.ne.jp/%s/movie/%s>,
+        $dsi_id, $file_name;
+}
+
+sub ugomemo_movie_to_thumbnail_url {
+    my ($self, $dsi_id, $file_name) = @_;
+    return sprintf q<http://image.ugomemo.hatena.ne.jp/thumbnail/%s/%s_o.gif>,
+        $dsi_id, $file_name;
+}
+
 sub ugomemo_movie_to_html {
     my ($self, $dsi_id, $file_name, %args) = @_;
-    my $swf_url = $self->ugomemo_swf_url;
-    return sprintf q{<object data="%s" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="%s"><param name="FlashVars" value="did=%s&amp;file=%s"></object>},
-        htescape $swf_url,
-        htescape $swf_url,
-        htescape $dsi_id,
-        htescape $file_name;
+    $self->{object_count}++;
+    if ($self->{object_count} > $self->max_object_count) {
+        my $ugomemo_url = $self->ugomemo_movie_to_url($dsi_id, $file_name);
+        return sprintf '<a href="%s">%s</a>',
+            htescape($ugomemo_url),
+            htescape($args{alt} || $ugomemo_url);
+    } else {
+        my $swf_url = $self->ugomemo_swf_url;
+        return sprintf q{<object data="%s" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="%s"><param name="FlashVars" value="did=%s&amp;file=%s"></object>},
+            htescape $swf_url,
+            htescape $swf_url,
+            htescape $dsi_id,
+            htescape $file_name;
+    }
 }
 
 sub ugomemo_notation_to_html {
@@ -374,9 +432,16 @@ sub latlon_to_html {
     $lon = $lon > 180 ? 180 : $lon < -180 ? -180 : $lon;
     $lat =~ s/\+//;
     $lon =~ s/\+//;
+    my $link_url = $self->latlon_to_link_url($lat, $lon);
+
+    $self->{object_count}++;
+    if ($self->{object_count} > $self->max_object_count) {
+        return sprintf '<div class=user-map><a href="%s">%s</a></div>',
+            htescape $link_url,
+            htescape($args{alt} || $link_url);
+    }
 
     my $image_url = $self->latlon_to_image_url($lat, $lon);
-    my $link_url = $self->latlon_to_link_url($lat, $lon);
     return sprintf q{<div class=user-map><a href="%s"><img src="%s" width=140 height=140 alt="%s"></a></div>},
         htescape $link_url,
         htescape $image_url,

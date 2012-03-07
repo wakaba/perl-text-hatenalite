@@ -21,10 +21,7 @@ sub _tests : Tests {
         my $parser = Text::HatenaLite::Formatter::HTML->new;
         $parser->parsed_data($parsed);
         my $text = $parser->as_text;
-        if ($text =~ /(nicovideo[0-9]+)/) {
-            my $id = $1;
-            $expected =~ s/nicovideo99999/$id/g;
-        }
+        $text =~ s/nicovideo[0-9]+/nicovideo99999/g;
         eq_or_diff $text, $expected;
     };
 }
