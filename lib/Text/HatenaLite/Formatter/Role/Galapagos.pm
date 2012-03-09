@@ -1,6 +1,7 @@
 package Text::HatenaLite::Formatter::Role::Galapagos;
 use strict;
 use warnings;
+our $VERSION = '1.0';
 use Text::HatenaLite::Formatter::HTML;
 use Encode;
 
@@ -10,10 +11,6 @@ BEGIN {
     *percent_encode_b = \&Text::HatenaLite::Formatter::HTML::percent_encode_b;
 }
 
-sub hatena_id_to_url {
-    return q<http://www.hatena.ne.jp/mobile/> . $_[1]->[1] . q</>;
-}
-
 sub id_notation_to_html {
     my $values = $_[2];
     my $link_url = $_[0]->hatena_id_to_url($values);
@@ -21,15 +18,6 @@ sub id_notation_to_html {
     return sprintf q{<a href="%s" class="user">id:%s</a>},
         htescape $link_url,
         htescape $values->[1];
-}
-
-sub keyword_to_link_url {
-    return q<http://d.hatena.ne.jp/keywordmobile/> .
-        percent_encode_b encode 'cp932', $_[1];
-}
-
-sub asin_to_url {
-    return sprintf q<http://h.hatena.ne.jp/mobile/asin/%s>, $_[1];
 }
 
 sub asin_to_html {
@@ -52,52 +40,6 @@ sub url_to_page_link {
         htescape $title;
 }
 
-sub url_to_mp3_player {
-    my ($self, $url, %args) = @_;
-    return sprintf '<a href="%s">%s</a>',
-        htescape $url,
-        htescape($args{alt} || $url);
-}
-
-sub nicovideo_id_to_html {
-    my ($self, $vid, %args) = @_;
-    my $nicovideo_url = $self->nicovideo_id_to_url($vid);
-    $self->{object_count}++;
-    if ($self->{object_count} > $self->max_object_count) {
-        #
-    } else {
-        my $thumbnail_url = $self->nicovideo_id_to_thumbnail_url($vid);
-        if ($thumbnail_url) {
-            return sprintf q{<a href="%s"><img src="%s" alt="%s">%s</a>},
-                htescape $nicovideo_url,
-                htescape $thumbnail_url,
-                htescape($args{alt} || $nicovideo_url),
-                $self->play_video_button_image_html;
-        }
-    }
-    return sprintf '<a href="%s">%s</a>',
-        htescape($nicovideo_url),
-        htescape($args{alt} || $nicovideo_url);
-}
-
-sub youtube_id_to_html {
-    my ($self, $vid, %args) = @_;
-    my $youtube_url = $self->youtube_id_to_url($vid);
-    $self->{object_count}++;
-    if ($self->{object_count} > $self->max_object_count) {
-        return sprintf '<a href="%s">%s</a>',
-            htescape($youtube_url),
-            htescape($args{alt} || $youtube_url);
-    } else {
-        my $thumbnail_url = $self->youtube_id_to_thumbnail_url($vid);
-        return sprintf q{<a href="%s"><img src="%s" alt="%s">%s</a>},
-            htescape $youtube_url,
-            htescape $thumbnail_url,
-            htescape($args{alt} || $youtube_url),
-            $self->play_video_button_image_html;
-    }
-}
-
 sub image_url_filter {
     my $url = $_[1];
     if ($url =~ m{^(http://cdn-ak\.f\.st-hatena\.com/images/fotolife/./[^/]+/[0-9]+/[0-9]+)\.(?:jpg|png|gif)$}) {
@@ -113,40 +55,10 @@ sub image_url_filter {
     }
 }
 
-sub fotolife_id_to_url {
-    return sprintf q<http://f.hatena.ne.jp/mobile/%s/%s>, $_[1], $_[2];
-}
-
-sub use_fotolife_movie_player { 0 }
-
-sub ugomemo_movie_to_url {
-    my ($self, $dsi_id, $file_name) = @_;
-    return sprintf q<http://ugomemo.hatena.ne.jp/mobile/%s@DSi/movie/%s>,
-        $dsi_id, $file_name;
-}
-
 sub ugomemo_movie_to_thumbnail_url {
     my ($self, $dsi_id, $file_name) = @_;
     return sprintf q<http://image.ugomemo.hatena.ne.jp/thumbnail/%s/%s_m.gif>,
         $dsi_id, $file_name;
-}
-
-sub ugomemo_movie_to_html {
-    my ($self, $dsi_id, $file_name, %args) = @_;
-    $self->{object_count}++;
-    my $ugomemo_url = $self->ugomemo_movie_to_url($dsi_id, $file_name);
-    if ($self->{object_count} > $self->max_object_count) {
-        return sprintf '<a href="%s">%s</a>',
-            htescape($ugomemo_url),
-            htescape($args{alt} || $ugomemo_url);
-    } else {
-        my $thumbnail_url = $self->ugomemo_movie_to_thumbnail_url($dsi_id, $file_name);
-        return sprintf q{<a href="%s"><img src="%s" alt="%s">%s</a>},
-            htescape $ugomemo_url,
-            htescape $thumbnail_url,
-            htescape($args{alt} || $ugomemo_url),
-            $self->play_video_button_image_html;
-    }
 }
 
 sub latlon_to_image_url {
