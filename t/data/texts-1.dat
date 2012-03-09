@@ -80,6 +80,30 @@ id ID:hatena
 <a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
 
 #data
+id:hatena:detail
+#parsed
+id id:hatena:detail
+ hatena
+#html
+<a href="http://www.hatena.ne.jp/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena/" class="user">id:hatena</a>
+#touchhtml
+<a href="http://www.hatena.ne.jp/touch/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatena/" class="user">id:hatena</a>
+#mobilehtml
+<a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
+
+#data
+id:hatena:DETAIL
+#parsed
+id id:hatena:DETAIL
+ hatena
+#html
+<a href="http://www.hatena.ne.jp/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena/" class="user">id:hatena</a>
+#touchhtml
+<a href="http://www.hatena.ne.jp/touch/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatena/" class="user">id:hatena</a>
+#mobilehtml
+<a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
+
+#data
 id:hatena120-_ abc
 #parsed
 id id:hatena120-_

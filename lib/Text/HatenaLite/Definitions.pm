@@ -8,7 +8,7 @@ my $http_pattern = q<[Hh][Tt][Tt][Pp][Ss]?:\/\/[0-9A-Za-z_~/.?&=\-%#+:;,@'!\$\(\
 our $Notations = [
     {
         type => 'id',
-        pattern => q<[Ii][Dd]:([0-9a-zA-Z_\@-]+)>,
+        pattern => q<[Ii][Dd]:([0-9a-zA-Z_\@-]+)(?::[Dd][Ee][Tt][Aa][Ii][Ll])?>,
     },
     {
         type => 'http',
