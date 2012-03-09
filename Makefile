@@ -16,7 +16,7 @@ Makefile.setupenv:
 	wget -O $@ https://raw.github.com/gist/1883312/Makefile.setupenv
 
 setupenv remotedev-test remotedev-reset config/perl/libs.txt \
-carton-install local-submodules: %: Makefile.setupenv always
+carton-install carton-update local-submodules: %: Makefile.setupenv always
 	make --makefile Makefile.setupenv $@ REMOTEDEV_HOST=$(REMOTEDEV_HOST)
 
 always:
