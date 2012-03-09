@@ -1,0 +1,37 @@
+=head1 NAME
+
+Template::Plugin::Text::HatenaLite::HTML - Convert Hatena Notation Lite into HTML
+
+=head1 SYNOPSIS
+
+  [% USE Text.HatenaLite.HTML %]
+  [% text | hatenalite_to_html %]
+
+=head1 DESCRIPTION
+
+The C<Template::Plugin::Text::HatenaLite::HTML> module, a Template
+Toolkit plugin, defines a filter, C<hatenalite_to_html>, which
+converts a text written in Hatena Notation Lite into HTML fragment,
+using L<Text::HatenaLite::Formatter::HTML>.
+
+The input to the filter must be a character string.  The output of the
+filter is a character string containing HTML fragment.
+
+=head1 SEE ALSO
+
+L<Text::HatenaLite::Parser>, L<Text::HatenaLite::Formatter::HTML>.
+
+L<Template::Plugin>.
+
+=head1 AUTHOR
+
+Wakaba (id:wakabatan) <wakabatan@hatena.ne.jp>.
+
+=head1 LICENSE
+
+Copyright 2012 Hatena <http://www.hatena.com/>.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
