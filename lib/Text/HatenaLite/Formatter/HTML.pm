@@ -31,6 +31,12 @@ sub percent_encode_c ($) {
     return $s;
 }
 
+sub percent_encode_b ($) {
+    my $s = ''.$_[0];
+    $s =~ s/([^0-9A-Za-z._~-])/sprintf '%%%02X', ord $1/ge;
+    return $s;
+}
+
 sub percent_decode_b ($) {
   my $s = ''.$_[0];
   utf8::encode ($s) if utf8::is_utf8 ($s);
@@ -219,23 +225,41 @@ sub idea_notation_to_html {
     return $_[0]->url_to_page_link($_[2]->[0] => $_[1]->{to_url}->($_[2]));
 }
 
+sub asin_to_icon_url {
+    return sprintf q<http://h.hatena.ne.jp/asin/%s/image.icon>, $_[1];
+}
+
+sub asin_to_url {
+    return sprintf q<http://h.hatena.ne.jp/asin/%s>, $_[1];
+}
+
 sub asin_to_html {
-    my (undef, $asin, %args) = @_;
-    my $icon_url = sprintf q<http://h.hatena.ne.jp/asin/%s/image.icon>,
-        $asin;
-    my $link_url = sprintf q<http://h.hatena.ne.jp/asin/%s>,
-        $asin;
+    my ($self, $asin, %args) = @_;
     my $label = defined $args{label} ? $args{label} : 'ASIN:' . $asin;
+    my $link_url = $self->asin_to_url($asin);
     return sprintf q{<a href="%s"><img src="%s" class=favicon width=16 height=16 alt=""></a><a href="%s">%s</a>},
         htescape $link_url,
-        htescape $icon_url,
+        htescape $self->asin_to_icon_url($asin),
         htescape $link_url,
         htescape $label;
+}
+
+sub play_video_button_image_html {
+    return q{<img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt="">};
 }
 
 sub nicovideo_id_to_url {
     my ($self, $vid) = @_;
     return sprintf q<http://www.nicovideo.jp/watch/%s>, $vid;
+}
+
+sub nicovideo_id_to_thumbnail_url {
+    my ($self, $vid) = @_;
+    if ($vid =~ s/^[Ss][Mm]//) {
+        return sprintf q<http://tn-skr4.smilevideo.jp/smile?i=%s>, $vid;
+    } else {
+        return undef;
+    }
 }
 
 sub nicovideo_id_to_html {
@@ -315,6 +339,8 @@ sub isbn_notation_to_html {
 
 # ------ Media ------
 
+sub image_url_filter { $_[1] }
+
 sub image_url_to_html {
     my ($self, $url, $link_url, %args) = @_;
     $self->{object_count}++;
@@ -325,29 +351,37 @@ sub image_url_to_html {
     } else {
         return sprintf '<a href="%s"><img src="%s" alt="%s"%s></a>',
             htescape($link_url || $url),
-            htescape $url,
+            htescape $self->image_url_filter($url),
             htescape(defined $args{alt} ? $args{alt} : $url),
             $args{additional_attributes} || '';
     }
 }
 
+sub fotolife_id_to_url {
+    return sprintf q<http://f.hatena.ne.jp/%s/%s>, $_[1], $_[2];
+}
+
+sub use_fotolife_movie_player { 1 }
+
 sub fotolife_notation_to_html {
+    my $self = $_[0];
     my $values = $_[2];
     
     my $img_url = $_[1]->{to_object_url}->($values);
     $img_url =~ s/\.flv$/,jpg/;
 
-    my $link_url = sprintf q<http://f.hatena.ne.jp/%s/%s>,
-        $values->[1], $values->[2];
+    my $link_url = $self->fotolife_id_to_url($values->[1], $values->[2]);
     
-    my $img = $_[0]->image_url_to_html(
+    my $img = $self->image_url_to_html(
         $img_url, $link_url,
         alt => $values->[0],
     );
     
     my $e = $values->[3];
     my $type = $values->[4] || '';
-    if (($e eq 'f' or $e eq 'F') and $type =~ /^[Mm][Oo][vv][Ii][Ee]$/) {
+    if (($e eq 'f' or $e eq 'F') and
+        $type =~ /^[Mm][Oo][vv][Ii][Ee]$/ and
+        $self->use_fotolife_movie_player) {
         return sprintf q{<object data="http://f.hatena.ne.jp/tools/flvplayer_s.swf" type="application/x-shockwave-flash" width="320" height="276">
 <param name="movie" value="http://f.hatena.ne.jp/tools/flvplayer_s.swf">
 <param name="FlashVars" value="fotoid=%s&amp;user=%s">
@@ -378,7 +412,7 @@ sub ugomemo_swf_url {
 
 sub ugomemo_movie_to_url {
     my ($self, $dsi_id, $file_name) = @_;
-    return sprintf q<http://ugomemo.hatena.ne.jp/%s/movie/%s>,
+    return sprintf q<http://ugomemo.hatena.ne.jp/%s@DSi/movie/%s>,
         $dsi_id, $file_name;
 }
 
@@ -420,8 +454,6 @@ sub latlon_to_image_url {
 }
 
 sub latlon_to_link_url {
-    #sprintf q<http://map.mobile.yahoo.co.jp/mpl?lat=%s&lon=%s&datum=wgs>,
-    #    $lat, $lon;
     return sprintf q<http://maps.google.com/?ll=%s,%s>,
         $_[1], $_[2]; # lat, lon
 }

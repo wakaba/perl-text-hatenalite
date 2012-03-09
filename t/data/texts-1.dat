@@ -62,6 +62,8 @@ id id:hatena
  hatena
 #html
 <a href="http://www.hatena.ne.jp/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena/" class="user">id:hatena</a>
+#mobilehtml
+<a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
 
 #data
 ID:hatena
@@ -70,6 +72,8 @@ id ID:hatena
  hatena
 #html
 <a href="http://www.hatena.ne.jp/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena/" class="user">id:hatena</a>
+#mobilehtml
+<a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
 
 #data
 id:hatena120-_ abc
@@ -79,6 +83,8 @@ id id:hatena120-_
 text  abc
 #html
 <a href="http://www.hatena.ne.jp/hatena120-_/" class="user"><img src="http://n.hatena.com/hatena120-_/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena120-_/" class="user">id:hatena120-_</a> abc
+#mobilehtml
+<a href="http://www.hatena.ne.jp/mobile/hatena120-_/" class="user">id:hatena120-_</a> abc
 
 #data
 id:hatenahogefuga@DSi*aa
@@ -88,6 +94,8 @@ id id:hatenahogefuga@DSi
 text *aa
 #html
 <a href="http://www.hatena.ne.jp/hatenahogefuga@DSi/" class="user"><img src="http://n.hatena.com/hatenahogefuga@DSi/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatenahogefuga@DSi/" class="user">id:hatenahogefuga@DSi</a>*aa
+#mobilehtml
+<a href="http://www.hatena.ne.jp/mobile/hatenahogefuga@DSi/" class="user">id:hatenahogefuga@DSi</a>*aa
 
 #data
 <script>alert('hello')</script>
@@ -126,6 +134,8 @@ text \u5000aba
 abcxyz\u4E00\u5000aba
 #html escaped
 abc<a href="http://d.hatena.ne.jp/keyword/xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+#mobilehtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u4E00</a>\u5000aba
 
 #data escaped
 abc[keyword:xyz\u4E00]\u5000aba
@@ -138,6 +148,8 @@ text \u5000aba
 abcxyz\u4E00\u5000aba
 #html escaped
 abc<a href="http://d.hatena.ne.jp/keyword/xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+#mobilehtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u4e00</a>\u5000aba
 
 #data escaped
 abc[KEYWORD:xyz\u4E00]\u5000aba
@@ -150,6 +162,8 @@ text \u5000aba
 abcxyz\u4E00\u5000aba
 #html escaped
 abc<a href="http://d.hatena.ne.jp/keyword/xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+#mobilehtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u4e00</a>\u5000aba
 
 #data escaped
 abc[[keyword:xyz\u4E00]]\u5000aba
@@ -162,6 +176,8 @@ text \u5000aba
 abckeyword:xyz\u4E00\u5000aba
 #html escaped
 abc<a href="http://d.hatena.ne.jp/keyword/keyword%3Axyz%E4%B8%80" class="keyword">keyword:xyz\u4E00</a>\u5000aba
+#mobilehtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordmobile/keyword%3Axyz%88%EA" class="keyword">keyword:xyz\u4e00</a>\u5000aba
 
 #data
 [[a<&">b]]
@@ -172,6 +188,8 @@ keyword [[a<&">b]]
 a<&">b
 #html
 <a href="http://d.hatena.ne.jp/keyword/a%3C%26%22%3Eb" class="keyword">a&lt;&amp;&#34;&gt;b</a>
+#mobilehtml
+<a href="http://d.hatena.ne.jp/keywordmobile/a%3C%26%22%3Eb" class="keyword">a&lt;&amp;&#34;&gt;b</a>
 
 #data escaped
 [[\uFFFF]]
@@ -182,6 +200,8 @@ keyword [[\uFFFF]]
 \uFFFF
 #html escaped
 <a href="http://d.hatena.ne.jp/keyword/%EF%BF%BD" class="keyword">\uFFFF</a>
+#mobilehtml escaped
+<a href="http://d.hatena.ne.jp/keywordmobile/%3F" class="keyword">\uffff</a>
 
 #data
 0 http://hoge/
@@ -301,6 +321,8 @@ http http://foo/bar.png
  http://foo/bar.png
 #html
 <a href="http://foo/bar.png"><img src="http://foo/bar.png" alt="http://foo/bar.png"></a>
+#mobilehtml
+<a href="http://foo/bar.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar.png" alt="http://foo/bar.png"></a>
 
 #data
 http://foo/barPNG
@@ -309,6 +331,8 @@ http http://foo/barPNG
  http://foo/barPNG
 #html
 <a href="http://foo/barPNG"><img src="http://foo/barPNG" alt="http://foo/barPNG"></a>
+#mobilehtml
+<a href="http://foo/barPNG"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2FbarPNG" alt="http://foo/barPNG"></a>
 
 #data
 http://foo/bar.jpeg
@@ -317,6 +341,8 @@ http http://foo/bar.jpeg
  http://foo/bar.jpeg
 #html
 <a href="http://foo/bar.jpeg"><img src="http://foo/bar.jpeg" alt="http://foo/bar.jpeg"></a>
+#mobilehtml
+<a href="http://foo/bar.jpeg"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar.jpeg" alt="http://foo/bar.jpeg"></a>
 
 #data
 http://foo/bar.JPEG
@@ -325,6 +351,8 @@ http http://foo/bar.JPEG
  http://foo/bar.JPEG
 #html
 <a href="http://foo/bar.JPEG"><img src="http://foo/bar.JPEG" alt="http://foo/bar.JPEG"></a>
+#mobilehtml
+<a href="http://foo/bar.JPEG"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar.JPEG" alt="http://foo/bar.JPEG"></a>
 
 #data
 http://foo/bar.jpg
@@ -333,6 +361,8 @@ http http://foo/bar.jpg
  http://foo/bar.jpg
 #html
 <a href="http://foo/bar.jpg"><img src="http://foo/bar.jpg" alt="http://foo/bar.jpg"></a>
+#mobilehtml
+<a href="http://foo/bar.jpg"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar.jpg" alt="http://foo/bar.jpg"></a>
 
 #data
 http://foo/bar.bmp
@@ -341,6 +371,8 @@ http http://foo/bar.bmp
  http://foo/bar.bmp
 #html
 <a href="http://foo/bar.bmp"><img src="http://foo/bar.bmp" alt="http://foo/bar.bmp"></a>
+#mobilehtml
+<a href="http://foo/bar.bmp"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar.bmp" alt="http://foo/bar.bmp"></a>
 
 #data
 http://foo/bar.gif
@@ -349,6 +381,8 @@ http http://foo/bar.gif
  http://foo/bar.gif
 #html
 <a href="http://foo/bar.gif"><img src="http://foo/bar.gif" alt="http://foo/bar.gif"></a>
+#mobilehtml
+<a href="http://foo/bar.gif"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar.gif" alt="http://foo/bar.gif"></a>
 
 #data
 [http://foo/bar/baz.png:image]
@@ -359,6 +393,8 @@ httpimage [http://foo/bar/baz.png:image]
 http://foo/bar/baz.png
 #html
 <a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image]"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.png" alt="[http://foo/bar/baz.png:image]"></a>
 
 #data
 [HTTPS://foo/bar/baz.png:IMAGE]
@@ -369,6 +405,8 @@ httpimage [HTTPS://foo/bar/baz.png:IMAGE]
 HTTPS://foo/bar/baz.png
 #html
 <a href="HTTPS://foo/bar/baz.png"><img src="HTTPS://foo/bar/baz.png" alt="[HTTPS://foo/bar/baz.png:IMAGE]"></a>
+#mobilehtml
+<a href="HTTPS://foo/bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=HTTPS%3A%2F%2Ffoo%2Fbar%2Fbaz.png" alt="[HTTPS://foo/bar/baz.png:IMAGE]"></a>
 
 #data
 [http://foo/bar/bazjpeg:image]
@@ -379,6 +417,8 @@ httpimage [http://foo/bar/bazjpeg:image]
 http://foo/bar/bazjpeg
 #html
 <a href="http://foo/bar/bazjpeg"><img src="http://foo/bar/bazjpeg" alt="[http://foo/bar/bazjpeg:image]"></a>
+#mobilehtml
+<a href="http://foo/bar/bazjpeg"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbazjpeg" alt="[http://foo/bar/bazjpeg:image]"></a>
 
 #data
 [http://foo/bar/baz.JPEG:image]
@@ -389,6 +429,8 @@ httpimage [http://foo/bar/baz.JPEG:image]
 http://foo/bar/baz.JPEG
 #html
 <a href="http://foo/bar/baz.JPEG"><img src="http://foo/bar/baz.JPEG" alt="[http://foo/bar/baz.JPEG:image]"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.JPEG"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.JPEG" alt="[http://foo/bar/baz.JPEG:image]"></a>
 
 #data
 [http://foo/bar/baz.jpg:image]
@@ -399,6 +441,8 @@ httpimage [http://foo/bar/baz.jpg:image]
 http://foo/bar/baz.jpg
 #html
 <a href="http://foo/bar/baz.jpg"><img src="http://foo/bar/baz.jpg" alt="[http://foo/bar/baz.jpg:image]"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.jpg"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.jpg" alt="[http://foo/bar/baz.jpg:image]"></a>
 
 #data
 [http://foo/bar/baz.JPG:image]
@@ -409,6 +453,8 @@ httpimage [http://foo/bar/baz.JPG:image]
 http://foo/bar/baz.JPG
 #html
 <a href="http://foo/bar/baz.JPG"><img src="http://foo/bar/baz.JPG" alt="[http://foo/bar/baz.JPG:image]"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.JPG"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.JPG" alt="[http://foo/bar/baz.JPG:image]"></a>
 
 #data
 [http://foo/bar/baz.bmp:image]
@@ -419,6 +465,8 @@ httpimage [http://foo/bar/baz.bmp:image]
 http://foo/bar/baz.bmp
 #html
 <a href="http://foo/bar/baz.bmp"><img src="http://foo/bar/baz.bmp" alt="[http://foo/bar/baz.bmp:image]"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.bmp"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.bmp" alt="[http://foo/bar/baz.bmp:image]"></a>
 
 #data
 [http://foo/bar/baz.gif:image]
@@ -429,6 +477,8 @@ httpimage [http://foo/bar/baz.gif:image]
 http://foo/bar/baz.gif
 #html
 <a href="http://foo/bar/baz.gif"><img src="http://foo/bar/baz.gif" alt="[http://foo/bar/baz.gif:image]"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.gif"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.gif" alt="[http://foo/bar/baz.gif:image]"></a>
 
 #data
 [http://foo/bar/baz.png:image:w120]
@@ -440,6 +490,8 @@ httpimage [http://foo/bar/baz.png:image:w120]
 http://foo/bar/baz.png
 #html
 <a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:w120]" width="120"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.png" alt="[http://foo/bar/baz.png:image:w120]" width="120"></a>
 
 #data
 [http://foo/bar/baz.png:image:W120]
@@ -451,6 +503,8 @@ httpimage [http://foo/bar/baz.png:image:W120]
 http://foo/bar/baz.png
 #html
 <a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:W120]" width="120"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.png" alt="[http://foo/bar/baz.png:image:W120]" width="120"></a>
 
 #data
 [http://foo/bar/baz.png:image:h13]
@@ -462,6 +516,8 @@ httpimage [http://foo/bar/baz.png:image:h13]
 http://foo/bar/baz.png
 #html
 <a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:h13]" height="13"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.png" alt="[http://foo/bar/baz.png:image:h13]" height="13"></a>
 
 #data
 [http://foo/bar/baz.png:image:H13]
@@ -473,6 +529,8 @@ httpimage [http://foo/bar/baz.png:image:H13]
 http://foo/bar/baz.png
 #html
 <a href="http://foo/bar/baz.png"><img src="http://foo/bar/baz.png" alt="[http://foo/bar/baz.png:image:H13]" height="13"></a>
+#mobilehtml
+<a href="http://foo/bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar%2Fbaz.png" alt="[http://foo/bar/baz.png:image:H13]" height="13"></a>
 
 #data
 http://foo.bar/baz.png
@@ -497,6 +555,8 @@ http http://foo.bar/baz.png
  http://foo.bar/baz.png
 #html
 <a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png">http://foo.bar/baz.png</a>
+#mobilehtml
+<a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png">http://foo.bar/baz.png</a>
 
 #data
 http://foo.bar/baz.png
@@ -535,6 +595,8 @@ http://foo.bar/baz.png
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 #html
 <a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="[http://foo.bar/baz.png:image]"></a><br><a href="http://foo.bar/baz.png"><img src="http://foo.bar/baz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png">http://foo.bar/baz.png</a><br><a href="http://f.hatena.ne.jp/cho45/20100103163715">f:id:cho45:20100103163715j:image</a>
+#mobilehtml
+<a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="[http://foo.bar/baz.png:image]"></a><br><a href="http://foo.bar/baz.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo.bar%2Fbaz.png" alt="http://foo.bar/baz.png"></a><br><a href="http://foo.bar/baz.png">http://foo.bar/baz.png</a><br><a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715">f:id:cho45:20100103163715j:image</a>
 
 #data
 [http://foo/bar/baz.mp3:sound]
@@ -556,6 +618,8 @@ http://foo/bar/baz.mp3
 </object>
 <a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
 
 #data
 [HTTPS://foo/bar/baz.mp3:sound]
@@ -577,6 +641,8 @@ HTTPS://foo/bar/baz.mp3
 </object>
 <a href="HTTPS://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="HTTPS://foo/bar/baz.mp3">HTTPS://foo/bar/baz.mp3</a>
 
 #data
 [http://foo/bar/bazMP3:sound]
@@ -598,6 +664,8 @@ http://foo/bar/bazMP3
 </object>
 <a href="http://foo/bar/bazMP3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/bazMP3">http://foo/bar/bazMP3</a>
 
 #data
 [http://foo/bar/baz.mp3:sound:00h600m12s]
@@ -622,6 +690,8 @@ http://foo/bar/baz.mp3
 </object>
 <a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
 
 #data
 [http://foo/bar/baz.mp3:sound:0H6M1S]
@@ -646,6 +716,8 @@ http://foo/bar/baz.mp3
 </object>
 <a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
 
 #data
 [http://foo/bar/baz.mp3:sound:1h]
@@ -670,6 +742,8 @@ http://foo/bar/baz.mp3
 </object>
 <a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
 
 #data
 [http://foo/bar/baz.mp3:sound:6m5s]
@@ -694,6 +768,8 @@ http://foo/bar/baz.mp3
 </object>
 <a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
 
 #data
 [http://foo/bar/baz'xyz'.mp3:sound:6m5s]
@@ -718,6 +794,8 @@ http://foo/bar/baz'xyz'.mp3
 </object>
 <a href="http://foo/bar/baz'xyz'.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/baz'xyz'.mp3">http://foo/bar/baz'xyz'.mp3</a>
 
 #data
 [http://foo/bar/baz.mp3?%&hoge=fuga;abcmp3:sound:6m5s]
@@ -742,6 +820,8 @@ http://foo/bar/baz.mp3?%&hoge=fuga;abcmp3
 </object>
 <a href="http://foo/bar/baz.mp3?%&amp;hoge=fuga;abcmp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>
+#mobilehtml
+<a href="http://foo/bar/baz.mp3?%&amp;hoge=fuga;abcmp3">http://foo/bar/baz.mp3?%&amp;hoge=fuga;abcmp3</a>
 
 #data
 [http://foo/bar/baz.mp3?abc=def:sound:6m5s]
@@ -765,6 +845,8 @@ text ]
 </object>
 <a href="http://foo/bar/baz.mp3?abc=def:sound:6m5s"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>]
+#mobilehtml
+[<a href="http://foo/bar/baz.mp3?abc=def:sound:6m5s">http://foo/bar/baz.mp3?abc=def:sound:6m5s</a>]
 
 #data
 [http://foo/bar/baz.MP3?abc=def:sound:6m5s]
@@ -788,6 +870,8 @@ text ]
 </object>
 <a href="http://foo/bar/baz.MP3?abc=def:sound:6m5s"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span>]
+#mobilehtml
+[<a href="http://foo/bar/baz.MP3?abc=def:sound:6m5s">http://foo/bar/baz.MP3?abc=def:sound:6m5s</a>]
 
 #data
 http://foo/bar/baz.mp3
@@ -867,6 +951,8 @@ http://foo/bar/baz.mp3
 </object>
 <a href="http://foo/bar/baz.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
 </span><br><a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a><br><a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
+#mobilehtml
+<a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a><br><a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a><br><a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a><br><a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a><br><a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a><br><a href="http://foo/bar/baz.mp3">http://foo/bar/baz.mp3</a>
 
 #data
 http://copie.hatelabo.jp/-gYC-x53el_-UIQ
@@ -875,6 +961,8 @@ http http://copie.hatelabo.jp/-gYC-x53el_-UIQ
  http://copie.hatelabo.jp/-gYC-x53el_-UIQ
 #html
 <a href="http://copie.hatelabo.jp/-gYC-x53el_-UIQ"><img src="http://copie.hatelabo.jp/cp/gYC-x53el_-UIQ.png" alt="http://copie.hatelabo.jp/-gYC-x53el_-UIQ"></a>
+#mobilehtml
+<a href="http://copie.hatelabo.jp/-gYC-x53el_-UIQ"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Fcopie.hatelabo.jp%2Fcp%2FgYC-x53el_-UIQ.png" alt="http://copie.hatelabo.jp/-gYC-x53el_-UIQ"></a>
 
 #data
 http://www.youtube.com/watch?v=aLWq7Pg1MdQ
@@ -899,7 +987,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA:movie
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA:movie"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
@@ -911,7 +999,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=featured
@@ -923,7 +1011,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=featured
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=featured"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
@@ -935,7 +1023,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;amp;feature=related"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=Hi4_LySCtbA&NR=1
@@ -947,7 +1035,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA&NR=1
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;NR=1"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=Hi4_LySCtbA&sns=em
@@ -959,7 +1047,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA&sns=em
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;sns=em"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data escaped
 http://www.youtube.com/watch?v=Hi4_LySCtbA\u4e00
@@ -984,7 +1072,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbAhttp://foo/bar
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbAhttp"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbAhttp" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbAhttp/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbAhttp/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp://foo/bar"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://youtu.be/Hi4_LySCtbA
@@ -996,7 +1084,7 @@ http http://youtu.be/Hi4_LySCtbA
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://youtu.be/Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded
@@ -1008,7 +1096,7 @@ http http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/gGenqKq_Q9E"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/gGenqKq_Q9E" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E&amp;feature=player_embedded"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded&a=b
@@ -1020,7 +1108,7 @@ http http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded&a=b
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/gGenqKq_Q9E"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/gGenqKq_Q9E" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div>
 #mobilehtml
-<a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E&amp;feature=player_embedded&amp;a=b"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA
@@ -1049,8 +1137,8 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA
 </div> <div class="video-body">
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
 </div> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
-#htmlmobile
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> http://www.youtube.com/watch?v=Hi4_LySCtbA
+#mobilehtml
+<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
 
 #data
 http://nico.ms/sm9754737
@@ -1071,7 +1159,7 @@ http http://nico.ms/sm9754737
 //--></script>
 <script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
 #mobilehtml
-<a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://www.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://nico.ms/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.nicovideo.jp/watch/sm9754737
@@ -1114,7 +1202,7 @@ http http://www.nicovideo.jp/watch/sm9754737:movie
 //--></script>
 <script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
 #mobilehtml
-<a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://www.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://www.nicovideo.jp/watch/sm9754737:movie"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://www.nicovideo.jp/watch/sm9754737
@@ -1187,6 +1275,8 @@ http http://nico.ms/sm9754737
     }
 //--></script>
 <script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script><br><a href="http://www.nicovideo.jp/watch/sm9754737">http://www.nicovideo.jp/watch/sm9754737</a><br><a href="http://www.nicovideo.jp/watch/sm9754737">http://nico.ms/sm9754737</a>
+#mobilehtml
+<a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://www.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://nico.ms/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://www.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://www.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://www.nicovideo.jp/watch/sm9754737">http://www.nicovideo.jp/watch/sm9754737</a><br><a href="http://www.nicovideo.jp/watch/sm9754737">http://nico.ms/sm9754737</a>
 
 #data
 http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000
@@ -1195,8 +1285,8 @@ http http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C
  http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0B594F10AA396D69&amp;file=396D69_090808BA0193C_000"></object>
-#htmlmobile
-<a href="http://ugomemo.hatena.ne.jp/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000" border="0"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+#mobilehtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000?in=url***
@@ -1207,7 +1297,7 @@ text ***
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0B594F10AA396D69&amp;file=396D69_090808BA0193C_000"></object>***
 #mobilehtml
-<a href="http://ugomemo.hatena.ne.jp/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="ugomemo" border="0"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>***
+<a href="http://ugomemo.hatena.ne.jp/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000?in=url"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>***
 
 #data
 http://flipnote.hatena.com/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000
@@ -1217,7 +1307,7 @@ http http://flipnote.hatena.com/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0B594F10AA396D69&amp;file=396D69_090808BA0193C_000"></object>
 #mobilehtml
-<a href="http://flipnote.hatena.com/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="flipnote" border="0"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://ugomemo.hatena.ne.jp/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="http://flipnote.hatena.com/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 http://flipnote.hatena.com/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000?in=movie
@@ -1227,7 +1317,7 @@ http http://flipnote.hatena.com/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0B594F10AA396D69&amp;file=396D69_090808BA0193C_000"></object>
 #mobilehtml
-<a href="http://flipnote.hatena.com/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="flipnote" border="0"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<a href="http://ugomemo.hatena.ne.jp/mobile/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0B594F10AA396D69/396D69_090808BA0193C_000_m.gif" alt="http://flipnote.hatena.com/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000?in=movie"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 idea:0
@@ -1238,6 +1328,8 @@ idea idea:0
 http://i.hatena.ne.jp/idea/0
 #html
 <a href="http://i.hatena.ne.jp/idea/0"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F0" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/0">idea:0</a>
+#mobilehtml
+<a href="http://i.hatena.ne.jp/idea/0">idea:0</a>
 
 #data
 idea:12345
@@ -1248,6 +1340,8 @@ idea idea:12345
 http://i.hatena.ne.jp/idea/12345
 #html
 <a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345</a>
+#mobilehtml
+<a href="http://i.hatena.ne.jp/idea/12345">idea:12345</a>
 
 #data
 idea:12345abc
@@ -1259,6 +1353,8 @@ text abc
 http://i.hatena.ne.jp/idea/12345abc
 #html
 <a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345</a>abc
+#mobilehtml
+<a href="http://i.hatena.ne.jp/idea/12345">idea:12345</a>abc
 
 #data
 IDEA:12345abc
@@ -1270,6 +1366,8 @@ text abc
 http://i.hatena.ne.jp/idea/12345abc
 #html
 <a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">IDEA:12345</a>abc
+#mobilehtml
+<a href="http://i.hatena.ne.jp/idea/12345">IDEA:12345</a>abc
 
 #data
 idea:12345:title
@@ -1280,6 +1378,8 @@ idea idea:12345:title
 http://i.hatena.ne.jp/idea/12345
 #html
 <a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345:title</a>
+#mobilehtml
+<a href="http://i.hatena.ne.jp/idea/12345">idea:12345:title</a>
 
 #data
 idea:12345:TITLE
@@ -1290,6 +1390,8 @@ idea idea:12345:TITLE
 http://i.hatena.ne.jp/idea/12345
 #html
 <a href="http://i.hatena.ne.jp/idea/12345"><img src="http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fi.hatena.ne.jp%2Fidea%2F12345" class=favicon width=16 height=16 alt=""></a><a href="http://i.hatena.ne.jp/idea/12345">idea:12345:TITLE</a>
+#mobilehtml
+<a href="http://i.hatena.ne.jp/idea/12345">idea:12345:TITLE</a>
 
 #data
 mailto:foo@bar
@@ -1370,6 +1472,8 @@ isbn isbn:978-4101115016
  978-4101115016
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:9784101115016</a>
+#mobilehtml
+<a href="http://h.hatena.ne.jp/mobile/asin/410111501X">ISBN:9784101115016</a>
 
 #data
 ISBN:978-4101115016
@@ -1378,6 +1482,8 @@ isbn ISBN:978-4101115016
  978-4101115016
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:9784101115016</a>
+#mobilehtml
+<a href="http://h.hatena.ne.jp/mobile/asin/410111501X">ISBN:9784101115016</a>
 
 #data
 isbn:410111501X
@@ -1386,6 +1492,8 @@ isbn isbn:410111501X
  410111501X
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:410111501X</a>
+#mobilehtml
+<a href="http://h.hatena.ne.jp/mobile/asin/410111501X">ISBN:410111501X</a>
 
 #data
 isbn:410111501x
@@ -1394,6 +1502,8 @@ isbn isbn:410111501x
  410111501x
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:410111501X</a>
+#mobilehtml
+<a href="http://h.hatena.ne.jp/mobile/asin/410111501X">ISBN:410111501X</a>
 
 #data
 asin:B0012IJERO
@@ -1402,6 +1512,8 @@ asin asin:B0012IJERO
  B0012IJERO
 #html
 <a href="http://h.hatena.ne.jp/asin/B0012IJERO"><img src="http://h.hatena.ne.jp/asin/B0012IJERO/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/B0012IJERO">ASIN:B0012IJERO</a>
+#mobilehtml
+<a href="http://h.hatena.ne.jp/mobile/asin/B0012IJERO">ASIN:B0012IJERO</a>
 
 #data
 ASIN:B0012Ijero
@@ -1410,6 +1522,8 @@ asin ASIN:B0012Ijero
  B0012Ijero
 #html
 <a href="http://h.hatena.ne.jp/asin/B0012IJERO"><img src="http://h.hatena.ne.jp/asin/B0012IJERO/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/B0012IJERO">ASIN:B0012IJERO</a>
+#mobilehtml
+<a href="http://h.hatena.ne.jp/mobile/asin/B0012IJERO">ASIN:B0012IJERO</a>
 
 #data
 f:id:cho45:20100103163715j:image
@@ -1423,6 +1537,8 @@ fotolife f:id:cho45:20100103163715j:image
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg" alt="f:id:cho45:20100103163715j:image"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715_120.jpg" alt="f:id:cho45:20100103163715j:image"></a>
 
 #data
 F:ID:cho45:20100103163715j:IMAGE
@@ -1436,6 +1552,8 @@ fotolife F:ID:cho45:20100103163715j:IMAGE
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg" alt="F:ID:cho45:20100103163715j:IMAGE"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715_120.jpg" alt="F:ID:cho45:20100103163715j:IMAGE"></a>
 
 #data
 f:id:cho-45:20100103163715j:image
@@ -1449,6 +1567,8 @@ fotolife f:id:cho-45:20100103163715j:image
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho-45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/cho-45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho-45/20100103/20100103163715.jpg" alt="f:id:cho-45:20100103163715j:image"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho-45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho-45/20100103/20100103163715_120.jpg" alt="f:id:cho-45:20100103163715j:image"></a>
 
 #data
 f:id:CHO-45:20100103163715j:image
@@ -1462,6 +1582,8 @@ fotolife f:id:CHO-45:20100103163715j:image
 http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO-45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/CHO-45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO-45/20100103/20100103163715.jpg" alt="f:id:CHO-45:20100103163715j:image"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/CHO-45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO-45/20100103/20100103163715_120.jpg" alt="f:id:CHO-45:20100103163715j:image"></a>
 
 #data
 f:id:CHO_45:20100103163715j:image
@@ -1475,6 +1597,8 @@ fotolife f:id:CHO_45:20100103163715j:image
 http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO_45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/CHO_45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO_45/20100103/20100103163715.jpg" alt="f:id:CHO_45:20100103163715j:image"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/CHO_45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO_45/20100103/20100103163715_120.jpg" alt="f:id:CHO_45:20100103163715j:image"></a>
 
 #data
 f:id:cho45:20100103163715j
@@ -1487,6 +1611,8 @@ fotolife f:id:cho45:20100103163715j
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg" alt="f:id:cho45:20100103163715j"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715_120.jpg" alt="f:id:cho45:20100103163715j"></a>
 
 #data
 f:id:cho45:20100103163715j:movie
@@ -1500,6 +1626,8 @@ fotolife f:id:cho45:20100103163715j:movie
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg" alt="f:id:cho45:20100103163715j:movie"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715_120.jpg" alt="f:id:cho45:20100103163715j:movie"></a>
 
 #data
 f:id:cho45:20100103163715j:MOVIE
@@ -1513,6 +1641,8 @@ fotolife f:id:cho45:20100103163715j:MOVIE
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg" alt="f:id:cho45:20100103163715j:MOVIE"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715_120.jpg" alt="f:id:cho45:20100103163715j:MOVIE"></a>
 
 #data
 f:id:cho45:20100103163715f:image
@@ -1526,6 +1656,8 @@ fotolife f:id:cho45:20100103163715f:image
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.flv
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715,jpg" alt="f:id:cho45:20100103163715f:image"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fc%2Fcho45%2F20100103%2F20100103163715%2Cjpg" alt="f:id:cho45:20100103163715f:image"></a>
 
 #data
 f:id:cho45:20100103163715F:image
@@ -1539,6 +1671,8 @@ fotolife f:id:cho45:20100103163715F:image
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.flv
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715,jpg" alt="f:id:cho45:20100103163715F:image"></a>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fc%2Fcho45%2F20100103%2F20100103163715%2Cjpg" alt="f:id:cho45:20100103163715F:image"></a>
 
 #data
 f:id:cho45:20100103163715f:movie
@@ -1557,6 +1691,8 @@ http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.fl
 <param name="wmode" value="transparent">
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715,jpg" alt="f:id:cho45:20100103163715f:movie"></a>
 </object>
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fc%2Fcho45%2F20100103%2F20100103163715%2Cjpg" alt="f:id:cho45:20100103163715f:movie"></a>
 
 #data
 land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
@@ -1568,6 +1704,8 @@ land land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
 http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg
 #html
 <a href="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg"><img src="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg" alt="land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg"></a>
+#mobilehtml
+<a href="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Fl.hatena.ne.jp%2Fimages%2F080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg" alt="land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg"></a>
 
 #data
 LAND:IMAGE:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
@@ -1579,6 +1717,8 @@ land LAND:IMAGE:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
 http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg
 #html
 <a href="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg"><img src="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg" alt="LAND:IMAGE:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg"></a>
+#mobilehtml
+<a href="http://l.hatena.ne.jp/images/080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Fl.hatena.ne.jp%2Fimages%2F080c02e06d4d0ca450f2d25496be0903356f1cbf.jpg" alt="LAND:IMAGE:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg"></a>
 
 #data
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -1591,6 +1731,8 @@ ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+#mobilehtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 UGOMEMO:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -1603,6 +1745,8 @@ ugomemo UGOMEMO:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+#mobilehtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="UGOMEMO:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -1615,6 +1759,8 @@ ugomemo flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+#mobilehtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -1627,6 +1773,8 @@ ugomemo FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object>
+#mobilehtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 
 #data
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
@@ -1683,7 +1831,9 @@ http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 http://hoge/fuga.png
 #html
-<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36/movie/DA0D36_0A0CDA47CF483_027">ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a><br><a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36/movie/DA0D36_0A0CDA47CF483_027">http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027</a><br><a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36/movie/DA0D36_0A0CDA47CF483_027">flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a><br><a href="http://hoge/fuga.png">http://hoge/fuga.png</a>
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027"></object><br><a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027">ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a><br><a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027">http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027</a><br><a href="http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027">flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a><br><a href="http://hoge/fuga.png">http://hoge/fuga.png</a>
+#mobilehtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_m.gif" alt="ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a><br><a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027">ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a><br><a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027">http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027</a><br><a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027">flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027</a><br><a href="http://hoge/fuga.png">http://hoge/fuga.png</a>
 
 #data
 market://search?q=pname:com.hatena.android.coco
@@ -1702,6 +1852,8 @@ text "hoge":image
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg"hoge":image
 #html
 <a href="http://f.hatena.ne.jp/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg" alt="f:id:cho45:20100103163715j"></a>&#34;hoge&#34;:image
+#mobilehtml
+<a href="http://f.hatena.ne.jp/mobile/cho45/20100103163715"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715_120.jpg" alt="f:id:cho45:20100103163715j"></a>&#34;hoge&#34;:image
 
 #data
 map:45:45
@@ -1711,6 +1863,8 @@ map map:45:45
  45
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=45,45"><img src="http://maps.google.com/maps/api/staticmap?markers=45,45&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:45:45"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=45&amp;lon=45&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=45,45&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:45:45"></a></div>
 
 #data
 map:45.132:45.453
@@ -1720,6 +1874,8 @@ map map:45.132:45.453
  45.453
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=45.132,45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=45.132,45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:45.132:45.453"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=45.132&amp;lon=45.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=45.132,45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:45.132:45.453"></a></div>
 
 #data
 map:-45.132:-45.453
@@ -1729,6 +1885,8 @@ map map:-45.132:-45.453
  -45.453
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=-45.132,-45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:-45.132:-45.453"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-45.132&amp;lon=-45.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:-45.132:-45.453"></a></div>
 
 #data
 MAP:-45.132:-45.453
@@ -1738,6 +1896,8 @@ map MAP:-45.132:-45.453
  -45.453
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=-45.132,-45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="MAP:-45.132:-45.453"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-45.132&amp;lon=-45.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="MAP:-45.132:-45.453"></a></div>
 
 #data
 map:-94.132:-181.453
@@ -1747,6 +1907,8 @@ map map:-94.132:-181.453
  -181.453
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=-90,-180"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:-94.132:-181.453"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-90&amp;lon=-180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:-94.132:-181.453"></a></div>
 
 #data
 map:94.132:181.453
@@ -1756,6 +1918,8 @@ map map:94.132:181.453
  181.453
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:94.132:181.453"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:94.132:181.453"></a></div>
 
 #data
 map:"<p>
@@ -1771,6 +1935,8 @@ http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=14.132,11.453"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div>
 
 #data
 http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&lon=%2B181.453&geo=wgs84
@@ -1779,6 +1945,8 @@ http http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&lon=%2B181.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&lon=%2B181.453&geo=wgs84
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&amp;lon=%2B181.453&amp;geo=wgs84"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&amp;lon=%2B181.453&amp;geo=wgs84"></a></div>
 
 #data
 http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
@@ -1787,6 +1955,8 @@ http http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=-90,-180"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=-94.132&amp;lon=%2D181.453&amp;geo=wgs84"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-90&amp;lon=-180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=-94.132&amp;lon=%2D181.453&amp;geo=wgs84"></a></div>
 
 #data
 map:94.132:181.453
@@ -1818,3 +1988,5 @@ http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 #html
 <div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:94.132:181.453"></a></div><br><div class=user-map><a href="http://maps.google.com/?ll=14.132,11.453"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div><br><div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:94.132:181.453"></a></div><br><div class=user-map><a href="http://maps.google.com/?ll=14.132,11.453"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div><br><div class=user-map><a href="http://maps.google.com/?ll=90,180">map:94.132:181.453</a></div><br><div class=user-map><a href="http://maps.google.com/?ll=14.132,11.453">http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84</a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:94.132:181.453"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:94.132:181.453"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs">map:94.132:181.453</a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs">http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84</a></div>
