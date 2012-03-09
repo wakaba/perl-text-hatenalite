@@ -66,7 +66,8 @@ sub id_notation_to_html {
 }
 
 sub keyword_to_link_url {
-    return q<http://d.hatena.ne.jp/keyword/> . percent_encode_c $_[1];
+    return q<http://d.hatena.ne.jp/keyword/> .
+        percent_encode_b encode 'euc-jp', $_[1];
 }
 
 sub keyword_notation_to_html {
