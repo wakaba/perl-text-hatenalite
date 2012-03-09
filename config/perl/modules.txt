@@ -1,1 +1,4 @@
 Regexp::Assemble
+Test::Class
+Test::Differences
+Test::More
