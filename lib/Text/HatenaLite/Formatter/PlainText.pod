@@ -1,0 +1,55 @@
+=head1 NAME
+
+Text::HatenaLite::Formatter::PlainText - Convert Hatena Notation Lite into plain text
+
+=head1 SYNOPSIS
+
+  use Text::HatenaLite::Parser;
+  use Text::HatenaLite::Formatter::PlainText;
+  
+  $data = Text::HatenaLite::Parser->parse_string ($text);
+  my $formatter = Text::HatenaLite::Formatter::PlainText->new;
+  $formatter->parsed_data($data);
+  print $parser->as_text;
+
+=head1 DESCRIPTION
+
+The C<Text::HatenaLite::Formatter::PlainText> class, and its
+subclasses, format a parsed representation of text in Hatena Notation
+Lite as plain text.
+
+=head1 METHODS
+
+=over 4
+
+=item $formatter = $CLASS->new
+
+Create a new instance of the formatter.
+
+=item $formatter->parsed_data($data)
+
+Set the parsed data to the formatter.  The data must be an array
+reference as returned by L<Text::HatenaLite::Parser>.
+
+=item $html = $formatter->as_text
+
+Return plain text representation of the parsed data.
+
+=back
+
+=head1 SEE ALSO
+
+L<Text::HatenaLite::Parser>.
+
+=head1 AUTHOR
+
+Wakaba (id:wakabatan) <wakabatan@hatena.ne.jp>.
+
+=head1 LICENSE
+
+Copyright 2007-2012 Hatena <http://www.hatena.com/>.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut

@@ -1,0 +1,68 @@
+=head1 NAME
+
+Text::HatenaLite::Parser - Hatena Notation Lite parser
+
+=head1 SYNOPSIS
+
+  use Text::HatenaLite::Parser;
+  
+  $data = Text::HatenaLite::Parser->parse_string($text);
+
+=head1 DESCRIPTION
+
+The C<Text::HatenaLite::Parser> module provides a parser for texts in
+a lightweight variant of Hatena Notation (aka Hatena Syntax, or
+"Hatena Kihou" in Japanese).
+
+=head1 METHODS
+
+=over 4
+
+=item $parsed = Text::HatenaLite::Parser->parse_string($text)
+
+Parse a text as Hatena Notation Lite.  The input must be a character
+string.
+
+The method return an array reference, which contains zero or more hash
+references, which represent parsed tokens in the text.  The array
+reference can be used as argument to formatter
+(e.g. L<Text::HatenaLite::Formatter::HTML>) to obtain serializations
+in some other document formats.
+
+=back
+
+=head1 SEE ALSO
+
+L<Text::HatenaLite::Formatter::PlainText>.
+
+L<Text::HatenaLite::Formatter::HTML>.
+
+An informal documentation of Hatena Syntax Lite is available at:
+<http://h.hatena.com/help/advanced#syntax>.
+
+=head1 AUTHOR
+
+Wakaba (id:wakabatan) <wakabatan@hatena.ne.jp>.
+
+=head1 ACKNOWLEDGEMENTS
+
+These modules derived from parsers and formatters of various Hatena
+Notation variations implemented by several Hatena services, including
+Hatena Haiku, Hatena Haiku2 (tentative), Hatena Coco, Hatena Land, and
+HatenaOne.  Thanks to following people for their contributions on
+those parsers and formatters: cho45, chris4403, hakobe932, hitode909,
+Junya Kondo, Kentaro Kuribayashi, lhapras, mechairoi, motemen,
+ninjinkun, onishi, satzz, Wakaba.  The original Hatena Notation, from
+which Hatena Notation Lite derives, is implemented in Hatena Diary,
+Hatena Group, and other services, developed and improved by serveral
+Hatena engineers.  Thanks also to the other Hatena Staffs and the
+users of these services for their bug reports and feature requests.
+
+=head1 LICENSE
+
+Copyright 2007-2012 Hatena <http://www.hatena.com/>.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut

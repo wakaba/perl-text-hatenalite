@@ -1,0 +1,82 @@
+=head1 NAME
+
+Text::HatenaLite::Formatter::HTML - Convert Hatena Notation Lite into HTML
+
+=head1 SYNOPSIS
+
+  use Text::HatenaLite::Parser;
+  use Text::HatenaLite::Formatter::HTML;
+  
+  $data = Text::HatenaLite::Parser->parse_string ($text);
+  my $formatter = Text::HatenaLite::Formatter::HTML->new;
+  $formatter->parsed_data($data);
+  print $parser->as_text;
+
+=head1 DESCRIPTION
+
+The C<Text::HatenaLite::Formatter::HTML> class, and its subclasses,
+serialize a parsed representation of text in Hatena Notation Lite as
+an HTML fragment.
+
+=head1 SUBCLASSES
+
+Following subclasses of C<Text::HatenaLite::Formatter::HTML are
+available for various flavors of HTML:
+
+=over 4
+
+=item Text::HatenaLite::Formatter::HTML
+
+A standard HTML representation appropriate for desktop browsers.
+
+=item Text::HatenaLite::Formatter::HTML::Smartphones
+
+A lightweight HTML representation appropriate for smartphone browsers.
+
+=item Text::HatenaLite::Formatter::HTML::Galapagos
+
+A simplified HTML representation for Galapagos Japanese mobile phone
+browsers.
+
+=back
+
+You can make your own subclasses by inheriting these subclasses or by
+mixining C<Text::HatenaLite::Formatter::Role::*> classes to customize
+HTML output for your applications.
+
+=head1 METHODS
+
+=over 4
+
+=item $formatter = $CLASS->new
+
+Create a new instance of the formatter.
+
+=item $formatter->parsed_data($data)
+
+Set the parsed data to the formatter.  The data must be an array
+reference as returned by L<Text::HatenaLite::Parser>.
+
+=item $html = $formatter->as_text
+
+Return textual representation of HTML fragment generated from the
+parsed data.
+
+=back
+
+=head1 SEE ALSO
+
+L<Text::HatenaLite::Parser>.
+
+=head1 AUTHOR
+
+Wakaba (id:wakabatan) <wakabatan@hatena.ne.jp>.
+
+=head1 LICENSE
+
+Copyright 2007-2012 Hatena <http://www.hatena.com/>.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
