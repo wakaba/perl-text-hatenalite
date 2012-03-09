@@ -8,7 +8,7 @@ use base qw(Test::Class);
 use Test::Differences;
 use Template;
 
-sub _hatena_for_riddle : Test(1) {
+sub _hatenalite_to_html : Test(1) {
     my $template = Template->new;
     $template->process(\"[% USE Text.HatenaLite.HTML %][% FILTER hatenalite_to_html %]<p>hoge<script>alert(2)</script>\n</forM>abc\n-xyz\n-aaa\nf:id:cho45:123456f:image\nhttp://hoge/fuga/abc.png[% END %]", undef, \my $result) or do {
         die $template->error;
