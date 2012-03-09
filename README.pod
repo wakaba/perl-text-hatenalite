@@ -1,0 +1,1 @@
+lib/Text/HatenaLite/Parser.pod
