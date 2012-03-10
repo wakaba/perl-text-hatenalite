@@ -156,6 +156,23 @@ sub httptitle_notation_to_html {
         htescape $values->[2];
 }
 
+sub url_to_qrcode_url {
+    return q<https://www.hatena.ne.jp/api/barcode?str=> .
+        percent_encode_c $_[1];
+}
+
+sub httpbarcode_notation_to_html {
+    my $values = $_[2];
+    my $link_url = undef;
+    my $url = $values->[1];
+    my $barcode_url = $_[0]->url_to_qrcode_url ($url);
+    return sprintf q{<a href="%s"><img src="%s" alt="%s" title="%s"></a>},
+        htescape $url,
+        htescape $barcode_url,
+        htescape $url,
+        htescape $url;
+}
+
 sub httpimage_notation_to_html {
     my $values = $_[2];
     my $link_url = undef;

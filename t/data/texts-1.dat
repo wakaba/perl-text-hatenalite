@@ -359,6 +359,32 @@ ab cde \u0300 httpS://foo/bar?baz#hogea
 <a href="httpS://foo/bar?baz#hoge">ab cde \u0300</a>a
 
 #data
+http://foo/bar/baz:title
+#parsed
+http http://foo/bar/baz:title
+ http://foo/bar/baz:title
+#html
+<a href="http://foo/bar/baz:title">http://foo/bar/baz:title</a>
+
+#data
+http://foo/bar/baz:barcode
+#parsed
+http http://foo/bar/baz:barcode
+ http://foo/bar/baz:barcode
+#html
+<a href="http://foo/bar/baz:barcode">http://foo/bar/baz:barcode</a>
+
+#data
+[http://foo/bar/baz:barcode]
+#parsed
+httpbarcode [http://foo/bar/baz:barcode]
+ http://foo/bar/baz
+#plaintext
+http://foo/bar/baz
+#html
+<a href="http://foo/bar/baz"><img src="https://www.hatena.ne.jp/api/barcode?str=http%3A%2F%2Ffoo%2Fbar%2Fbaz" alt="http://foo/bar/baz" title="http://foo/bar/baz"></a>
+
+#data
 http://foo/bar.png
 #parsed
 http http://foo/bar.png
