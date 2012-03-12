@@ -39,6 +39,12 @@ our $Notations = [
         to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
+        type => 'httpbarcode',
+        pattern => q<\[(> . $http_pattern . q<):[Bb][Aa][Rr][Cc][Oo][Dd][Ee]\]>,
+        to_url => sub { $_[0]->[1] },
+        to_text => sub { $_[0]->{to_url}->($_[1]) },
+    },
+    {
         type => 'idea',
         pattern => q<[Ii][Dd][Ee][Aa]:([0-9]+)(?::[Tt][Ii][Tt][Ll][Ee])?>,
         to_url => sub {
