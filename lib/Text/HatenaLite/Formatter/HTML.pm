@@ -47,17 +47,17 @@ sub percent_decode_b ($) {
 # ------ Links ------
 
 sub hatena_id_to_url {
-    return q<http://www.hatena.ne.jp/> . $_[1]->[1] . q</>;
+    return q<http://www.hatena.ne.jp/> . $_[1] . q</>;
 }
 
 sub hatena_id_to_icon_url {
-    return q<http://n.hatena.com/> . $_[1]->[1] . q</profile/image.gif?type=icon&size=16>;
+    return q<http://n.hatena.com/> . $_[1] . q</profile/image.gif?type=icon&size=16>;
 }
 
 sub id_notation_to_html {
     my $values = $_[2];
-    my $link_url = $_[0]->hatena_id_to_url($values);
-    my $image_url = $_[0]->hatena_id_to_icon_url($values);
+    my $link_url = $_[0]->hatena_id_to_url($values->[1]);
+    my $image_url = $_[0]->hatena_id_to_icon_url($values->[1]);
     return sprintf q{<a href="%s" class="user"><img src="%s" class=profile-image width=16 height=16 alt=""></a><a href="%s" class="user">id:%s</a>},
         htescape $link_url,
         htescape $image_url,

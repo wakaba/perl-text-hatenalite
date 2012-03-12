@@ -13,8 +13,8 @@ BEGIN {
 
 sub id_notation_to_html {
     my $values = $_[2];
-    my $link_url = $_[0]->hatena_id_to_url($values);
-    my $image_url = $_[0]->hatena_id_to_icon_url($values);
+    my $link_url = $_[0]->hatena_id_to_url($values->[1]);
+    my $image_url = $_[0]->hatena_id_to_icon_url($values->[1]);
     return sprintf q{<a href="%s" class="user">id:%s</a>},
         htescape $link_url,
         htescape $values->[1];
