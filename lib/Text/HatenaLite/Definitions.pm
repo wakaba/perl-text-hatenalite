@@ -125,4 +125,13 @@ our $TextNotation = {
     to_text => sub { $_[1]->[0] },
 };
 
+## Following syntaxes are considered obsoleted and are not supported
+## by this implementation:
+##
+## http:title without []: http://example.com/:title=PageTitle (in
+## favor of [http://example.com/:title=PageTitle])
+##
+## Sime: {SIME}keyword-name ({SIME} is U+3006; in favor of
+## [[keyword-name]])
+
 1;
