@@ -22,7 +22,10 @@ sub id_notation_to_html {
 
 sub asin_to_html {
     my ($self, $asin, %args) = @_;
-    my $label = defined $args{label} ? $args{label} : 'ASIN:' . $asin;
+    my $label = defined $args{label}
+        ? $args{label}
+        : $self->asin_to_title($asin);
+    $label = 'ASIN:' . $asin if not defined $label;
     my $link_url = $self->asin_to_url($asin);
     return sprintf q{<a href="%s">%s</a>},
         htescape $link_url,
