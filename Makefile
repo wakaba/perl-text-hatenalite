@@ -14,7 +14,7 @@ safetest:
 
 Makefile-setupenv: Makefile.setupenv
 	make --makefile Makefile.setupenv setupenv-update \
-            SETUPENV_MIN_REVISION=20120310
+            SETUPENV_MIN_REVISION=20120313
 
 Makefile.setupenv:
 	wget -O $@ https://raw.github.com/wakaba/perl-setupenv/master/Makefile.setupenv
