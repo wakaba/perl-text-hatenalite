@@ -24,25 +24,21 @@ our $Notations = [
         type => 'httptitle',
         pattern => q<\[(> . $http_pattern . q<):[Tt][Ii][Tt][Ll][Ee]=([^\]]+)\]>,
         to_url => sub { $_[0]->[1] },
-        to_text => sub { $_[1]->[2] . ' ' . $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'httpimage',
         pattern => q<\[(> . $http_pattern . q<(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])):[Ii][Mm][Aa][Gg][Ee](?::([HhWw][0-9]+))?\]>,
         to_url => sub { $_[0]->[1] },
-        to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'httpsound',
         pattern => q<\[(> . $http_pattern . q<[Mm][Pp]3):[Ss][Oo][Uu][Nn][Dd](?::(?:([0-9]+)[Hh]|())(?:([0-9]+)[Mm]|())(?:([0-9]+)[Ss]|()))?\]>,
         to_url => sub { $_[0]->[1] },
-        to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'httpbarcode',
         pattern => q<\[(> . $http_pattern . q<):[Bb][Aa][Rr][Cc][Oo][Dd][Ee]\]>,
         to_url => sub { $_[0]->[1] },
-        to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'idea',
@@ -50,7 +46,6 @@ our $Notations = [
         to_url => sub {
             return q<http://i.hatena.ne.jp/idea/> . $_[0]->[1];
         },
-        to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'isbn',
@@ -82,7 +77,6 @@ our $Notations = [
                 $v->[2],
                 $ext;
         },
-        to_text => sub { $_[0]->{to_object_url}->($_[1]) },
     },
     {
         type => 'land',
@@ -92,7 +86,6 @@ our $Notations = [
             return sprintf q<http://l.hatena.ne.jp/images/%s.%s>,
                 $v->[1], $v->[2];
         },
-        to_text => sub { $_[0]->{to_object_url}->($_[1]) },
     },
     {
         type => 'map',
@@ -109,17 +102,14 @@ our $Notations = [
                 $v->[2],
                 $v->[3];
         },
-        to_text => sub { $_[0]->{to_url}->($_[1]) },
     },
     {
         type => 'keyword',
         pattern => q<\[[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
-        to_text => sub { $_[1]->[1] },
     },
     {
         type => 'keyword',
         pattern => q<\[\[([^\]]+)\]\]>,
-        to_text => sub { $_[1]->[1] },
     },
     {
         type => 'mailto',
@@ -127,9 +117,7 @@ our $Notations = [
     },
 ];
 
-our $TextNotation = {
-    to_text => sub { $_[1]->[0] },
-};
+our $TextNotation = {};
 
 ## Following syntaxes are considered obsoleted and are not supported
 ## by this implementation:

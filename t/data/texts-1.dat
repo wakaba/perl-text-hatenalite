@@ -1621,6 +1621,8 @@ isbn:978-4101115016
 #parsed
 isbn isbn:978-4101115016
  978-4101115016
+#plaintext
+ISBN:9784101115016
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:9784101115016</a>
 #touchhtml
@@ -1633,6 +1635,8 @@ ISBN:978-4101115016
 #parsed
 isbn ISBN:978-4101115016
  978-4101115016
+#plaintext
+ISBN:9784101115016
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:9784101115016</a>
 #touchhtml
@@ -1645,6 +1649,8 @@ isbn:410111501X
 #parsed
 isbn isbn:410111501X
  410111501X
+#plaintext
+ISBN:410111501X
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:410111501X</a>
 #touchhtml
@@ -1657,6 +1663,8 @@ isbn:410111501x
 #parsed
 isbn isbn:410111501x
  410111501x
+#plaintext
+ISBN:410111501X
 #html
 <a href="http://h.hatena.ne.jp/asin/410111501X"><img src="http://h.hatena.ne.jp/asin/410111501X/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/410111501X">ISBN:410111501X</a>
 #touchhtml
@@ -1669,6 +1677,8 @@ asin:B0012IJERO
 #parsed
 asin asin:B0012IJERO
  B0012IJERO
+#plaintext
+ASIN:B0012IJERO
 #html
 <a href="http://h.hatena.ne.jp/asin/B0012IJERO"><img src="http://h.hatena.ne.jp/asin/B0012IJERO/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/B0012IJERO">ASIN:B0012IJERO</a>
 #touchhtml
@@ -1681,6 +1691,8 @@ ASIN:B0012Ijero
 #parsed
 asin ASIN:B0012Ijero
  B0012Ijero
+#plaintext
+ASIN:B0012IJERO
 #html
 <a href="http://h.hatena.ne.jp/asin/B0012IJERO"><img src="http://h.hatena.ne.jp/asin/B0012IJERO/image.icon" class=favicon width=16 height=16 alt=""></a><a href="http://h.hatena.ne.jp/asin/B0012IJERO">ASIN:B0012IJERO</a>
 #touchhtml

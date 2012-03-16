@@ -211,10 +211,10 @@ sub idea_notation_to_html {
 
 sub asin_to_html {
     my ($self, $asin, %args) = @_;
-    my $label = defined $args{label}
-        ? $args{label}
-        : $self->asin_to_title($asin);
-    $label = 'ASIN:' . $asin if not defined $label;
+    my $label = $self->asin_to_title($asin);
+    $label = defined $args{fallback_label}
+        ? $args{fallback_label} : 'ASIN:' . $asin
+        if not defined $label;
     my $link_url = $self->asin_to_url($asin);
     return sprintf q{<a href="%s"><img src="%s" class=favicon width=16 height=16 alt=""></a><a href="%s">%s</a>},
         htescape $link_url,
@@ -274,7 +274,8 @@ sub youtube_id_to_html {
 sub isbn_to_html {
     my $isbn = $_[1];
     my $asin = isbn_to_asin $isbn;
-    return $_[0]->asin_to_html($asin, label => 'ISBN:' . $isbn) if $asin;
+    return $_[0]->asin_to_html($asin, fallback_label => 'ISBN:' . $isbn)
+        if $asin;
     return htescape('ISBN:' . $isbn);
 }
 
