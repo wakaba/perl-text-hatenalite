@@ -7,8 +7,6 @@ use Encode;
 
 BEGIN {
     *htescape = \&Text::HatenaLite::Formatter::HTML::htescape;
-    *percent_encode_c = \&Text::HatenaLite::Formatter::HTML::percent_encode_c;
-    *percent_encode_b = \&Text::HatenaLite::Formatter::HTML::percent_encode_b;
 }
 
 sub url_to_mp3_player {

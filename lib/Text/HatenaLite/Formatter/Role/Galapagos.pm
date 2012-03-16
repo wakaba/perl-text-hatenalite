@@ -3,12 +3,12 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 use Text::HatenaLite::Formatter::HTML;
+use Text::HatenaLite::Formatter::Role::URLs;
 use Encode;
 
 BEGIN {
     *htescape = \&Text::HatenaLite::Formatter::HTML::htescape;
-    *percent_encode_c = \&Text::HatenaLite::Formatter::HTML::percent_encode_c;
-    *percent_encode_b = \&Text::HatenaLite::Formatter::HTML::percent_encode_b;
+    *percent_encode_c = \&Text::HatenaLite::Formatter::Role::URLs::percent_encode_c;
 }
 
 sub id_notation_to_html {

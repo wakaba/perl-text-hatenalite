@@ -2,11 +2,11 @@ package Text::HatenaLite::Formatter::Role::HatenaTouch;
 use strict;
 use warnings;
 our $VERSION = '1.0';
-use Text::HatenaLite::Formatter::HTML;
+use Text::HatenaLite::Formatter::Role::URLs;
 use Encode;
 
 BEGIN {
-    *percent_encode_b = \&Text::HatenaLite::Formatter::HTML::percent_encode_b;
+    *percent_encode_b = \&Text::HatenaLite::Formatter::Role::URLs::percent_encode_b;
 }
 
 sub hatena_id_to_url {

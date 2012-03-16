@@ -6,8 +6,12 @@ use Encode;
 use Mono::ID;
 use WebService::ImageURLs;
 use Text::HatenaLite::Definitions;
+use Text::HatenaLite::Formatter::Role::URLs;
 use Text::HatenaLite::Formatter::Base;
-push our @ISA, qw(Text::HatenaLite::Formatter::Base);
+push our @ISA, qw(
+  Text::HatenaLite::Formatter::Role::URLs
+  Text::HatenaLite::Formatter::Base
+);
 
 my $Notations = {};
 for my $def (@$Text::HatenaLite::Definitions::Notations) {
@@ -25,18 +29,6 @@ sub htescape ($) {
     return $v;
 }
 
-sub percent_encode_c ($) {
-    my $s = encode ('utf-8', ''.$_[0]);
-    $s =~ s/([^0-9A-Za-z._~-])/sprintf '%%%02X', ord $1/ge;
-    return $s;
-}
-
-sub percent_encode_b ($) {
-    my $s = ''.$_[0];
-    $s =~ s/([^0-9A-Za-z._~-])/sprintf '%%%02X', ord $1/ge;
-    return $s;
-}
-
 sub percent_decode_b ($) {
   my $s = ''.$_[0];
   utf8::encode ($s) if utf8::is_utf8 ($s);
@@ -45,14 +37,6 @@ sub percent_decode_b ($) {
 }
 
 # ------ Links ------
-
-sub hatena_id_to_url {
-    return q<http://www.hatena.ne.jp/> . $_[1] . q</>;
-}
-
-sub hatena_id_to_icon_url {
-    return q<http://n.hatena.com/> . $_[1] . q</profile/image.gif?type=icon&size=16>;
-}
 
 sub id_notation_to_html {
     my $values = $_[2];
@@ -63,11 +47,6 @@ sub id_notation_to_html {
         htescape $image_url,
         htescape $link_url,
         htescape $values->[1];
-}
-
-sub keyword_to_link_url {
-    return q<http://d.hatena.ne.jp/keyword/> .
-        percent_encode_b encode 'euc-jp', $_[1];
 }
 
 sub keyword_notation_to_html {
@@ -87,14 +66,6 @@ sub mailto_notation_to_html {
 # ------ Web pages ------
 
 sub max_object_count { 4 }
-
-sub url_to_page_title {
-    return undef;
-}
-
-sub url_to_page_favicon_url {
-    return q<http://cdn-ak.favicon.st-hatena.com/?url=> . percent_encode_c $_[1];
-}
 
 sub url_to_page_link {
     my $self = $_[0];
@@ -154,11 +125,6 @@ sub httptitle_notation_to_html {
     return sprintf q{<a href="%s">%s</a>},
         htescape $values->[1],
         htescape $values->[2];
-}
-
-sub url_to_qrcode_url {
-    return q<https://www.hatena.ne.jp/api/barcode?str=> .
-        percent_encode_c $_[1];
 }
 
 sub httpbarcode_notation_to_html {
@@ -243,18 +209,6 @@ sub idea_notation_to_html {
     return $_[0]->url_to_page_link($_[2]->[0] => $_[1]->{to_url}->($_[2]));
 }
 
-sub asin_to_icon_url {
-    return sprintf q<http://h.hatena.ne.jp/asin/%s/image.icon>, $_[1];
-}
-
-sub asin_to_url {
-    return sprintf q<http://h.hatena.ne.jp/asin/%s>, $_[1];
-}
-
-sub asin_to_title {
-    return undef;
-}
-
 sub asin_to_html {
     my ($self, $asin, %args) = @_;
     my $label = defined $args{label}
@@ -271,20 +225,6 @@ sub asin_to_html {
 
 sub play_video_button_image_html {
     return q{<img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt="">};
-}
-
-sub nicovideo_id_to_url {
-    my ($self, $vid) = @_;
-    return sprintf q<http://www.nicovideo.jp/watch/%s>, $vid;
-}
-
-sub nicovideo_id_to_thumbnail_url {
-    my ($self, $vid) = @_;
-    if ($vid =~ s/^[Ss][Mm]//) {
-        return sprintf q<http://tn-skr4.smilevideo.jp/smile?i=%s>, $vid;
-    } else {
-        return undef;
-    }
 }
 
 sub nicovideo_id_to_html {
@@ -313,16 +253,6 @@ sub nicovideo_id_to_html {
             htescape $vid,
             $id, $id;
     }
-}
-
-sub youtube_id_to_url {
-    my ($self, $vid) = @_;
-    return sprintf q<http://www.youtube.com/watch?v=%s>, $vid;
-}
-
-sub youtube_id_to_thumbnail_url {
-    my ($self, $vid) = @_;
-    return sprintf q<http://i4.ytimg.com/vi/%s/default.jpg>, $vid;
 }
 
 sub youtube_id_to_html {
@@ -364,8 +294,6 @@ sub isbn_notation_to_html {
 
 # ------ Media ------
 
-sub image_url_filter { $_[1] }
-
 sub image_url_to_html {
     my ($self, $url, $link_url, %args) = @_;
     $self->{object_count}++;
@@ -380,10 +308,6 @@ sub image_url_to_html {
             htescape(defined $args{alt} ? $args{alt} : $url),
             $args{additional_attributes} || '';
     }
-}
-
-sub fotolife_id_to_url {
-    return sprintf q<http://f.hatena.ne.jp/%s/%s>, $_[1], $_[2];
 }
 
 sub use_fotolife_movie_player { 1 }
@@ -430,23 +354,6 @@ sub land_notation_to_html {
     );
 }
 
-sub ugomemo_swf_url {
-    return q<http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf>;
-    #q<http://flipnote.hatena.com/js/flipplayer_s.swf>;
-}
-
-sub ugomemo_movie_to_url {
-    my ($self, $dsi_id, $file_name) = @_;
-    return sprintf q<http://ugomemo.hatena.ne.jp/%s@DSi/movie/%s>,
-        $dsi_id, $file_name;
-}
-
-sub ugomemo_movie_to_thumbnail_url {
-    my ($self, $dsi_id, $file_name) = @_;
-    return sprintf q<http://image.ugomemo.hatena.ne.jp/thumbnail/%s/%s_o.gif>,
-        $dsi_id, $file_name;
-}
-
 sub ugomemo_movie_to_html {
     my ($self, $dsi_id, $file_name, %args) = @_;
     $self->{object_count}++;
@@ -470,17 +377,6 @@ sub ugomemo_notation_to_html {
     return $_[0]->ugomemo_movie_to_html(
         $values->[2], $values->[3], alt => $values->[0],
     );
-}
-
-sub latlon_to_image_url {
-    # <http://code.google.com/intl/ja/apis/maps/documentation/staticmaps/>.
-    return sprintf q<http://maps.google.com/maps/api/staticmap?markers=%s,%s&sensor=false&size=140x140&maptype=mobile&zoom=13&format=png>,
-        $_[1], $_[2]; # lat, lon
-}
-
-sub latlon_to_link_url {
-    return sprintf q<http://maps.google.com/?ll=%s,%s>,
-        $_[1], $_[2]; # lat, lon
 }
 
 sub latlon_to_html {
