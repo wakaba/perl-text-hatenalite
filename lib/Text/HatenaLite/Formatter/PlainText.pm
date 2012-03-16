@@ -23,7 +23,7 @@ sub keyword_notation_to_plain_text {
 }
 
 sub httptitle_notation_to_plain_text {
-    return $_[2]->[2] . ' ' . $_[1]->{to_url}->($_[2]);
+    return $_[2]->[2] . '<' . $_[1]->{to_url}->($_[2]) . '>';
 }
 
 sub httpimage_notation_to_plain_text {
@@ -44,12 +44,12 @@ sub idea_notation_to_plain_text {
 
 sub asin_to_plain_text {
     my ($self, $asin, %args) = @_;
-    my $label = $args{fallback_label};
-    $label = 'ASIN:' . $asin if not defined $label;
     my $title = $self->asin_to_title($asin);
     if (defined $title) {
-        return $title . ' (' . $label . ')';
+        return $title . ' (ASIN:' . $asin . ')';
     } else {
+        my $label = $args{fallback_label};
+        $label = 'ASIN:' . $asin if not defined $label;
         return $label;
     }
 }

@@ -330,7 +330,7 @@ httptitle [http://foo/bar?baz#hoge:title=ab cde \u0300]
  ab cde \u0300
 text a
 #plaintext escaped
-ab cde \u0300 http://foo/bar?baz#hogea
+ab cde \u0300<http://foo/bar?baz#hoge>a
 #html escaped
 <a href="http://foo/bar?baz#hoge">ab cde \u0300</a>a
 
@@ -342,7 +342,7 @@ httptitle [http://foo/bar?baz#hoge():title=ab cde \u0300]
  ab cde \u0300
 text a
 #plaintext escaped
-ab cde \u0300 http://foo/bar?baz#hoge()a
+ab cde \u0300<http://foo/bar?baz#hoge()>a
 #html escaped
 <a href="http://foo/bar?baz#hoge()">ab cde \u0300</a>a
 
@@ -354,7 +354,7 @@ httptitle [httpS://foo/bar?baz#hoge:TITLE=ab cde \u0300]
  ab cde \u0300
 text a
 #plaintext escaped
-ab cde \u0300 httpS://foo/bar?baz#hogea
+ab cde \u0300<httpS://foo/bar?baz#hoge>a
 #html escaped
 <a href="httpS://foo/bar?baz#hoge">ab cde \u0300</a>a
 
