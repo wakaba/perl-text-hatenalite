@@ -227,6 +227,20 @@ sub play_video_button_image_html {
     return q{<img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt="">};
 }
 
+sub nicovideo_widget_width {
+    if (@_ > 1) {
+        $_[0]->{nicovideo_widget_width} = $_[1];
+    }
+    return $_[0]->{nicovideo_widget_width} || 300;
+}
+
+sub nicovideo_widget_height {
+    if (@_ > 1) {
+        $_[0]->{nicovideo_widget_height} = $_[1];
+    }
+    return $_[0]->{nicovideo_widget_height} || 238;
+}
+
 sub nicovideo_id_to_html {
     my ($self, $vid, %args) = @_;
     $self->{object_count}++;
@@ -236,6 +250,8 @@ sub nicovideo_id_to_html {
             htescape($nicovideo_url),
             htescape($args{alt} || $nicovideo_url);
     } else {
+        my $w = $self->nicovideo_widget_width;
+        my $h = $self->nicovideo_widget_height;
         my $id = sprintf('nicovideo%d', int(rand(10000)));
         return sprintf q{<div id="%s"></div>
 <script type="text/javascript"><!--
@@ -248,11 +264,26 @@ sub nicovideo_id_to_html {
         }
     }
 //--></script>
-<script src="http://www.nicovideo.jp/thumb_watch/%s?w=300&amp;h=238&amp;cb=write%s&amp;eb=write%s" charset="utf-8"></script>},
+<script src="http://www.nicovideo.jp/thumb_watch/%s?w=%d&amp;h=%d&amp;cb=write%s&amp;eb=write%s" charset="utf-8"></script>},
             $id, $id, $id, 
             htescape $vid,
+            $w, $h,
             $id, $id;
     }
+}
+
+sub youtube_widget_width {
+    if (@_ > 1) {
+        $_[0]->{youtube_widget_width} = $_[1];
+    }
+    return $_[0]->{youtube_widget_width} || 300;
+}
+
+sub youtube_widget_height {
+    if (@_ > 1) {
+        $_[0]->{youtube_widget_height} = $_[1];
+    }
+    return $_[0]->{youtube_widget_height} || 250;
 }
 
 sub youtube_id_to_html {
@@ -264,10 +295,14 @@ sub youtube_id_to_html {
             htescape($youtube_url),
             htescape($args{alt} || $youtube_url);
     } else {
+        my $w = $self->youtube_widget_width;
+        my $h = $self->youtube_widget_height;
         return sprintf q{<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/%s"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/%s" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
+<object width="%d" height="%d"><param name="movie" value="http://www.youtube.com/v/%s"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/%s" type="application/x-shockwave-flash" wmode="transparent" width="%d" height="%d"></object>
 </div>},
-            htescape $vid, htescape $vid;
+            $w, $h,
+            htescape $vid, htescape $vid,
+            $w, $h;
     }
 }
 
