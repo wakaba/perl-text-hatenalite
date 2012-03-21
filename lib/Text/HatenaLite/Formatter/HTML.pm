@@ -4,7 +4,6 @@ use warnings;
 our $VERSION = '1.0';
 use Encode;
 use Mono::ID;
-use WebService::ImageURLs;
 use Text::HatenaLite::Definitions;
 use Text::HatenaLite::Formatter::Role::URLs;
 use Text::HatenaLite::Formatter::Base;
@@ -27,13 +26,6 @@ sub htescape ($) {
     $v =~ s{>}{&gt;}g;
     $v =~ s{\x22}{&#34;}g;
     return $v;
-}
-
-sub percent_decode_b ($) {
-  my $s = ''.$_[0];
-  utf8::encode ($s) if utf8::is_utf8 ($s);
-  $s =~ s/%([0-9A-Fa-f]{2})/pack 'C', hex $1/ge;
-  return $s;
 }
 
 # ------ Links ------
@@ -83,40 +75,30 @@ sub url_to_page_link {
 sub http_notation_to_html {
     my $self = $_[0];
     my $url = $_[2]->[0];
-    if ($url =~ /(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])(?:\?[^\?]*)?$/) {
-        return $self->image_url_to_html($url, $url, alt => $url);
-    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp][Ss]?://[0-9A-Za-z-]+\.[Yy][Oo][Uu][Tt][Uu][Bb][Ee]\.[Cc][Oo][Mm]/watch\?v=([0-9A-Za-z_-]+)}) {
-        return $self->youtube_id_to_html($1, alt => $url);
-    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Yy][Oo][Uu][Tt][Uu]\.[Bb][Ee]/([A-Za-z0-9_-]+)}) {
-        return $self->youtube_id_to_html($1, alt => $url);
-    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Ww][Ww][Ww]\.[Nn][Ii][Cc][Oo][Vv][Ii][Dd][Ee][Oo]\.[Jj][Pp]/watch/([0-9A-Za-z_]+)}) {
-        return $self->nicovideo_id_to_html($1, alt => $url);
-    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Nn][Ii][Cc][Oo]\.[Mm][Ss]/([0-9A-Za-z_]+)}) {
-        return $self->nicovideo_id_to_html($1, alt => $url);
-    } elsif ($url =~ /[Mm][Pp]3(\?.*)?$/) {
-        return $self->url_to_mp3_player($url);
-    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]?://(?:[0-9A-Za-z-]\.)?(?:[Uu][Gg][Oo][Mm][Ee][Mm][Oo]|[Ff][Ll][Ii][Pp][Nn][Oo][Tt][Ee])\.[Hh][Aa][Tt][Ee][Nn][Aa]\.(?:[Nn][Ee]\.[Jj][Pp]|[Cc][Oo][Mm])/([0-9A-Fa-f]+)(?:\@|%40)DSi/movie/([0-9A-Za-z_-]+)(?:$|\?)}) {
-        return $self->ugomemo_movie_to_html($1, $2, alt => $url);
-    } elsif ($url =~ m{^http://docomo\.ne\.jp/cp/map\.cgi\?lat=([^&]+)&lon=([^&]+)&geo=[Ww][Gg][Ss]84$}) {
-        ## See
-        ## <http://www.nttdocomo.co.jp/service/imode/make/content/browser/html/tag/location_info.html>.
-        my $lat = percent_decode_b $1;
-        my $lon = percent_decode_b $2;
-        if ($lat =~ /^([+-][0-9]+)\.([0-9]+)\.([0-9]+\.[0-9]+)$/) {
-            $lat = $1 + ($2 / 60) + ($3 / 60 / 60);
-        }
-        if ($lon =~ /^([+-][0-9]+)\.([0-9]+)\.([0-9]+\.[0-9]+)$/) {
-            $lon = $1 + ($2 / 60) + ($3 / 60 / 60);
-        }
-        return $self->latlon_to_html($lat, $lon, alt => $url);
+    my $parsed = $self->parse_http_url($url);
+    
+    if ($parsed->{image_url}) {
+        return $self->image_url_to_html($parsed->{image_url}, $url, alt => $url);
+    } elsif ($parsed->{youtube_id}) {
+        return $self->youtube_id_to_html($parsed->{youtube_id}, alt => $url);
+    } elsif ($parsed->{nicovideo_id}) {
+        return $self->nicovideo_id_to_html($parsed->{nicovideo_id}, alt => $url);
+    } elsif ($parsed->{mp3_url}) {
+        return $self->url_to_mp3_player($parsed->{mp3_url}, alt => $url);
+    } elsif ($parsed->{ugomemo_file_name}) {
+        return $self->ugomemo_movie_to_html(
+            $parsed->{ugomemo_dsi_id},
+            $parsed->{ugomemo_file_name},
+            alt => $url,
+        );
+    } elsif ($parsed->{map_lat} or $parsed->{map_lon}) {
+        return $self->latlon_to_html(
+            $parsed->{map_lat},
+            $parsed->{map_lon},
+            alt => $url,
+        );
     } else {
-        my $img_url = expand_image_permalink_url $url;
-        if ($img_url) {
-            return $self->image_url_to_html($img_url, $url, alt => $url);
-        } else {
-            return sprintf '<a href="%s">%s</a>',
-                htescape $url, htescape $url;
-        }
+        return sprintf '<a href="%s">%s</a>', htescape $url, htescape $url;
     }
 }
 

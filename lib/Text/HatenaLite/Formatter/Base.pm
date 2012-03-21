@@ -5,7 +5,7 @@ our $VERSION = '1.0';
 
 sub new {
     my $class = shift;
-    return bless {}, $class;
+    return bless {@_}, $class;
 }
 
 sub parsed_data {

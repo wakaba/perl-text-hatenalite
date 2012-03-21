@@ -3,6 +3,7 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 use Encode;
+use WebService::ImageURLs;
 
 sub percent_encode_c ($) {
     my $s = encode ('utf-8', ''.$_[0]);
@@ -13,6 +14,13 @@ sub percent_encode_c ($) {
 sub percent_encode_b ($) {
     my $s = ''.$_[0];
     $s =~ s/([^0-9A-Za-z._~-])/sprintf '%%%02X', ord $1/ge;
+    return $s;
+}
+
+sub percent_decode_b ($) {
+    my $s = ''.$_[0];
+    utf8::encode ($s) if utf8::is_utf8 ($s);
+    $s =~ s/%([0-9A-Fa-f]{2})/pack 'C', hex $1/ge;
     return $s;
 }
 
@@ -110,6 +118,48 @@ sub latlon_to_image_url {
 sub latlon_to_link_url {
     return sprintf q<http://maps.google.com/?ll=%s,%s>,
         $_[1], $_[2]; # lat, lon
+}
+
+sub parse_http_url {
+    my $url = $_[1];
+    my $parsed = {};
+
+    if ($url =~ /(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])(?:\?[^\?]*)?$/) {
+        $parsed->{image_url} = $url;
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp][Ss]?://[0-9A-Za-z-]+\.[Yy][Oo][Uu][Tt][Uu][Bb][Ee]\.[Cc][Oo][Mm]/watch\?v=([0-9A-Za-z_-]+)}) {
+        $parsed->{youtube_id} = $1;
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Yy][Oo][Uu][Tt][Uu]\.[Bb][Ee]/([A-Za-z0-9_-]+)}) {
+        $parsed->{youtube_id} = $1;
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Ww][Ww][Ww]\.[Nn][Ii][Cc][Oo][Vv][Ii][Dd][Ee][Oo]\.[Jj][Pp]/watch/([0-9A-Za-z_]+)}) {
+        $parsed->{nicovideo_id} = $1;
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Nn][Ii][Cc][Oo]\.[Mm][Ss]/([0-9A-Za-z_]+)}) {
+        $parsed->{nicovideo_id} = $1;
+    } elsif ($url =~ /[Mm][Pp]3(?:\?.*)?$/) {
+        $parsed->{mp3_url} = $url;
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]?://(?:[0-9A-Za-z-]\.)?(?:[Uu][Gg][Oo][Mm][Ee][Mm][Oo]|[Ff][Ll][Ii][Pp][Nn][Oo][Tt][Ee])\.[Hh][Aa][Tt][Ee][Nn][Aa]\.(?:[Nn][Ee]\.[Jj][Pp]|[Cc][Oo][Mm])/([0-9A-Fa-f]+)(?:\@|%40)DSi/movie/([0-9A-Za-z_-]+)(?:$|\?)}) {
+        $parsed->{ugomemo_dsi_id} = $1;
+        $parsed->{ugomemo_file_name} = $2;
+    } elsif ($url =~ m{^http://docomo\.ne\.jp/cp/map\.cgi\?lat=([^&]+)&lon=([^&]+)&geo=[Ww][Gg][Ss]84$}) {
+        ## See
+        ## <http://www.nttdocomo.co.jp/service/imode/make/content/browser/html/tag/location_info.html>.
+        my $lat = percent_decode_b $1;
+        my $lon = percent_decode_b $2;
+        if ($lat =~ /^([+-][0-9]+)\.([0-9]+)\.([0-9]+\.[0-9]+)$/) {
+            $lat = $1 + ($2 / 60) + ($3 / 60 / 60);
+        }
+        if ($lon =~ /^([+-][0-9]+)\.([0-9]+)\.([0-9]+\.[0-9]+)$/) {
+            $lon = $1 + ($2 / 60) + ($3 / 60 / 60);
+        }
+        $parsed->{map_lat} = $lat;
+        $parsed->{map_lon} = $lon;
+    } else {
+        my $img_url = expand_image_permalink_url $url;
+        if ($img_url) {
+            $parsed->{image_url} = $img_url;
+        }
+    }
+    
+    return $parsed;
 }
 
 1;
