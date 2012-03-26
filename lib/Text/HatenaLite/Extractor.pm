@@ -3,6 +3,8 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 use Text::HatenaLite::Definitions;
+use Text::HatenaLite::Formatter::Role::URLs;
+push our @ISA, qw(Text::HatenaLite::Formatter::Role::URLs);
 
 sub new {
     my $class = shift;
@@ -31,7 +33,11 @@ sub extract_urls {
         my $def = $Notations->{$node->{type}}
             or die "Definition for |$node->{type}| not found";
 
-        if ($def->{to_url}) {
+        my $code = $self->can($node->{type} . '_notation_to_url');
+        if ($code) {
+            my $url = $self->$code($def, $node->{values});
+            push @url, $url if defined $url;
+        } elsif ($def->{to_url}) {
             my $url = $def->{to_url}->($node->{values});
             push @url, $url if defined $url;
         }

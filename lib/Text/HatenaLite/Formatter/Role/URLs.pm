@@ -88,8 +88,18 @@ sub youtube_id_to_thumbnail_url {
 
 sub image_url_filter { $_[1] }
 
+sub fotolife_notation_to_url {
+    my $self = $_[0];
+    my $values = $_[2];
+    return $self->fotolife_id_to_url($values->[1], $values->[2]);
+}
+
 sub fotolife_id_to_url {
     return sprintf q<http://f.hatena.ne.jp/%s/%s>, $_[1], $_[2];
+}
+
+sub land_notation_to_url {
+    return $_[1]->{to_object_url}->($_[2]);
 }
 
 sub ugomemo_swf_url {
