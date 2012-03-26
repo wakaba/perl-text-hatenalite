@@ -14,13 +14,18 @@ sub _tests : Tests {
     for_each_test file(__FILE__)->dir->subdir('data', 'texts-1.dat')->stringify, {
         data => {is_prefixed => 1},
         urls => {is_prefixed => 1},
+        trackbackurls => {is_prefixed => 1},
     }, sub {
         my $test = shift;
         my $parsed = Text::HatenaLite::Parser->parse_string($test->{data}->[0]);
         my $parser = Text::HatenaLite::Extractor->new;
         $parser->parsed_data($parsed);
+
         eq_or_diff $parser->extract_urls,
             [split /\n/, ($test->{urls} || [])->[0] || ''];
+
+        eq_or_diff $parser->extract_urls_for_trackback,
+            [split /\n/, ($test->{trackbackurls} || [])->[0] || ''];
     };
 }
 

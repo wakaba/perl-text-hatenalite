@@ -26,6 +26,8 @@ $Notations->{text} = $Text::HatenaLite::Definitions::TextNotation;
 
 sub extract_urls {
     my $self = shift;
+    return $self->{extracted_urls} if $self->{extracted_urls};
+
     my $data = $self->parsed_data or die "|parsed_data| is not set";
 
     my @url;
@@ -44,7 +46,26 @@ sub extract_urls {
         
     }
 
-    return \@url;
+    return $self->{extracted_urls} = \@url;
+}
+
+sub extract_urls_for_trackback {
+    my $self = shift;
+    my $found = {};
+    return [grep { not $found->{$_}++ } map {
+        (m{
+            ^https?://
+            (?:
+                f\.hatena\.(?:ne\.jp|com)/[^/]+/[0-9]+ |
+                (?:ugomemo|flipnote)\.hatena\.(?:ne\.jp|com)/[^/]+/movie/[^/]+ |
+                d\.hatena\.ne\.jp/[^/]+/.+ |
+                [0-9a-z-]+\.g\.hatena\.ne\.jp/[^/]+/.+ |
+                q\.hatena\.ne\.jp/[0-9]+ |
+                i\.hatena\.ne\.jp/idea/[0-9]+ |
+                anond\.hatelabo\.jp/[0-9]+
+            )
+        }xig);
+    } @{$self->extract_urls}];
 }
 
 1;
