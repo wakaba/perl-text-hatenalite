@@ -347,7 +347,7 @@ sub fotolife_notation_to_html {
     my $e = $values->[3];
     my $type = $values->[4] || '';
     if (($e eq 'f' or $e eq 'F') and
-        $type =~ /^[Mm][Oo][vv][Ii][Ee]$/ and
+        $type =~ /^[Mm][Oo][Vv][Ii][Ee]$/ and
         $self->use_fotolife_movie_player) {
         return sprintf q{<object data="http://f.hatena.ne.jp/tools/flvplayer_s.swf" type="application/x-shockwave-flash" width="320" height="276">
 <param name="movie" value="http://f.hatena.ne.jp/tools/flvplayer_s.swf">
