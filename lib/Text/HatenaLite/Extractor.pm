@@ -94,4 +94,25 @@ sub extract_image_urls {
     return $self->{extracted_image_urls} = {map { $_ => 1 } @url};
 }
 
+sub extract_geo_coords {
+    my $self = shift;
+    return $self->{extracted_geo_coords} if $self->{extracted_geo_coords};
+
+    my $data = $self->parsed_data or die "|parsed_data| is not set";
+
+    my $list = {};
+    for my $node (@$data) {
+        my $def = $Notations->{$node->{type}}
+            or die "Definition for |$node->{type}| not found";
+
+        my $code = $self->can($node->{type} . '_notation_to_geo_coord');
+        if ($code) {
+            my $latlon = $self->$code($def, $node->{values});
+            $list->{$latlon->[0], $latlon->[1]} = $latlon if $latlon;
+        }
+    }
+
+    return $self->{extracted_geo_coords} = $list;
+}
+
 1;

@@ -50,6 +50,37 @@ sub url_to_qrcode_url {
         percent_encode_c $_[1];
 }
 
+sub latlon_to_geo_coords {
+    my (undef, $lat, $lon) = @_;
+    return undef if not defined $lat or not defined $lon;
+    $lat =~ s/^\+//;
+    $lon =~ s/^\+//;
+    $lat = $lat > 90 ? 90 : $lat < -90 ? -90 : $lat;
+    $lon = $lon > 180 ? 180 : $lon < -180 ? -180 : $lon;
+    return [$lat, $lon];
+}
+
+sub map_notation_to_geo_coord {
+    my $values = $_[2];
+    return $_[0]->latlon_to_geo_coords(
+        $values->[1], $values->[2],
+    );
+}
+
+sub http_notation_to_geo_coord {
+    my $self = $_[0];
+    my $url = $_[2]->[0];
+    my $parsed = $self->parse_http_url($url);
+    
+    if ($parsed->{map_lat} or $parsed->{map_lon}) {
+        return $self->latlon_to_geo_coords(
+            $parsed->{map_lat}, $parsed->{map_lon},
+        );
+    } else {
+        return undef;
+    }
+}
+
 sub http_notation_to_image_url {
     my $self = $_[0];
     my $url = $_[2]->[0];

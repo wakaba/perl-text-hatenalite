@@ -16,6 +16,7 @@ sub _tests : Tests {
         urls => {is_prefixed => 1},
         trackbackurls => {is_prefixed => 1},
         imageurls => {is_prefixed => 1},
+        geocoords => {is_prefixed => 1},
     }, sub {
         my $test = shift;
         my $parsed = Text::HatenaLite::Parser->parse_string($test->{data}->[0]);
@@ -30,6 +31,11 @@ sub _tests : Tests {
 
         eq_or_diff [sort { $a cmp $b } keys %{$parser->extract_image_urls}],
             [sort { $a cmp $b } split /\n/, ($test->{imageurls} || [])->[0] || ''];
+
+        my $coords = $parser->extract_geo_coords;
+        eq_or_diff [map { $coords->{$_}->[0] . ',' . $coords->{$_}->[1] }
+                    sort { $a cmp $b } keys %$coords],
+            [sort { $a cmp $b } split /\n/, ($test->{geocoords} || [])->[0] || ''];
     };
 }
 

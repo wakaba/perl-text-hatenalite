@@ -2523,6 +2523,8 @@ map map:45:45
 <div class=user-map><a href="http://maps.google.com/?ll=45,45"><img src="http://maps.google.com/maps/api/staticmap?markers=45,45&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:45:45"></a></div>
 #mobilehtml
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=45&amp;lon=45&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=45,45&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:45:45"></a></div>
+#geocoords
+45,45
 
 #data
 map:45.132:45.453
@@ -2534,6 +2536,29 @@ map map:45.132:45.453
 <div class=user-map><a href="http://maps.google.com/?ll=45.132,45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=45.132,45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:45.132:45.453"></a></div>
 #mobilehtml
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=45.132&amp;lon=45.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=45.132,45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:45.132:45.453"></a></div>
+#geocoords
+45.132,45.453
+
+#data
+map:45.132:45.453
+map:-45.132:45.45
+#parsed escaped
+map map:45.132:45.453
+ 45.132
+ 45.453
+text \u000A
+map map:-45.132:45.45
+ -45.132
+ 45.45
+#html
+<div class=user-map><a href="http://maps.google.com/?ll=45.132,45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=45.132,45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:45.132:45.453"></a></div>
+<div class=user-map><a href="http://maps.google.com/?ll=-45.132,45.45"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,45.45&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:-45.132:45.45"></a></div>
+#mobilehtml
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=45.132&amp;lon=45.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=45.132,45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:45.132:45.453"></a></div>
+<div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-45.132&amp;lon=45.45&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,45.45&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:-45.132:45.45"></a></div>
+#geocoords
+45.132,45.453
+-45.132,45.45
 
 #data
 map:-45.132:-45.453
@@ -2545,6 +2570,8 @@ map map:-45.132:-45.453
 <div class=user-map><a href="http://maps.google.com/?ll=-45.132,-45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:-45.132:-45.453"></a></div>
 #mobilehtml
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-45.132&amp;lon=-45.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:-45.132:-45.453"></a></div>
+#geocoords
+-45.132,-45.453
 
 #data
 MAP:-45.132:-45.453
@@ -2556,6 +2583,8 @@ map MAP:-45.132:-45.453
 <div class=user-map><a href="http://maps.google.com/?ll=-45.132,-45.453"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="MAP:-45.132:-45.453"></a></div>
 #mobilehtml
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-45.132&amp;lon=-45.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-45.132,-45.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="MAP:-45.132:-45.453"></a></div>
+#geocoords
+-45.132,-45.453
 
 #data
 map:-94.132:-181.453
@@ -2567,6 +2596,8 @@ map map:-94.132:-181.453
 <div class=user-map><a href="http://maps.google.com/?ll=-90,-180"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:-94.132:-181.453"></a></div>
 #mobilehtml
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-90&amp;lon=-180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:-94.132:-181.453"></a></div>
+#geocoords
+-90,-180
 
 #data
 map:94.132:181.453
@@ -2578,6 +2609,8 @@ map map:94.132:181.453
 <div class=user-map><a href="http://maps.google.com/?ll=90,180"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=png" width=140 height=140 alt="map:94.132:181.453"></a></div>
 #mobilehtml
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:94.132:181.453"></a></div>
+#geocoords
+90,180
 
 #data
 map:"<p>
@@ -2597,6 +2630,8 @@ http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div>
 #urls
 http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+#geocoords
+14.132,11.453
 
 #data
 http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&lon=%2B181.453&geo=wgs84
@@ -2609,6 +2644,8 @@ http http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&lon=%2B181.453&geo=wgs84
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&amp;lon=%2B181.453&amp;geo=wgs84"></a></div>
 #urls
 http://docomo.ne.jp/cp/map.cgi?lat=%2B94.132&lon=%2B181.453&geo=wgs84
+#geocoords
+90,180
 
 #data
 http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
@@ -2621,6 +2658,8 @@ http http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=-90&amp;lon=-180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=-90,-180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=-94.132&amp;lon=%2D181.453&amp;geo=wgs84"></a></div>
 #urls
 http://docomo.ne.jp/cp/map.cgi?lat=-94.132&lon=%2D181.453&geo=wgs84
+#geocoords
+-90,-180
 
 #data
 map:94.132:181.453
@@ -2656,3 +2695,6 @@ http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 <div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:94.132:181.453"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=90,180&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="map:94.132:181.453"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs"><img src="http://maps.google.com/maps/api/staticmap?markers=14.132,11.453&amp;sensor=false&amp;size=140x140&amp;maptype=mobile&amp;zoom=13&amp;format=gif" width=140 height=140 alt="http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84"></a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=90&amp;lon=180&amp;datum=wgs">map:94.132:181.453</a></div><br><div class=user-map><a href="http://map.mobile.yahoo.co.jp/mpl?lat=14.132&amp;lon=11.453&amp;datum=wgs">http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&amp;lon=%2B11.453&amp;geo=wgs84</a></div>
 #urls
 http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
+#geocoords
+14.132,11.453
+90,180
