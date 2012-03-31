@@ -1,0 +1,77 @@
+=head1 NAME
+
+Text::HatenaLite::Extractor - Extract data from Hatena Notation Lite texts
+
+=head1 SYNOPSIS
+
+  use Text::HatenaLite::Parser;
+  use Text::HatenaLite::Extractor;
+  
+  $data = Text::HatenaLite::Parser->parse_string ($text);
+  my $formatter = Text::HatenaLite::Extractor->new;
+  $formatter->parsed_data($data);
+  print join ' ', keys %{$parser->extract_urls};
+  print join ' ', keys %{$parser->extract_image_urls};
+
+=head1 DESCRIPTION
+
+The C<Text::HatenaLite::Extractor> class extracts list of embedded
+items, such as URLs, images, or geographical coordinates, from a
+parsed representation of text in Hatena Notation Lite markup format.
+
+=head1 METHODS
+
+=over 4
+
+=item $formatter = $CLASS->new
+
+Create a new instance of the formatter.
+
+=item $formatter->parsed_data($data)
+
+Set the parsed data to the formatter.  The data must be an array
+reference as returned by L<Text::HatenaLite::Parser>.
+
+=item $hashref = $formatter->extract_urls
+
+Extract the URLs embedded in the input text and return as a hash
+reference where the keys are the URLs and their values are true
+values.
+
+=item $hashref = $formatter->extract_urls_for_trackback
+
+Extract the URLs to which trackbacks should be sent when an entry is
+posted with the input text and return as a hash reference where the
+keys are the URLs and their values are true values.
+
+=item $hashref = $formatter->extract_image_urls
+
+Extract URLs of the images embedded in the input text (including
+poster images of videos) and return as a hash reference where the keys
+are the URLs and their values are true values.
+
+=item $hashref = $formatter->extract_geo_coords
+
+Extract geographical coordinates embedded in the input text and return
+as as hash reference where the keys are the latitude-longitude pairs
+(two numbers joined by C<$;>) and their values are array references of
+latitude and longitude of coordinates.
+
+=back
+
+=head1 SEE ALSO
+
+L<Text::HatenaLite::Parser>.
+
+=head1 AUTHOR
+
+Wakaba (id:wakabatan) <wakabatan@hatena.ne.jp>.
+
+=head1 LICENSE
+
+Copyright 2007-2012 Hatena <http://www.hatena.com/>.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
