@@ -22,14 +22,14 @@ sub _tests : Tests {
         my $parser = Text::HatenaLite::Extractor->new;
         $parser->parsed_data($parsed);
 
-        eq_or_diff $parser->extract_urls,
-            [split /\n/, ($test->{urls} || [])->[0] || ''];
+        eq_or_diff [sort { $a cmp $b } keys %{$parser->extract_urls}],
+            [sort { $a cmp $b } split /\n/, ($test->{urls} || [])->[0] || ''];
 
-        eq_or_diff $parser->extract_urls_for_trackback,
-            [split /\n/, ($test->{trackbackurls} || [])->[0] || ''];
+        eq_or_diff [sort { $a cmp $b } keys %{$parser->extract_urls_for_trackback}],
+            [sort { $a cmp $b } split /\n/, ($test->{trackbackurls} || [])->[0] || ''];
 
-        eq_or_diff $parser->extract_image_urls,
-            [split /\n/, ($test->{imageurls} || [])->[0] || ''];
+        eq_or_diff [sort { $a cmp $b } keys %{$parser->extract_image_urls}],
+            [sort { $a cmp $b } split /\n/, ($test->{imageurls} || [])->[0] || ''];
     };
 }
 

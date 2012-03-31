@@ -46,13 +46,13 @@ sub extract_urls {
         
     }
 
-    return $self->{extracted_urls} = \@url;
+    return $self->{extracted_urls} = {map { $_ => 1 } @url};
 }
 
 sub extract_urls_for_trackback {
     my $self = shift;
     my $found = {};
-    return [grep { not $found->{$_}++ } map {
+    return {map { $_ => 1 } grep { not $found->{$_}++ } map {
         (m{
             ^https?://
             (?:
@@ -65,7 +65,7 @@ sub extract_urls_for_trackback {
                 anond\.hatelabo\.jp/[0-9]+
             )
         }xig);
-    } @{$self->extract_urls}];
+    } keys %{$self->extract_urls}};
 }
 
 sub extract_image_urls {
@@ -91,7 +91,7 @@ sub extract_image_urls {
         }
     }
 
-    return $self->{extracted_image_urls} = \@url;
+    return $self->{extracted_image_urls} = {map { $_ => 1 } @url};
 }
 
 1;
