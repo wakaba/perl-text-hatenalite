@@ -50,6 +50,27 @@ sub url_to_qrcode_url {
         percent_encode_c $_[1];
 }
 
+sub http_notation_to_image_url {
+    my $self = $_[0];
+    my $url = $_[2]->[0];
+    my $parsed = $self->parse_http_url($url);
+    
+    if ($parsed->{image_url}) {
+        return $parsed->{image_url};
+    } elsif ($parsed->{youtube_id}) {
+        return $self->youtube_id_to_thumbnail_url($parsed->{youtube_id});
+    } elsif ($parsed->{nicovideo_id}) {
+        return $self->nicovideo_id_to_thumbnail_url($parsed->{nicovideo_id});
+    } elsif ($parsed->{ugomemo_file_name}) {
+        return $self->ugomemo_movie_to_thumbnail_url(
+            $parsed->{ugomemo_dsi_id},
+            $parsed->{ugomemo_file_name},
+        );
+    } else {
+        return undef;
+    }
+}
+
 sub asin_to_icon_url {
     return sprintf q<http://h.hatena.ne.jp/asin/%s/image.icon>, $_[1];
 }
@@ -94,6 +115,12 @@ sub fotolife_notation_to_url {
     return $self->fotolife_id_to_url($values->[1], $values->[2]);
 }
 
+sub fotolife_notation_to_image_url {
+    my $img_url = $_[1]->{to_object_url}->($_[2]);
+    $img_url =~ s/\.flv$/.jpg/;
+    return $img_url;
+}
+
 sub fotolife_id_to_url {
     return sprintf q<http://f.hatena.ne.jp/%s/%s>, $_[1], $_[2];
 }
@@ -117,6 +144,13 @@ sub ugomemo_movie_to_thumbnail_url {
     my ($self, $dsi_id, $file_name) = @_;
     return sprintf q<http://image.ugomemo.hatena.ne.jp/thumbnail/%s/%s_o.gif>,
         $dsi_id, $file_name;
+}
+
+sub ugomemo_notation_to_image_url {
+    my $values = $_[2];
+    return $_[0]->ugomemo_movie_to_thumbnail_url(
+        $values->[2], $values->[3],
+    );
 }
 
 sub latlon_to_image_url {

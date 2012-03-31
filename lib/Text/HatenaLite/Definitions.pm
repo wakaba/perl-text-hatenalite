@@ -29,6 +29,7 @@ our $Notations = [
         type => 'httpimage',
         pattern => q<\[(> . $http_pattern . q<(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])):[Ii][Mm][Aa][Gg][Ee](?::([HhWw][0-9]+))?\]>,
         to_url => sub { $_[0]->[1] },
+        has_image => 1,
     },
     {
         type => 'httpsound',
@@ -77,6 +78,7 @@ our $Notations = [
                 $v->[2],
                 $ext;
         },
+        has_image => 1,
     },
     {
         type => 'land',
@@ -86,6 +88,7 @@ our $Notations = [
             return sprintf q<http://l.hatena.ne.jp/images/%s.%s>,
                 $v->[1], $v->[2];
         },
+        has_image => 1,
     },
     {
         type => 'map',
@@ -102,6 +105,7 @@ our $Notations = [
                 $v->[2],
                 $v->[3];
         },
+        has_image => 1,
     },
     {
         type => 'keyword',

@@ -68,4 +68,30 @@ sub extract_urls_for_trackback {
     } @{$self->extract_urls}];
 }
 
+sub extract_image_urls {
+    my $self = shift;
+    return $self->{extracted_image_urls} if $self->{extracted_image_urls};
+
+    my $data = $self->parsed_data or die "|parsed_data| is not set";
+
+    my @url;
+    for my $node (@$data) {
+        my $def = $Notations->{$node->{type}}
+            or die "Definition for |$node->{type}| not found";
+
+        my $code = $self->can($node->{type} . '_notation_to_image_url');
+        if ($code) {
+            my $url = $self->$code($def, $node->{values});
+            push @url, $url if defined $url;
+        } elsif (($def->{to_object_url} || $def->{to_url}) and
+                 $def->{has_image}) {
+            my $url = ($def->{to_object_url} || $def->{to_url})
+                ->($node->{values});
+            push @url, $url if defined $url;
+        }
+    }
+
+    return $self->{extracted_image_urls} = \@url;
+}
+
 1;

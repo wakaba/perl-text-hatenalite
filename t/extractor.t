@@ -15,6 +15,7 @@ sub _tests : Tests {
         data => {is_prefixed => 1},
         urls => {is_prefixed => 1},
         trackbackurls => {is_prefixed => 1},
+        imageurls => {is_prefixed => 1},
     }, sub {
         my $test = shift;
         my $parsed = Text::HatenaLite::Parser->parse_string($test->{data}->[0]);
@@ -26,6 +27,9 @@ sub _tests : Tests {
 
         eq_or_diff $parser->extract_urls_for_trackback,
             [split /\n/, ($test->{trackbackurls} || [])->[0] || ''];
+
+        eq_or_diff $parser->extract_image_urls,
+            [split /\n/, ($test->{imageurls} || [])->[0] || ''];
     };
 }
 
