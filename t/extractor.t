@@ -7,6 +7,7 @@ use lib glob file(__FILE__)->dir->parent->subdir('modules', '*', 'lib')->stringi
 use base qw(Test::Class);
 use Text::HatenaLite::Parser;
 use Text::HatenaLite::Extractor;
+use Text::HatenaLite::Formatter::PlainText;
 use Test::Differences;
 use Test::HTCT::Parser;
 
@@ -18,6 +19,7 @@ sub _tests : Tests {
         idcalls => {is_prefixed => 1},
         imageurls => {is_prefixed => 1},
         geocoords => {is_prefixed => 1},
+        head => {is_prefixed => 1, multiple => 1},
     }, sub {
         my $test = shift;
         my $parsed = Text::HatenaLite::Parser->parse_string($test->{data}->[0]);
@@ -40,6 +42,13 @@ sub _tests : Tests {
         eq_or_diff [map { $coords->{$_}->[0] . ',' . $coords->{$_}->[1] }
                     sort { $a cmp $b } keys %$coords],
             [sort { $a cmp $b } split /\n/, ($test->{geocoords} || [])->[0] || ''];
+
+        for my $t (@{$test->{head} or []}) {
+            my $data = $parser->head_by_length($t->[1]->[0]);
+            my $f = Text::HatenaLite::Formatter::PlainText->new;
+            $f->parsed_data($data);
+            eq_or_diff $f->as_text, $t->[0];
+        }
     };
 }
 

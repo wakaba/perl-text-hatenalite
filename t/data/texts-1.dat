@@ -1,10 +1,20 @@
 #data
 #parsed
+#head 0
+#head 1
+#head 2
+#head 10
 
 #data
 0
 #parsed
 text 0
+#head 0
+...
+#head 1
+0
+#head 10
+0
 
 #data escaped
 abc\u000Axxx\u000A
@@ -12,6 +22,26 @@ abc\u000Axxx\u000A
 text abc\u000Axxx\u000A
 #html
 abc<br>xxx<br>
+#head 0
+...
+#head 1
+...
+#head 3
+...
+#head 4
+a...
+#head 5 escaped
+ab...
+#head 6 escaped
+abc...
+#head 7 escaped
+abc\u000A...
+#head 8 escaped
+abc\u000Axxx\u000A
+#head 9 escaped
+abc\u000Axxx\u000A
+#head 10 escaped 
+abc\u000Axxx\u000A
 
 #data escaped
 abc\u000Dxxx\u000D
@@ -68,6 +98,22 @@ id id:hatena
 <a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
 #idcalls
 hatena
+#head 0
+...
+#head 1
+...
+#head 2
+...
+#head 3
+...
+#head 4
+...
+#head 8
+...
+#head 9
+id:hatena
+#head 10
+id:hatena
 
 #data
 ID:hatena
@@ -125,6 +171,26 @@ text  abc
 <a href="http://www.hatena.ne.jp/mobile/hatena120-_/" class="user">id:hatena120-_</a> abc
 #idcalls
 hatena120-_
+#head 13
+...
+#head 14
+id:hatena120-_...
+#head 15
+id:hatena120-_...
+#head 16
+id:hatena120-_...
+#head 17
+id:hatena120-_...
+#head 18
+id:hatena120-_ abc
+#head 19
+id:hatena120-_ abc
+#head 20
+id:hatena120-_ abc
+#head 21
+id:hatena120-_ abc
+#head 22
+id:hatena120-_ abc
 
 #data
 id:hatenahogefuga@DSi*aa
@@ -163,6 +229,14 @@ http://hoge.hoge=
 a[[]]b
 #parsed
 text a[[]]b
+#head 0
+...
+#head 1
+...
+#head 5
+a[...
+#head 6
+a[[]]b
 
 #data
 a[keyword:]b
@@ -246,6 +320,18 @@ a<&">b
 <a href="http://d.hatena.ne.jp/keywordtouch/a%3C%26%22%3Eb" class="keyword">a&lt;&amp;&#34;&gt;b</a>
 #mobilehtml
 <a href="http://d.hatena.ne.jp/keywordmobile/a%3C%26%22%3Eb" class="keyword">a&lt;&amp;&#34;&gt;b</a>
+#head 0
+...
+#head 1
+...
+#head 8
+...
+#head 9
+...
+#head 10
+a<&">b
+#head 11
+a<&">b
 
 #data escaped
 [[\uFFFF]]
@@ -260,6 +346,47 @@ keyword [[\uFFFF]]
 <a href="http://d.hatena.ne.jp/keywordtouch/%3F" class="keyword">\uFFFF</a>
 #mobilehtml escaped
 <a href="http://d.hatena.ne.jp/keywordmobile/%3F" class="keyword">\uffff</a>
+
+#data
+[[[[a]]]]
+#parsed
+keyword 
+
+#data
+[[a]][[b]][[c]][[d]]
+#parsed
+keyword [[a]]
+ a
+keyword [[b]]
+ b
+keyword [[c]]
+ c
+keyword [[d]]
+ d
+#html
+<a href="http://d.hatena.ne.jp/keyword/a" class="keyword">a</a><a href="http://d.hatena.ne.jp/keyword/b" class="keyword">b</a><a href="http://d.hatena.ne.jp/keyword/c" class="keyword">c</a><a href="http://d.hatena.ne.jp/keyword/d" class="keyword">d</a>
+#touchhtml
+<a href="http://d.hatena.ne.jp/keywordtouch/a" class="keyword">a</a><a href="http://d.hatena.ne.jp/keywordtouch/b" class="keyword">b</a><a href="http://d.hatena.ne.jp/keywordtouch/c" class="keyword">c</a><a href="http://d.hatena.ne.jp/keywordtouch/d" class="keyword">d</a>
+#mobilehtml
+<a href="http://d.hatena.ne.jp/keywordmobile/a" class="keyword">a</a><a href="http://d.hatena.ne.jp/keywordmobile/b" class="keyword">b</a><a href="http://d.hatena.ne.jp/keywordmobile/c" class="keyword">c</a><a href="http://d.hatena.ne.jp/keywordmobile/d" class="keyword">d</a>
+#head 0
+...
+#head 1
+...
+#head 5
+a...
+#head 6
+a...
+#head 7
+a...
+#head 10
+ab...
+#head 19
+abc...
+#head 20
+abcd
+#head 21
+abcd
 
 #data
 0 http://hoge/
@@ -280,6 +407,18 @@ http http://hoge/fuga
 #html
 <a href="http://hoge/fuga">http://hoge/fuga</a>
 #urls
+http://hoge/fuga
+#head 0
+...
+#head 1
+...
+#head 10
+...
+#head 15
+...
+#head 16
+http://hoge/fuga
+#head 20
 http://hoge/fuga
 
 #data

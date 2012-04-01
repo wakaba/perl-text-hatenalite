@@ -137,4 +137,41 @@ sub extract_geo_coords {
     return $self->{extracted_geo_coords} = $list;
 }
 
+sub head_by_length {
+    my ($self, $n, %args) = @_;
+    my $data = $self->parsed_data or die "|parsed_data| is not set";
+    
+    my $new_data = [];
+    for (0..$#$data) {
+        if ($_ < $#$data and $n <= 0) {
+            push @$new_data, {type => 'text', values => ['...']};
+            last;
+        }
+
+        my $node = $data->[$_];
+        if ($node->{type} eq 'text') {
+            my $value = $node->{values}->[0];
+            if ($n < length $value) {
+                $value = $n > 3 ? substr $value, 0, $n - 3 : '';
+                $value .= '...';
+                push @$new_data, {type => 'text', values => [$value]};
+                last;
+            }
+            
+            push @$new_data, {type => 'text', values => [$value]};
+            $n -= length $value;
+        } else {
+            if ($n >= length $node->{values}->[0]) {
+                push @$new_data, $node;
+                $n -= length $node->{values}->[0];
+            } else {
+                push @$new_data, {type => 'text', values => ['...']};
+                last;
+            }
+        }
+    }
+
+    return $new_data;
+}
+
 1;
