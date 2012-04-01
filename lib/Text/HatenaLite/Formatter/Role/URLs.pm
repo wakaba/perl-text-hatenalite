@@ -32,6 +32,10 @@ sub hatena_id_to_icon_url {
     return q<http://n.hatena.com/> . $_[1] . q</profile/image.gif?type=icon&size=16>;
 }
 
+sub id_notation_to_url_name_for_id_call {
+    return $_[2]->[1];
+}
+
 sub keyword_to_link_url {
     return q<http://d.hatena.ne.jp/keyword/> .
         percent_encode_b encode 'euc-jp', $_[1];
@@ -102,6 +106,24 @@ sub http_notation_to_image_url {
     }
 }
 
+sub http_notation_to_url_name_for_id_call {
+    my $self = $_[0];
+    my $url = $_[2]->[0];
+    if ($url =~ m{
+        [Hh][Tt][Tt][Pp][Ss]?://
+        (?:[Hh]2?|[Nn]|[Cc]|[Oo][Nn][Ee])
+        \.[Hh][Aa][Tt][Ee][Nn][Aa]\.(?:[Nn][Ee]\.[Jj][Pp]|[Cc][Oo][Mm])/
+        (?:touch/|mobile/|)
+        ([0-9A-Za-z_@%-]+)/
+    }x) {
+        my $url_name = $1;
+        $url_name =~ s/%40/\@/g;
+        return $url_name;
+    } else {
+        return undef;
+    }
+}
+
 sub asin_to_icon_url {
     return sprintf q<http://h.hatena.ne.jp/asin/%s/image.icon>, $_[1];
 }
@@ -150,6 +172,10 @@ sub fotolife_notation_to_image_url {
     my $img_url = $_[1]->{to_object_url}->($_[2]);
     $img_url =~ s/\.flv$/.jpg/;
     return $img_url;
+}
+
+sub fotolife_notation_to_url_name_for_id_call {
+    return $_[2]->[1];
 }
 
 sub fotolife_id_to_url {

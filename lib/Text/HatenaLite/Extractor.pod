@@ -44,6 +44,14 @@ Extract the URLs to which trackbacks should be sent when an entry is
 posted with the input text and return as a hash reference where the
 keys are the URLs and their values are true values.
 
+=item $hashref = $formatter->extract_url_names_for_id_call
+
+Extract the URL names (or Hatena IDs) to which ID calls should be sent
+when an entry is posted with the input text and return as a hash
+reference where the keys are the URL names and their values are true
+values.  Please note that the returned URL names might or might not be
+valid or existing URL names.
+
 =item $hashref = $formatter->extract_image_urls
 
 Extract URLs of the images embedded in the input text (including

@@ -66,6 +66,8 @@ id id:hatena
 <a href="http://www.hatena.ne.jp/touch/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatena/" class="user">id:hatena</a>
 #mobilehtml
 <a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
+#idcalls
+hatena
 
 #data
 ID:hatena
@@ -78,6 +80,8 @@ id ID:hatena
 <a href="http://www.hatena.ne.jp/touch/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatena/" class="user">id:hatena</a>
 #mobilehtml
 <a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
+#idcalls
+hatena
 
 #data
 id:hatena:detail
@@ -90,6 +94,8 @@ id id:hatena:detail
 <a href="http://www.hatena.ne.jp/touch/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatena/" class="user">id:hatena</a>
 #mobilehtml
 <a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
+#idcalls
+hatena
 
 #data
 id:hatena:DETAIL
@@ -102,6 +108,8 @@ id id:hatena:DETAIL
 <a href="http://www.hatena.ne.jp/touch/hatena/" class="user"><img src="http://n.hatena.com/hatena/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatena/" class="user">id:hatena</a>
 #mobilehtml
 <a href="http://www.hatena.ne.jp/mobile/hatena/" class="user">id:hatena</a>
+#idcalls
+hatena
 
 #data
 id:hatena120-_ abc
@@ -115,6 +123,8 @@ text  abc
 <a href="http://www.hatena.ne.jp/touch/hatena120-_/" class="user"><img src="http://n.hatena.com/hatena120-_/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatena120-_/" class="user">id:hatena120-_</a> abc
 #mobilehtml
 <a href="http://www.hatena.ne.jp/mobile/hatena120-_/" class="user">id:hatena120-_</a> abc
+#idcalls
+hatena120-_
 
 #data
 id:hatenahogefuga@DSi*aa
@@ -128,6 +138,8 @@ text *aa
 <a href="http://www.hatena.ne.jp/touch/hatenahogefuga@DSi/" class="user"><img src="http://n.hatena.com/hatenahogefuga@DSi/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/touch/hatenahogefuga@DSi/" class="user">id:hatenahogefuga@DSi</a>*aa
 #mobilehtml
 <a href="http://www.hatena.ne.jp/mobile/hatenahogefuga@DSi/" class="user">id:hatenahogefuga@DSi</a>*aa
+#idcalls
+hatenahogefuga@DSi
 
 #data
 <script>alert('hello')</script>
@@ -353,6 +365,54 @@ http http://d.hatena.ne.jp/hatena/12411111/hogehoge
 http://d.hatena.ne.jp/hatena/12411111/hogehoge
 #trackbackurls
 http://d.hatena.ne.jp/hatena/12411111/hogehoge
+
+#data
+http://h.hatena.ne.jp/hatena/12411111/hogehoge
+#parsed
+http http://h.hatena.ne.jp/hatena/12411111/hogehoge
+ http://h.hatena.ne.jp/hatena/12411111/hogehoge
+#html
+<a href="http://h.hatena.ne.jp/hatena/12411111/hogehoge">http://h.hatena.ne.jp/hatena/12411111/hogehoge</a>
+#urls
+http://h.hatena.ne.jp/hatena/12411111/hogehoge
+#idcalls
+hatena
+
+#data
+http://h2.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+#parsed
+http http://h2.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+ http://h2.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+#html
+<a href="http://h2.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge">http://h2.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge</a>
+#urls
+http://h2.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+#idcalls
+hatena@hoge
+
+#data
+http://n.hatena.ne.jp/touch/hatena%40hoge/12411111/hogehoge
+#parsed
+http http://n.hatena.ne.jp/touch/hatena%40hoge/12411111/hogehoge
+ http://n.hatena.ne.jp/touch/hatena%40hoge/12411111/hogehoge
+#html
+<a href="http://n.hatena.ne.jp/touch/hatena%40hoge/12411111/hogehoge">http://n.hatena.ne.jp/touch/hatena%40hoge/12411111/hogehoge</a>
+#urls
+http://n.hatena.ne.jp/touch/hatena%40hoge/12411111/hogehoge
+#idcalls
+hatena@hoge
+
+#data
+http://C.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+#parsed
+http http://C.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+ http://C.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+#html
+<a href="http://C.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge">http://C.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge</a>
+#urls
+http://C.hatena.ne.jp/touch/hatena@hoge/12411111/hogehoge
+#idcalls
+hatena@hoge
 
 #data
 http://hatena.g.hatena.ne.jp/hatena/12411111/hogehoge
@@ -847,6 +907,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://foo.bar/baz.png
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 [http://foo/bar/baz.mp3:sound]
@@ -2049,6 +2111,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 F:ID:cho45:20100103163715j:IMAGE
@@ -2070,6 +2134,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 f:id:cho-45:20100103163715j:image
@@ -2091,6 +2157,8 @@ http://f.hatena.ne.jp/cho-45/20100103163715
 http://f.hatena.ne.jp/cho-45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho-45/20100103/20100103163715.jpg
+#idcalls
+cho-45
 
 #data
 f:id:CHO-45:20100103163715j:image
@@ -2112,6 +2180,8 @@ http://f.hatena.ne.jp/CHO-45/20100103163715
 http://f.hatena.ne.jp/CHO-45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO-45/20100103/20100103163715.jpg
+#idcalls
+CHO-45
 
 #data
 f:id:CHO_45:20100103163715j:image
@@ -2133,6 +2203,8 @@ http://f.hatena.ne.jp/CHO_45/20100103163715
 http://f.hatena.ne.jp/CHO_45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/C/CHO_45/20100103/20100103163715.jpg
+#idcalls
+CHO_45
 
 #data
 f:id:cho45:20100103163715j
@@ -2153,6 +2225,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 f:id:cho45:20100103163715j:movie
@@ -2174,6 +2248,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 f:id:cho45:20100103163715j:MOVIE
@@ -2195,6 +2271,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 f:id:cho45:20100103163715f:image
@@ -2216,6 +2294,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 f:id:cho45:20100103163715F:image
@@ -2237,6 +2317,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 f:id:cho45:20100103163715f:movie
@@ -2265,6 +2347,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 f:id:cho45:20100103163715f:MOVIE
@@ -2293,6 +2377,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 land:image:080c02e06d4d0ca450f2d25496be0903356f1cbf:jpg
@@ -2512,6 +2598,8 @@ http://f.hatena.ne.jp/cho45/20100103163715
 http://f.hatena.ne.jp/cho45/20100103163715
 #imageurls
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg
+#idcalls
+cho45
 
 #data
 map:45:45

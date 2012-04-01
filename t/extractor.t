@@ -15,6 +15,7 @@ sub _tests : Tests {
         data => {is_prefixed => 1},
         urls => {is_prefixed => 1},
         trackbackurls => {is_prefixed => 1},
+        idcalls => {is_prefixed => 1},
         imageurls => {is_prefixed => 1},
         geocoords => {is_prefixed => 1},
     }, sub {
@@ -28,6 +29,9 @@ sub _tests : Tests {
 
         eq_or_diff [sort { $a cmp $b } keys %{$parser->extract_urls_for_trackback}],
             [sort { $a cmp $b } split /\n/, ($test->{trackbackurls} || [])->[0] || ''];
+
+        eq_or_diff [sort { $a cmp $b } keys %{$parser->extract_url_names_for_id_call}],
+            [sort { $a cmp $b } split /\n/, ($test->{idcalls} || [])->[0] || ''];
 
         eq_or_diff [sort { $a cmp $b } keys %{$parser->extract_image_urls}],
             [sort { $a cmp $b } split /\n/, ($test->{imageurls} || [])->[0] || ''];

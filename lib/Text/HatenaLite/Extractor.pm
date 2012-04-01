@@ -68,6 +68,28 @@ sub extract_urls_for_trackback {
     } keys %{$self->extract_urls}};
 }
 
+sub extract_url_names_for_id_call {
+    my $self = shift;
+    return $self->{extracted_url_names_for_id_call}
+        if $self->{extracted_url_names_for_id_call};
+
+    my $data = $self->parsed_data or die "|parsed_data| is not set";
+
+    my %url_name;
+    for my $node (@$data) {
+        my $def = $Notations->{$node->{type}}
+            or die "Definition for |$node->{type}| not found";
+
+        my $code = $self->can($node->{type} . '_notation_to_url_name_for_id_call');
+        if ($code) {
+            my $url_name = $self->$code($def, $node->{values});
+            $url_name{$url_name} = 1 if defined $url_name;
+        }
+    }
+
+    return $self->{extracted_url_names_for_id_call} = \%url_name;
+}
+
 sub extract_image_urls {
     my $self = shift;
     return $self->{extracted_image_urls} if $self->{extracted_image_urls};
