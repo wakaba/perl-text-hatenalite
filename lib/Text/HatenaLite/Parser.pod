@@ -40,6 +40,22 @@ L<Text::HatenaLite::Formatter::HTML>.
 An informal documentation of Hatena Syntax Lite is available at:
 <http://h.hatena.com/help/advanced#syntax>.
 
+=head1 DEVELOPMENT
+
+Latest version of the module is available from GitHub repository:
+
+=over 4
+
+=item GitHub
+
+<http://github.com/wakaba/perl-text-hatenalite>
+
+=item Travis CI
+
+<http://travis-ci.org/wakaba/perl-text-hatenalite>
+
+=back
+
 =head1 AUTHOR
 
 Wakaba (id:wakabatan) <wakabatan@hatena.ne.jp>.
@@ -52,8 +68,10 @@ Hatena Haiku, Hatena Haiku2 (tentative), Hatena Coco, Hatena Land, and
 HatenaOne.  Thanks to following people for their contributions on
 those parsers and formatters: cho45, chris4403, hakobe932, hitode909,
 Junya Kondo, Kentaro Kuribayashi, lhapras, mechairoi, motemen,
-ninjinkun, onishi, satzz, Wakaba.  The original Hatena Notation, from
-which Hatena Notation Lite derives, is implemented in Hatena Diary,
+ninjinkun, onishi, satzz, Wakaba.  The original impelemntation for
+Hatena Coco, Hatena Land, and HatenaOne was inspired by
+L<Text::Xatena> by cho45.  The original Hatena Notation, from which
+Hatena Notation Lite derives, is implemented as part of Hatena Diary,
 Hatena Group, and other services, developed and improved by serveral
 Hatena engineers.  Thanks also to the other Hatena Staffs and the
 users of these services for their bug reports and feature requests.
