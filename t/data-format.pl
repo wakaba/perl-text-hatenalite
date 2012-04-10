@@ -11,4 +11,5 @@
     imageurls => {is_prefixed => 1},
     geocoords => {is_prefixed => 1},
     head => {is_prefixed => 1, multiple => 1},
+    headskipobject => {is_prefixed => 1, multiple => 1},
 };

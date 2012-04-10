@@ -42,6 +42,10 @@ abc\u000Axxx\u000A
 abc\u000Axxx\u000A
 #head 10 escaped 
 abc\u000Axxx\u000A
+#headskipobject 6 escaped
+abc...
+#headskipobject 10 escaped 
+abc\u000Axxx\u000A
 
 #data escaped
 abc\u000Dxxx\u000D
@@ -331,6 +335,10 @@ a<&">b
 #head 10
 a<&">b
 #head 11
+a<&">b
+#headskipobject 1
+...
+#headskipobject 11
 a<&">b
 
 #data escaped
@@ -700,6 +708,14 @@ http http://foo/bar.png
 http://foo/bar.png
 #imageurls
 http://foo/bar.png
+#head 0
+...
+#head 10
+...
+#headskipobject 0
+...
+#headskipobject 10
+...
 
 #data
 http://foo/barPNG
@@ -1010,6 +1026,15 @@ http http://foo.bar/baz.png
 http://foo.bar/baz.png
 #imageurls
 http://foo.bar/baz.png
+#head 25
+http://foo.bar/baz.png
+...
+#headskipobject 20
+...
+...
+...
+...
+...
 
 #data
 http://foo.bar/baz.png
@@ -2935,3 +2960,22 @@ http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 #geocoords
 14.132,11.453
 90,180
+
+#data
+http://foo/bar.png abc xyz
+#parsed
+http http://foo/bar.png
+ http://foo/bar.png
+text  abc xyz
+#html
+<a href="http://foo/bar.png"><img src="http://foo/bar.png" alt="http://foo/bar.png"></a> abc xyz
+#mobilehtml
+<a href="http://foo/bar.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%2Fbar.png" alt="http://foo/bar.png"></a> abc xyz
+#urls
+http://foo/bar.png
+#imageurls
+http://foo/bar.png
+#headskipobject 10
+... abc...
+#headskipobject 20
+... abc xyz

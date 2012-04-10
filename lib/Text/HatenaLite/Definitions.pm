@@ -19,27 +19,32 @@ our $Notations = [
             }
         },
         to_url => sub { $_[0]->[1] },
+        is_skipped_object => 1,
     },
     {
         type => 'httptitle',
         pattern => q<\[(> . $http_pattern . q<):[Tt][Ii][Tt][Ll][Ee]=([^\]]+)\]>,
         to_url => sub { $_[0]->[1] },
+        is_skipped_object => 1,
     },
     {
         type => 'httpimage',
         pattern => q<\[(> . $http_pattern . q<(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])):[Ii][Mm][Aa][Gg][Ee](?::([HhWw][0-9]+))?\]>,
         to_url => sub { $_[0]->[1] },
         has_image => 1,
+        is_skipped_object => 1,
     },
     {
         type => 'httpsound',
         pattern => q<\[(> . $http_pattern . q<[Mm][Pp]3):[Ss][Oo][Uu][Nn][Dd](?::(?:([0-9]+)[Hh]|())(?:([0-9]+)[Mm]|())(?:([0-9]+)[Ss]|()))?\]>,
         to_url => sub { $_[0]->[1] },
+        is_skipped_object => 1,
     },
     {
         type => 'httpbarcode',
         pattern => q<\[(> . $http_pattern . q<):[Bb][Aa][Rr][Cc][Oo][Dd][Ee]\]>,
         to_url => sub { $_[0]->[1] },
+        is_skipped_object => 1,
     },
     {
         type => 'idea',
@@ -79,6 +84,7 @@ our $Notations = [
                 $ext;
         },
         has_image => 1,
+        is_skipped_object => 1,
     },
     {
         type => 'land',
@@ -89,10 +95,12 @@ our $Notations = [
                 $v->[1], $v->[2];
         },
         has_image => 1,
+        is_skipped_object => 1,
     },
     {
         type => 'map',
         pattern => q<[Mm][Aa][Pp]:([0-9+.-]+):([0-9+.-]+)>,
+        is_skipped_object => 1,
     },
     {
         type => 'ugomemo',
@@ -106,6 +114,7 @@ our $Notations = [
                 $v->[3];
         },
         has_image => 1,
+        is_skipped_object => 1,
     },
     {
         type => 'keyword',

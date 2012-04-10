@@ -161,6 +161,14 @@ sub head_by_length {
             push @$new_data, {type => 'text', values => [$value]};
             $n -= length $value;
         } else {
+            my $def = $Notations->{$node->{type}}
+                or die "Definition for |$node->{type}| not found";
+            if ($args{skip_object} and $def->{is_skipped_object}) {
+                push @$new_data, {type => 'text', values => ['...']};
+                $n -= 3;
+                next;
+            }
+
             if ($n >= length $node->{values}->[0]) {
                 push @$new_data, $node;
                 $n -= length $node->{values}->[0];

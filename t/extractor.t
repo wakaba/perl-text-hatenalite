@@ -43,6 +43,13 @@ sub _tests : Tests {
             $f->parsed_data($data);
             eq_or_diff $f->as_text, $t->[0];
         }
+
+        for my $t (@{$test->{headskipobject} or []}) {
+            my $data = $parser->head_by_length($t->[1]->[0], skip_object => 1);
+            my $f = Text::HatenaLite::Formatter::PlainText->new;
+            $f->parsed_data($data);
+            eq_or_diff $f->as_text, $t->[0];
+        }
     };
 }
 
