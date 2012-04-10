@@ -9,11 +9,10 @@ use Text::HatenaLite::Parser;
 use Test::Differences;
 use Test::HTCT::Parser;
 
+my $TestDataFormat = do(file(__FILE__)->dir->file('data-format.pl')->stringify);
+
 sub _tests : Tests {
-    for_each_test file(__FILE__)->dir->subdir('data', 'texts-1.dat')->stringify, {
-        data => {is_prefixed => 1},
-        parsed => {is_prefixed => 1},
-    }, sub {
+    for_each_test file(__FILE__)->dir->subdir('data', 'texts-1.dat')->stringify, $TestDataFormat, sub {
         my $test = shift;
         my $result = Text::HatenaLite::Parser->parse_string($test->{data}->[0]);
         $result = join "\n", map {

@@ -11,16 +11,10 @@ use Text::HatenaLite::Formatter::PlainText;
 use Test::Differences;
 use Test::HTCT::Parser;
 
+my $TestDataFormat = do(file(__FILE__)->dir->file('data-format.pl')->stringify);
+
 sub _tests : Tests {
-    for_each_test file(__FILE__)->dir->subdir('data', 'texts-1.dat')->stringify, {
-        data => {is_prefixed => 1},
-        urls => {is_prefixed => 1},
-        trackbackurls => {is_prefixed => 1},
-        idcalls => {is_prefixed => 1},
-        imageurls => {is_prefixed => 1},
-        geocoords => {is_prefixed => 1},
-        head => {is_prefixed => 1, multiple => 1},
-    }, sub {
+    for_each_test file(__FILE__)->dir->subdir('data', 'texts-1.dat')->stringify, $TestDataFormat, sub {
         my $test = shift;
         my $parsed = Text::HatenaLite::Parser->parse_string($test->{data}->[0]);
         my $parser = Text::HatenaLite::Extractor->new;

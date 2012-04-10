@@ -350,7 +350,17 @@ keyword [[\uFFFF]]
 #data
 [[[[a]]]]
 #parsed
-keyword 
+keyword [[[[a]]
+ [[a
+text ]]
+#plaintext
+[[a]]
+#html
+<a href="http://d.hatena.ne.jp/keyword/%5B%5Ba" class="keyword">[[a</a>]]
+#touchhtml
+<a href="http://d.hatena.ne.jp/keywordtouch/%5B%5Ba" class="keyword">[[a</a>]]
+#mobilehtml
+<a href="http://d.hatena.ne.jp/keywordmobile/%5B%5Ba" class="keyword">[[a</a>]]
 
 #data
 [[a]][[b]][[c]][[d]]
@@ -363,6 +373,8 @@ keyword [[c]]
  c
 keyword [[d]]
  d
+#plaintext
+abcd
 #html
 <a href="http://d.hatena.ne.jp/keyword/a" class="keyword">a</a><a href="http://d.hatena.ne.jp/keyword/b" class="keyword">b</a><a href="http://d.hatena.ne.jp/keyword/c" class="keyword">c</a><a href="http://d.hatena.ne.jp/keyword/d" class="keyword">d</a>
 #touchhtml
