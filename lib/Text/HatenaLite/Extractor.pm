@@ -46,7 +46,8 @@ sub extract_urls {
         
     }
 
-    return $self->{extracted_urls} = {map { $_ => 1 } @url};
+    my $i = 0;
+    return $self->{extracted_urls} = {map { $_ => ++$i } @url};
 }
 
 sub extract_urls_for_trackback {
@@ -76,6 +77,7 @@ sub extract_url_names_for_id_call {
     my $data = $self->parsed_data or die "|parsed_data| is not set";
 
     my %url_name;
+    my $i = 0;
     for my $node (@$data) {
         my $def = $Notations->{$node->{type}}
             or die "Definition for |$node->{type}| not found";
@@ -83,7 +85,7 @@ sub extract_url_names_for_id_call {
         my $code = $self->can($node->{type} . '_notation_to_url_name_for_id_call');
         if ($code) {
             my $url_name = $self->$code($def, $node->{values});
-            $url_name{$url_name} = 1 if defined $url_name;
+            $url_name{$url_name} = ++$i if defined $url_name;
         }
     }
 
@@ -113,7 +115,8 @@ sub extract_image_urls {
         }
     }
 
-    return $self->{extracted_image_urls} = {map { $_ => 1 } @url};
+    my $i = 0;
+    return $self->{extracted_image_urls} = {map { $_ => ++$i } @url};
 }
 
 sub extract_geo_coords {
@@ -123,6 +126,7 @@ sub extract_geo_coords {
     my $data = $self->parsed_data or die "|parsed_data| is not set";
 
     my $list = {};
+    my $i = 0;
     for my $node (@$data) {
         my $def = $Notations->{$node->{type}}
             or die "Definition for |$node->{type}| not found";
@@ -130,7 +134,8 @@ sub extract_geo_coords {
         my $code = $self->can($node->{type} . '_notation_to_geo_coord');
         if ($code) {
             my $latlon = $self->$code($def, $node->{values});
-            $list->{$latlon->[0], $latlon->[1]} = $latlon if $latlon;
+            $list->{$latlon->[0], $latlon->[1]}
+                = [$latlon->[0], $latlon->[1], ++$i] if $latlon;
         }
     }
 
