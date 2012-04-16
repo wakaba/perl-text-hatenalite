@@ -2679,6 +2679,28 @@ http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027_o.gif
 
 #data
+FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027-abcz
+#parsed
+ugomemo FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027-abcz
+ FLIPNOTE
+ 0D24EB604CDA0D36
+ DA0D36_0A0CDA47CF483_027-abcz
+#plaintext
+http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027-abcz
+#html
+<object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0D24EB604CDA0D36&amp;file=DA0D36_0A0CDA47CF483_027-abcz"></object>
+#touchhtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027-abcz"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027-abcz_o.gif" alt="FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027-abcz"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+#mobilehtml
+<a href="http://ugomemo.hatena.ne.jp/mobile/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027-abcz"><img src="http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027-abcz_m.gif" alt="FLIPNOTE:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027-abcz"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+#urls
+http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027-abcz
+#trackbackurls
+http://flipnote.hatena.com/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027-abcz
+#imageurls
+http://image.ugomemo.hatena.ne.jp/thumbnail/0D24EB604CDA0D36/DA0D36_0A0CDA47CF483_027-abcz_o.gif
+
+#data
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
 ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
