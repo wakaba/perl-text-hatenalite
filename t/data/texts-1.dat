@@ -9,6 +9,7 @@
 0
 #parsed
 text 0
+ 0
 #head 0
 ...
 #head 1
@@ -20,6 +21,7 @@ text 0
 abc\u000Axxx\u000A
 #parsed escaped
 text abc\u000Axxx\u000A
+ abc\u000Axxx\u000A
 #html
 abc<br>xxx<br>
 #head 0
@@ -51,6 +53,7 @@ abc\u000Axxx\u000A
 abc\u000Dxxx\u000D
 #parsed escaped
 text abc\u000Dxxx\u000D
+ abc\u000Dxxx\u000D
 #html
 abc<br>xxx<br>
 
@@ -58,6 +61,7 @@ abc<br>xxx<br>
 abc\u000D\u000Axxx\u000D\u000A
 #parsed escaped
 text abc\u000D\u000Axxx\u000D\u000A
+ abc\u000D\u000Axxx\u000D\u000A
 #html
 abc<br>xxx<br>
 
@@ -65,6 +69,7 @@ abc<br>xxx<br>
 abc\u000A\u000Dxxx\u000A\u000D
 #parsed escaped
 text abc\u000A\u000Dxxx\u000A\u000D
+ abc\u000A\u000Dxxx\u000A\u000D
 #html
 abc<br><br>xxx<br><br>
 
@@ -72,6 +77,7 @@ abc<br><br>xxx<br><br>
 abc\uFFFFxxx\u000A
 #parsed escaped
 text abc\uFFFFxxx\u000A
+ abc\uFFFFxxx\u000A
 #html escaped
 abc\uFFFFxxx<br>
 
@@ -79,6 +85,7 @@ abc\uFFFFxxx<br>
 abc\uFFFFxxx\u0000a
 #parsed escaped
 text abc\uFFFFxxx\u0000a
+ abc\uFFFFxxx\u0000a
 #html escaped
 abc\uFFFFxxx\u0000a
 
@@ -86,6 +93,7 @@ abc\uFFFFxxx\u0000a
 abc\uD800xxx\u000A
 #parsed escaped
 text abc\uD800xxx\u000A
+ abc\uD800xxx\u000A
 #html escaped
 abc\uD800xxx<br>
 
@@ -167,6 +175,7 @@ id:hatena120-_ abc
 id id:hatena120-_
  hatena120-_
 text  abc
+  abc
 #html
 <a href="http://www.hatena.ne.jp/hatena120-_/" class="user"><img src="http://n.hatena.com/hatena120-_/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatena120-_/" class="user">id:hatena120-_</a> abc
 #touchhtml
@@ -202,6 +211,7 @@ id:hatenahogefuga@DSi*aa
 id id:hatenahogefuga@DSi
  hatenahogefuga@DSi
 text *aa
+ *aa
 #html
 <a href="http://www.hatena.ne.jp/hatenahogefuga@DSi/" class="user"><img src="http://n.hatena.com/hatenahogefuga@DSi/profile/image.gif?type=icon&amp;size=16" class=profile-image width=16 height=16 alt=""></a><a href="http://www.hatena.ne.jp/hatenahogefuga@DSi/" class="user">id:hatenahogefuga@DSi</a>*aa
 #touchhtml
@@ -215,6 +225,7 @@ hatenahogefuga@DSi
 <script>alert('hello')</script>
 #parsed
 text <script>alert('hello')</script>
+ <script>alert('hello')</script>
 #html
 &lt;script&gt;alert('hello')&lt;/script&gt;
 
@@ -224,6 +235,7 @@ http://hoge.hoge="><script>alert("hoge")</script>
 http http://hoge.hoge=
  http://hoge.hoge=
 text "><script>alert("hoge")</script>
+ "><script>alert("hoge")</script>
 #html
 <a href="http://hoge.hoge=">http://hoge.hoge=</a>&#34;&gt;&lt;script&gt;alert(&#34;hoge&#34;)&lt;/script&gt;
 #urls
@@ -233,6 +245,7 @@ http://hoge.hoge=
 a[[]]b
 #parsed
 text a[[]]b
+ a[[]]b
 #head 0
 ...
 #head 1
@@ -246,14 +259,17 @@ a[[]]b
 a[keyword:]b
 #parsed
 text a[keyword:]b
+ a[keyword:]b
 
 #data escaped
 abc[[xyz\u4E00]]\u5000aba
 #parsed escaped
 text abc
+ abc
 keyword [[xyz\u4E00]]
  xyz\u4E00
 text \u5000aba
+ \u5000aba
 #plaintext escaped
 abcxyz\u4E00\u5000aba
 #html escaped
@@ -267,9 +283,11 @@ abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u
 abc[keyword:xyz\u4E00]\u5000aba
 #parsed escaped
 text abc
+ abc
 keyword [keyword:xyz\u4E00]
  xyz\u4E00
 text \u5000aba
+ \u5000aba
 #plaintext escaped
 abcxyz\u4E00\u5000aba
 #html escaped
@@ -283,9 +301,11 @@ abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u
 abc[KEYWORD:xyz\u4E00]\u5000aba
 #parsed escaped
 text abc
+ abc
 keyword [KEYWORD:xyz\u4E00]
  xyz\u4E00
 text \u5000aba
+ \u5000aba
 #plaintext escaped
 abcxyz\u4E00\u5000aba
 #html escaped
@@ -299,9 +319,11 @@ abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u
 abc[[keyword:xyz\u4E00]]\u5000aba
 #parsed escaped
 text abc
+ abc
 keyword [[keyword:xyz\u4E00]]
  keyword:xyz\u4E00
 text \u5000aba
+ \u5000aba
 #plaintext escaped
 abckeyword:xyz\u4E00\u5000aba
 #html escaped
@@ -361,6 +383,7 @@ keyword [[\uFFFF]]
 keyword [[[[a]]
  [[a
 text ]]
+ ]]
 #plaintext
 [[a]]
 #html
@@ -412,6 +435,7 @@ abcd
 0 http://hoge/
 #parsed escaped
 text 0\u0020
+ 0\u0020
 http http://hoge/
  http://hoge/
 #html
@@ -447,6 +471,7 @@ http://hoge/fuga abc
 http http://hoge/fuga
  http://hoge/fuga
 text  abc
+  abc
 #html
 <a href="http://hoge/fuga">http://hoge/fuga</a> abc
 #urls
@@ -498,6 +523,7 @@ https://hoge/fuga()
 http https://hoge/fuga
  https://hoge/fuga
 text ()
+ ()
 #html
 <a href="https://hoge/fuga">https://hoge/fuga</a>()
 #urls
@@ -628,6 +654,7 @@ httptitle [http://foo/bar?baz#hoge:title=ab cde \u0300]
  http://foo/bar?baz#hoge
  ab cde \u0300
 text a
+ a
 #plaintext escaped
 ab cde \u0300<http://foo/bar?baz#hoge>a
 #html escaped
@@ -642,6 +669,7 @@ httptitle [http://foo/bar?baz#hoge():title=ab cde \u0300]
  http://foo/bar?baz#hoge()
  ab cde \u0300
 text a
+ a
 #plaintext escaped
 ab cde \u0300<http://foo/bar?baz#hoge()>a
 #html escaped
@@ -656,6 +684,7 @@ httptitle [httpS://foo/bar?baz#hoge:TITLE=ab cde \u0300]
  httpS://foo/bar?baz#hoge
  ab cde \u0300
 text a
+ a
 #plaintext escaped
 ab cde \u0300<httpS://foo/bar?baz#hoge>a
 #html escaped
@@ -1007,15 +1036,19 @@ http://foo.bar/baz.png
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 #html
@@ -1047,18 +1080,23 @@ f:id:cho45:20100103163715j:image
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 httpimage [http://foo.bar/baz.png:image]
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 http http://foo.bar/baz.png
  http://foo.bar/baz.png
 text \u000A
+ \u000A
 fotolife f:id:cho45:20100103163715j:image
  cho45
  20100103163715
@@ -1351,9 +1389,11 @@ http://foo/bar/baz.mp3?%&hoge=fuga;abcmp3
 [http://foo/bar/baz.mp3?abc=def:sound:6m5s]
 #parsed escaped
 text [
+ [
 http http://foo/bar/baz.mp3?abc=def:sound:6m5s
  http://foo/bar/baz.mp3?abc=def:sound:6m5s
 text ]
+ ]
 #plaintext
 [http://foo/bar/baz.mp3?abc=def:sound:6m5s]
 #html
@@ -1380,9 +1420,11 @@ http://foo/bar/baz.mp3?abc=def:sound:6m5s
 [http://foo/bar/baz.MP3?abc=def:sound:6m5s]
 #parsed escaped
 text [
+ [
 http http://foo/bar/baz.MP3?abc=def:sound:6m5s
  http://foo/bar/baz.MP3?abc=def:sound:6m5s
 text ]
+ ]
 #plaintext
 [http://foo/bar/baz.MP3?abc=def:sound:6m5s]
 #html
@@ -1416,18 +1458,23 @@ http://foo/bar/baz.mp3
 http http://foo/bar/baz.mp3
  http://foo/bar/baz.mp3
 text \u000A
+ \u000A
 http http://foo/bar/baz.mp3
  http://foo/bar/baz.mp3
 text \u000A
+ \u000A
 httpsound [http://foo/bar/baz.mp3:sound]
  http://foo/bar/baz.mp3
 text \u000A
+ \u000A
 http http://foo/bar/baz.mp3
  http://foo/bar/baz.mp3
 text \u000A
+ \u000A
 http http://foo/bar/baz.mp3
  http://foo/bar/baz.mp3
 text \u000A
+ \u000A
 httpsound [http://foo/bar/baz.mp3:sound]
  http://foo/bar/baz.mp3
 #plaintext escape
@@ -1656,6 +1703,7 @@ http://www.youtube.com/watch?v=Hi4_LySCtbA\u4e00
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
  http://www.youtube.com/watch?v=Hi4_LySCtbA
 text \u4e00
+ \u4e00
 #html escaped
 <div class="video-body">
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
@@ -1747,15 +1795,19 @@ http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_Ly
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
  http://www.youtube.com/watch?v=Hi4_LySCtbA
 text \u0020
+ \u0020
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
  http://www.youtube.com/watch?v=Hi4_LySCtbA
 text \u0020
+ \u0020
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
  http://www.youtube.com/watch?v=Hi4_LySCtbA
 text \u0020
+ \u0020
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
  http://www.youtube.com/watch?v=Hi4_LySCtbA
 text \u0020
+ \u0020
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
  http://www.youtube.com/watch?v=Hi4_LySCtbA
 #html
@@ -1870,18 +1922,23 @@ http://nico.ms/sm9754737
 http http://www.nicovideo.jp/watch/sm9754737
  http://www.nicovideo.jp/watch/sm9754737
 text \u000A
+ \u000A
 http http://nico.ms/sm9754737
  http://nico.ms/sm9754737
 text \u000A
+ \u000A
 http http://www.nicovideo.jp/watch/sm9754737
  http://www.nicovideo.jp/watch/sm9754737
 text \u000A
+ \u000A
 http http://www.nicovideo.jp/watch/sm9754737
  http://www.nicovideo.jp/watch/sm9754737
 text \u000A
+ \u000A
 http http://www.nicovideo.jp/watch/sm9754737
  http://www.nicovideo.jp/watch/sm9754737
 text \u000A
+ \u000A
 http http://nico.ms/sm9754737
  http://nico.ms/sm9754737
 #html
@@ -1964,6 +2021,7 @@ http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000?
 http http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000?in=url
  http://ugomemo.hatena.ne.jp/0B594F10AA396D69@DSi/movie/396D69_090808BA0193C_000?in=url
 text ***
+ ***
 #html
 <object data="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://ugomemo.hatena.ne.jp/js/ugoplayer_s.swf"><param name="FlashVars" value="did=0B594F10AA396D69&amp;file=396D69_090808BA0193C_000"></object>***
 #touchhtml
@@ -2051,6 +2109,7 @@ idea:12345abc
 idea idea:12345
  12345
 text abc
+ abc
 #plaintext
 http://i.hatena.ne.jp/idea/12345abc
 #html
@@ -2068,6 +2127,7 @@ IDEA:12345abc
 idea IDEA:12345
  12345
 text abc
+ abc
 #plaintext
 http://i.hatena.ne.jp/idea/12345abc
 #html
@@ -2133,6 +2193,7 @@ mailto:foo@bar.
 mailto mailto:foo@bar
  foo@bar
 text .
+ .
 #html
 <a href="mailto:foo@bar">foo@bar</a>.
 
@@ -2150,6 +2211,7 @@ mailto:foo@bar.baz>abx
 mailto mailto:foo@bar.baz
  foo@bar.baz
 text >abx
+ >abx
 #plaintext
 mailto:foo@bar.baz>abx
 #html
@@ -2159,11 +2221,13 @@ mailto:foo@bar.baz>abx
 isbn:
 #parsed
 text isbn:
+ isbn:
 
 #data
 asin:
 #parsed
 text asin:
+ asin:
 
 #data
 isbn:0
@@ -2715,34 +2779,41 @@ ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
 text \u000A
+ \u000A
 ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  ugomemo
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
 text \u000A
+ \u000A
 ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  ugomemo
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
 text \u000A
+ \u000A
 ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  ugomemo
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
 text \u000A
+ \u000A
 ugomemo ugomemo:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  ugomemo
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
 text \u000A
+ \u000A
 http http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
  http://ugomemo.hatena.ne.jp/0D24EB604CDA0D36@DSi/movie/DA0D36_0A0CDA47CF483_027
 text \u000A
+ \u000A
 ugomemo flipnote:0D24EB604CDA0D36:DA0D36_0A0CDA47CF483_027
  flipnote
  0D24EB604CDA0D36
  DA0D36_0A0CDA47CF483_027
 text \u000A
+ \u000A
 http http://hoge/fuga.png
  http://hoge/fuga.png
 #plaintext
@@ -2775,6 +2846,7 @@ http://hoge/fuga.png
 market://search?q=pname:com.hatena.android.coco
 #parsed
 text market://search?q=pname:com.hatena.android.coco
+ market://search?q=pname:com.hatena.android.coco
 
 #data
 f:id:cho45:20100103163715j"hoge":image
@@ -2784,6 +2856,7 @@ fotolife f:id:cho45:20100103163715j
  20100103163715
  j
 text "hoge":image
+ "hoge":image
 #plaintext
 http://cdn-ak.f.st-hatena.com/images/fotolife/c/cho45/20100103/20100103163715.jpg"hoge":image
 #html
@@ -2833,6 +2906,7 @@ map map:45.132:45.453
  45.132
  45.453
 text \u000A
+ \u000A
 map map:-45.132:45.45
  -45.132
  45.45
@@ -2900,6 +2974,7 @@ map map:94.132:181.453
 map:"<p>
 #parsed
 text map:"<p>
+ map:"<p>
 #html
 map:&#34;&lt;p&gt;
 
@@ -2957,20 +3032,25 @@ map map:94.132:181.453
  94.132
  181.453
 text \u000A
+ \u000A
 http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 text \u000A
+ \u000A
 map map:94.132:181.453
  94.132
  181.453
 text \u000A
+ \u000A
 http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 text \u000A
+ \u000A
 map map:94.132:181.453
  94.132
  181.453
 text \u000A
+ \u000A
 http http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
  http://docomo.ne.jp/cp/map.cgi?lat=%2B14.132&lon=%2B11.453&geo=wgs84
 #html
@@ -2989,6 +3069,7 @@ http://foo/bar.png abc xyz
 http http://foo/bar.png
  http://foo/bar.png
 text  abc xyz
+  abc xyz
 #html
 <a href="http://foo/bar.png"><img src="http://foo/bar.png" alt="http://foo/bar.png"></a> abc xyz
 #mobilehtml
@@ -3001,3 +3082,121 @@ http://foo/bar.png
 ... abc...
 #headskipobject 20
 ... abc xyz
+
+#data
+aaa&#x123;aa
+#parsed escaped
+text aaa&#x123;aa
+ aaa\u0123aa
+
+#data
+aaa&#00124113;aaa
+#parsed escaped
+text aaa&#00124113;aaa
+ aaa\U0001E4D1aaa
+
+#data
+aaa&#xd800;aa
+#parsed escaped
+text aaa&#xd800;aa
+ aaa\uD800aa
+
+#data
+aaa&#XFFFF;aa
+#parsed escaped
+text aaa&#XFFFF;aa
+ aaa\uFFFFaa
+
+#data
+aaa&#x110000;bb
+#parsed escaped
+text aaa&#x110000;bb
+ aaa\uFFFDbb
+
+#data
+aaa&#131110000;bb
+#parsed escaped
+text aaa&#131110000;bb
+ aaa\uFFFDbb
+
+#data
+aaa&#0000;bb
+#parsed escaped
+text aaa&#0000;bb
+ aaa\u0000bb
+
+#data
+aaa&#x0000;bb
+#parsed escaped
+text aaa&#x0000;bb
+ aaa\u0000bb
+
+#data
+aaa&#x000D;bb
+#parsed escaped
+text aaa&#x000D;bb
+ aaa\u000Dbb
+
+#data
+abc&amp;xyz&lt;&copy;aa
+#parsed escaped
+text abc&amp;xyz&lt;&copy;aa
+ abc&xyz<\u00A9aa
+
+#data
+abc&copyright;
+#parsed escaped
+text abc&copyright;
+ abc\u00A9right;
+
+#data
+&NotGreaterSlantEqual;"&NotGreaterSlantEqual
+#parsed escaped
+text &NotGreaterSlantEqual;"&NotGreaterSlantEqual
+ \u2a7e\u0338"&NotGreaterSlantEqual
+
+#data
+Q&A
+#parsed
+text Q&A
+ Q&A
+
+#data
+http://a/ Q&A
+#parsed
+http http://a/
+ http://a/
+text  Q&A
+  Q&A
+
+#data
+http://a/ Q&AgraveA
+#parsed escaped
+http http://a/
+ http://a/
+text  Q&AgraveA
+  Q\u00C0A
+
+#data
+http://a/ Q&Agrave;A
+#parsed escaped
+http http://a/
+ http://a/
+text  Q&Agrave;A
+  Q\u00C0A
+
+#data
+http://a/ Q&#x000c0;
+#parsed escaped
+http http://a/
+ http://a/
+text  Q&#x000c0;
+  Q\u00C0
+
+#data
+http://a/ Q&#4142;
+#parsed escaped
+http http://a/
+ http://a/
+text  Q&#4142;
+  Q\u102E

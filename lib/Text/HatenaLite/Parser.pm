@@ -4,6 +4,7 @@ use warnings;
 our $VERSION = '1.0';
 use Regexp::Assemble;
 use Text::HatenaLite::Definitions;
+use Text::HatenaLite::Parser::CharRefs;
 
 my $Patterns = $Text::HatenaLite::Definitions::Notations;
 
@@ -14,6 +15,47 @@ for (@$Patterns) {
 
 my $PatternToType = {map { $_->{pattern} => $_->{type} } @$Patterns};
 my $PatternToPP = {map { $_->{pattern} => $_->{postprocess} } @$Patterns};
+
+sub resolve_charrefs ($) {
+    return unless $_[0] =~ /&/;
+    
+    no warnings 'utf8';
+    $_[0] =~ s{
+        &\#[Xx]([0-9A-Fa-f]+); |
+        &\#([0-9]+); |
+        &([0-9A-Za-z]+;?)
+    }{
+        if (defined $1) {
+            if (hex $1 > 0x10FFFF) {
+                "\x{FFFD}";
+            } else {
+                chr hex $1;
+            }
+        } elsif (defined $2) {
+            if ($2 > 0x10FFFF) {
+                "\x{FFFD}";
+            } else {
+                chr $2;
+            }
+        } else {
+            my $name = $3;
+            my $result = '&' . $name;
+            my $rem = '';
+            {
+                my $char = $Text::HatenaLite::Parser::CharRefs->{$name};
+                if ($char) {
+                    $result = $char . $rem;
+                    last;
+                } else {
+                    $rem = substr ($name, -1, 1) . $rem;
+                    substr ($name, -1, 1) = '';
+                    redo if length $name;
+                }
+            }
+            $result;
+        }
+    }gex;
+}
 
 sub parse_string {
     my (undef, $str) = @_;
@@ -26,6 +68,8 @@ sub parse_string {
         if ($Regexp->mbegin->[0] > 0) {
             push @token, {type => 'text',
                           values => [substr($str, 0, $Regexp->mbegin->[0])]};
+            $token[-1]->{values}->[1] = $token[-1]->{values}->[0];
+            resolve_charrefs $token[-1]->{values}->[1];
         }
         
         my $pattern = $Regexp->matched;
@@ -39,7 +83,10 @@ sub parse_string {
         
         $str = substr($str, $Regexp->mend->[0]);
     }
-    push @token, {type => 'text', values => [$str]} if length $str;
+    if (length $str) {
+        push @token, {type => 'text', values => [$str, $str]};
+        resolve_charrefs $token[-1]->{values}->[1];
+    }
 
     return \@token;
 }
