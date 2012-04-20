@@ -18,6 +18,10 @@ for my $def (@$Text::HatenaLite::Definitions::Notations) {
 
 $Notations->{text} = $Text::HatenaLite::Definitions::TextNotation;
 
+sub text_notation_to_plain_text {
+    return $_[2]->[1];
+}
+
 sub keyword_notation_to_plain_text {
     return $_[2]->[1];
 }

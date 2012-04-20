@@ -3088,72 +3088,96 @@ aaa&#x123;aa
 #parsed escaped
 text aaa&#x123;aa
  aaa\u0123aa
+#plaintext escaped
+aaa\u0123aa
 
 #data
 aaa&#00124113;aaa
 #parsed escaped
 text aaa&#00124113;aaa
  aaa\U0001E4D1aaa
+#plaintext escaped
+aaa\U0001E4D1aaa
 
 #data
 aaa&#xd800;aa
 #parsed escaped
 text aaa&#xd800;aa
  aaa\uD800aa
+#plaintext escaped
+aaa\uD800aa
 
 #data
 aaa&#XFFFF;aa
 #parsed escaped
 text aaa&#XFFFF;aa
  aaa\uFFFFaa
+#plaintext escaped
+aaa\uFFFFaa
 
 #data
 aaa&#x110000;bb
 #parsed escaped
 text aaa&#x110000;bb
  aaa\uFFFDbb
+#plaintext escaped
+aaa\uFFFDbb
 
 #data
 aaa&#131110000;bb
 #parsed escaped
 text aaa&#131110000;bb
  aaa\uFFFDbb
+#plaintext escaped
+aaa\uFFFDbb
 
 #data
 aaa&#0000;bb
 #parsed escaped
 text aaa&#0000;bb
  aaa\u0000bb
+#plaintext escaped
+aaa\u0000bb
 
 #data
 aaa&#x0000;bb
 #parsed escaped
 text aaa&#x0000;bb
  aaa\u0000bb
+#plaintext escaped
+aaa\u0000bb
 
 #data
 aaa&#x000D;bb
 #parsed escaped
 text aaa&#x000D;bb
  aaa\u000Dbb
+#plaintext escaped
+aaa\u000Dbb
 
 #data
 abc&amp;xyz&lt;&copy;aa
 #parsed escaped
 text abc&amp;xyz&lt;&copy;aa
  abc&xyz<\u00A9aa
+#plaintext escaped
+abc&xyz<\u00A9aa
 
 #data
 abc&copyright;
 #parsed escaped
 text abc&copyright;
  abc\u00A9right;
+#plaintext escaped
+abc\u00A9right;
 
 #data
 &NotGreaterSlantEqual;"&NotGreaterSlantEqual
 #parsed escaped
 text &NotGreaterSlantEqual;"&NotGreaterSlantEqual
  \u2a7e\u0338"&NotGreaterSlantEqual
+#plaintext escaped
+\u2a7e\u0338"&NotGreaterSlantEqual
 
 #data
 Q&A
@@ -3176,6 +3200,8 @@ http http://a/
  http://a/
 text  Q&AgraveA
   Q\u00C0A
+#plaintext escaped
+http://a/ Q\u00C0A
 
 #data
 http://a/ Q&Agrave;A
@@ -3184,6 +3210,8 @@ http http://a/
  http://a/
 text  Q&Agrave;A
   Q\u00C0A
+#plaintext escaped
+http://a/ Q\u00C0A
 
 #data
 http://a/ Q&#x000c0;
@@ -3192,6 +3220,8 @@ http http://a/
  http://a/
 text  Q&#x000c0;
   Q\u00C0
+#plaintext escaped
+http://a/ Q\u00C0
 
 #data
 http://a/ Q&#4142;
@@ -3200,3 +3230,5 @@ http http://a/
  http://a/
 text  Q&#4142;
   Q\u102E
+#plaintext escaped
+http://a/ Q\u102E
