@@ -100,7 +100,8 @@ sub as_text {
     for my $node (@$data) {
         my $def = $Notations->{$node->{type}}
             or die "Definition for |$node->{type}| not found";
-        my $code = $self->can($node->{type} . '_notation_to_plain_text') || $def->{to_text} || sub { $_[2]->[0] };
+        my $code = $self->can($node->{type} . '_notation_to_plain_text')
+            || $def->{to_text} || sub { $_[2]->[0] };
         push @l, $self->$code($def, $node->{values});
     }
 

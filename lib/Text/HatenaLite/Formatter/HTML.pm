@@ -74,28 +74,29 @@ sub url_to_page_link {
 
 sub http_notation_to_html {
     my $self = $_[0];
-    my $url = $_[2]->[0];
+    my $url = $_[2]->[1];
+    my $alt = $_[2]->[0];
     my $parsed = $self->parse_http_url($url);
     
     if ($parsed->{image_url}) {
-        return $self->image_url_to_html($parsed->{image_url}, $url, alt => $url);
+        return $self->image_url_to_html($parsed->{image_url}, $url, alt => $alt);
     } elsif ($parsed->{youtube_id}) {
-        return $self->youtube_id_to_html($parsed->{youtube_id}, alt => $url);
+        return $self->youtube_id_to_html($parsed->{youtube_id}, alt => $alt);
     } elsif ($parsed->{nicovideo_id}) {
-        return $self->nicovideo_id_to_html($parsed->{nicovideo_id}, alt => $url);
+        return $self->nicovideo_id_to_html($parsed->{nicovideo_id}, alt => $alt);
     } elsif ($parsed->{mp3_url}) {
-        return $self->url_to_mp3_player($parsed->{mp3_url}, alt => $url);
+        return $self->url_to_mp3_player($parsed->{mp3_url}, alt => $alt);
     } elsif ($parsed->{ugomemo_file_name}) {
         return $self->ugomemo_movie_to_html(
             $parsed->{ugomemo_dsi_id},
             $parsed->{ugomemo_file_name},
-            alt => $url,
+            alt => $alt,
         );
     } elsif ($parsed->{map_lat} or $parsed->{map_lon}) {
         return $self->latlon_to_html(
             $parsed->{map_lat},
             $parsed->{map_lon},
-            alt => $url,
+            alt => $alt,
         );
     } else {
         return sprintf '<a href="%s">%s</a>', htescape $url, htescape $url;
@@ -437,7 +438,7 @@ sub as_text {
         my $def = $Notations->{$node->{type}}
             or die "Definition for |$node->{type}| not found";
         my $code = $self->can($node->{type} . '_notation_to_html') || sub {
-            my $text = htescape $_[2]->[0];
+            my $text = htescape(defined $_[2]->[1] ? $_[2]->[1] : $_[2]->[0]);
             $text =~ s/\x0D\x0A?/<br>/g;
             $text =~ s/\x0A/<br>/g;
             $text;

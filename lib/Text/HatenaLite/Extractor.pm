@@ -149,27 +149,27 @@ sub head_by_length {
     my $new_data = [];
     for (0..$#$data) {
         if ($_ < $#$data and $n <= 0) {
-            push @$new_data, {type => 'text', values => ['...']};
+            push @$new_data, {type => 'text', values => ['...', '...']};
             last;
         }
 
         my $node = $data->[$_];
         if ($node->{type} eq 'text') {
-            my $value = $node->{values}->[0];
+            my $value = $node->{values}->[1];
             if ($n < length $value) {
                 $value = $n > 3 ? substr $value, 0, $n - 3 : '';
                 $value .= '...';
-                push @$new_data, {type => 'text', values => [$value]};
+                push @$new_data, {type => 'text', values => [$value, $value]};
                 last;
             }
             
-            push @$new_data, {type => 'text', values => [$value]};
+            push @$new_data, {type => 'text', values => [$value, $value]};
             $n -= length $value;
         } else {
             my $def = $Notations->{$node->{type}}
                 or die "Definition for |$node->{type}| not found";
             if ($args{skip_object} and $def->{is_skipped_object}) {
-                push @$new_data, {type => 'text', values => ['...']};
+                push @$new_data, {type => 'text', values => ['...', '...']};
                 $n -= 3;
                 next;
             }
@@ -178,7 +178,7 @@ sub head_by_length {
                 push @$new_data, $node;
                 $n -= length $node->{values}->[0];
             } else {
-                push @$new_data, {type => 'text', values => ['...']};
+                push @$new_data, {type => 'text', values => ['...', '...']};
                 last;
             }
         }

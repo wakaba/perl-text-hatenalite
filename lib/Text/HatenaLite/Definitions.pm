@@ -20,12 +20,14 @@ our $Notations = [
         },
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
+        allow_refs => [undef, 'attr', 0],
     },
     {
         type => 'httptitle',
         pattern => q<\[(> . $http_pattern . q<):[Tt][Ii][Tt][Ll][Ee]=([^\]]+)\]>,
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
+        allow_refs => [undef, 'attr', 1],
     },
     {
         type => 'httpimage',
@@ -33,18 +35,21 @@ our $Notations = [
         to_url => sub { $_[0]->[1] },
         has_image => 1,
         is_skipped_object => 1,
+        allow_refs => [undef, 'attr', 0],
     },
     {
         type => 'httpsound',
         pattern => q<\[(> . $http_pattern . q<[Mm][Pp]3):[Ss][Oo][Uu][Nn][Dd](?::(?:([0-9]+)[Hh]|())(?:([0-9]+)[Mm]|())(?:([0-9]+)[Ss]|()))?\]>,
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
+        allow_refs => [undef, 'attr', 0, 0],
     },
     {
         type => 'httpbarcode',
         pattern => q<\[(> . $http_pattern . q<):[Bb][Aa][Rr][Cc][Oo][Dd][Ee]\]>,
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
+        allow_refs => [undef, 'attr'],
     },
     {
         type => 'idea',
@@ -119,10 +124,12 @@ our $Notations = [
     {
         type => 'keyword',
         pattern => q<\[[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
+        allow_refs => [undef, 1],
     },
     {
         type => 'keyword',
         pattern => q<\[\[([^\]]+)\]\]>,
+        allow_refs => [undef, 1],
     },
     {
         type => 'mailto',

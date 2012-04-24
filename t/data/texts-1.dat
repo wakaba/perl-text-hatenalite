@@ -1647,7 +1647,7 @@ http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg
 http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
 #parsed
 http http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
- http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
+ http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
 #html
 <div class="video-body">
 <object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
@@ -1657,7 +1657,7 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;amp;feature=related"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
-http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
+http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
 #imageurls
 http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg
 
@@ -3090,6 +3090,8 @@ text aaa&#x123;aa
  aaa\u0123aa
 #plaintext escaped
 aaa\u0123aa
+#html escaped
+aaa\u0123aa
 
 #data
 aaa&#00124113;aaa
@@ -3098,6 +3100,8 @@ text aaa&#00124113;aaa
  aaa\U0001E4D1aaa
 #plaintext escaped
 aaa\U0001E4D1aaa
+#html escaped
+aaa\U0001e4d1aaa
 
 #data
 aaa&#xd800;aa
@@ -3106,6 +3110,8 @@ text aaa&#xd800;aa
  aaa\uD800aa
 #plaintext escaped
 aaa\uD800aa
+#html escaped
+aaa\ud800aa
 
 #data
 aaa&#XFFFF;aa
@@ -3114,6 +3120,8 @@ text aaa&#XFFFF;aa
  aaa\uFFFFaa
 #plaintext escaped
 aaa\uFFFFaa
+#html escaped
+aaa\uffffaa
 
 #data
 aaa&#x110000;bb
@@ -3122,6 +3130,8 @@ text aaa&#x110000;bb
  aaa\uFFFDbb
 #plaintext escaped
 aaa\uFFFDbb
+#html escaped
+aaa\ufffdbb
 
 #data
 aaa&#131110000;bb
@@ -3130,6 +3140,8 @@ text aaa&#131110000;bb
  aaa\uFFFDbb
 #plaintext escaped
 aaa\uFFFDbb
+#html escaped
+aaa\ufffdbb
 
 #data
 aaa&#0000;bb
@@ -3137,6 +3149,8 @@ aaa&#0000;bb
 text aaa&#0000;bb
  aaa\u0000bb
 #plaintext escaped
+aaa\u0000bb
+#html escaped
 aaa\u0000bb
 
 #data
@@ -3146,6 +3160,8 @@ text aaa&#x0000;bb
  aaa\u0000bb
 #plaintext escaped
 aaa\u0000bb
+#html escaped
+aaa\u0000bb
 
 #data
 aaa&#x000D;bb
@@ -3154,6 +3170,8 @@ text aaa&#x000D;bb
  aaa\u000Dbb
 #plaintext escaped
 aaa\u000Dbb
+#html
+aaa<br>bb
 
 #data
 abc&amp;xyz&lt;&copy;aa
@@ -3162,6 +3180,8 @@ text abc&amp;xyz&lt;&copy;aa
  abc&xyz<\u00A9aa
 #plaintext escaped
 abc&xyz<\u00A9aa
+#html escaped
+abc&amp;xyz&lt;\u00a9aa
 
 #data
 abc&copyright;
@@ -3170,6 +3190,16 @@ text abc&copyright;
  abc\u00A9right;
 #plaintext escaped
 abc\u00A9right;
+#html escaped
+abc\u00a9right;
+#head 5
+ab...
+#head 6
+abc...
+#head 7 escaped
+abc\u00A9...
+#head 8 escaped
+abc\u00A9r...
 
 #data
 &NotGreaterSlantEqual;"&NotGreaterSlantEqual
@@ -3178,12 +3208,24 @@ text &NotGreaterSlantEqual;"&NotGreaterSlantEqual
  \u2a7e\u0338"&NotGreaterSlantEqual
 #plaintext escaped
 \u2a7e\u0338"&NotGreaterSlantEqual
+#html escaped
+\u2a7e\u0338&#34;&amp;NotGreaterSlantEqual
+#head 3 escaped
+...
+#head 5 escaped
+\u2a7e\u0338...
+#head 6 escaped
+\u2a7e\u0338"...
+#head 10 escaped
+\u2a7e\u0338"&Not...
 
 #data
 Q&A
 #parsed
 text Q&A
  Q&A
+#html
+Q&amp;A
 
 #data
 http://a/ Q&A
@@ -3192,6 +3234,10 @@ http http://a/
  http://a/
 text  Q&A
   Q&A
+#html
+<a href="http://a/">http://a/</a> Q&amp;A
+#urls escaped
+http://a/
 
 #data
 http://a/ Q&AgraveA
@@ -3202,6 +3248,10 @@ text  Q&AgraveA
   Q\u00C0A
 #plaintext escaped
 http://a/ Q\u00C0A
+#html escaped
+<a href="http://a/">http://a/</a> Q\u00c0A
+#urls escaped
+http://a/
 
 #data
 http://a/ Q&Agrave;A
@@ -3212,6 +3262,10 @@ text  Q&Agrave;A
   Q\u00C0A
 #plaintext escaped
 http://a/ Q\u00C0A
+#html escaped
+<a href="http://a/">http://a/</a> Q\u00c0A
+#urls escaped
+http://a/
 
 #data
 http://a/ Q&#x000c0;
@@ -3222,6 +3276,10 @@ text  Q&#x000c0;
   Q\u00C0
 #plaintext escaped
 http://a/ Q\u00C0
+#html escaped
+<a href="http://a/">http://a/</a> Q\u00c0
+#urls escaped
+http://a/
 
 #data
 http://a/ Q&#4142;
@@ -3232,3 +3290,163 @@ text  Q&#4142;
   Q\u102E
 #plaintext escaped
 http://a/ Q\u102E
+#html escaped
+<a href="http://a/">http://a/</a> Q\u102e
+#urls escaped
+http://a/
+
+#data
+hoge http://foo/?a&copy=abc&copy;=xyz&amp aaa
+#parsed escaped
+text hoge\u0020
+ hoge\u0020
+http http://foo/?a&copy=abc&copy;=xyz&amp
+ http://foo/?a&copy=abc\u00A9=xyz&
+text  aaa
+  aaa
+#html escaped
+hoge <a href="http://foo/?a&amp;copy=abc\u00a9=xyz&amp;">http://foo/?a&amp;copy=abc\u00a9=xyz&amp;</a> aaa
+#urls escaped
+http://foo/?a&copy=abc\u00A9=xyz&
+
+#data
+hoge http://foo/?a&copy=abc&copy;=xyz&amp= aaa
+#parsed escaped
+text hoge\u0020
+ hoge\u0020
+http http://foo/?a&copy=abc&copy;=xyz&amp=
+ http://foo/?a&copy=abc\u00A9=xyz&amp=
+text  aaa
+  aaa
+#html escaped
+hoge <a href="http://foo/?a&amp;copy=abc\u00a9=xyz&amp;amp=">http://foo/?a&amp;copy=abc\u00a9=xyz&amp;amp=</a> aaa
+#urls escaped
+http://foo/?a&copy=abc\u00A9=xyz&amp=
+
+#data
+hoge //foo/?a&copy=abc&copy;=xyz&amp aaa
+#parsed escaped
+text hoge\u0020//foo/?a&copy=abc&copy;=xyz&amp aaa
+ hoge\u0020//foo/?a\u00A9=abc\u00A9=xyz& aaa
+#plaintext escaped
+hoge\u0020//foo/?a\u00A9=abc\u00A9=xyz& aaa
+#html escaped
+hoge //foo/?a\u00a9=abc\u00a9=xyz&amp; aaa
+
+#data
+http://hoge //foo/?a&copy=abc&copy;=xyz&amp aaa
+#parsed escaped
+http http://hoge
+ http://hoge
+text \u0020//foo/?a&copy=abc&copy;=xyz&amp aaa
+ \u0020//foo/?a\u00A9=abc\u00A9=xyz& aaa
+#plaintext escaped
+http://hoge\u0020//foo/?a\u00A9=abc\u00A9=xyz& aaa
+#html escaped
+<a href="http://hoge">http://hoge</a> //foo/?a\u00a9=abc\u00a9=xyz&amp; aaa
+#urls escaped
+http://hoge
+
+#data
+[http://foo&copy=abc&copy:title=foo&copy=&LT]
+#parsed escaped
+httptitle [http://foo&copy=abc&copy:title=foo&copy=&LT]
+ http://foo&copy=abc\u00A9
+ foo\u00A9=<
+#plaintext escaped
+foo\u00A9=<<http://foo&copy=abc\u00A9>
+#html escaped
+<a href="http://foo&amp;copy=abc\u00a9">foo\u00a9=&lt;</a>
+#urls escaped
+http://foo&copy=abc\u00A9
+#head 20
+...
+#head 100 escaped
+foo\u00a9=<<http://foo&copy=abc\u00a9>
+
+#data
+[http://foo&copy=abc&copy.png:image]
+#parsed escaped
+httpimage [http://foo&copy=abc&copy.png:image]
+ http://foo&copy=abc\u00A9.png
+#plaintext escaped
+http://foo&copy=abc\u00A9.png
+#html escaped
+<a href="http://foo&amp;copy=abc\u00a9.png"><img src="http://foo&amp;copy=abc\u00a9.png" alt="[http://foo&amp;copy=abc&amp;copy.png:image]"></a>
+#mobilehtml escaped
+<a href="http://foo&amp;copy=abc\u00a9.png"><img src="http://mgw.hatena.ne.jp/?url=http%3A%2F%2Ffoo%26copy%3Dabc%C2%A9.png" alt="[http://foo&amp;copy=abc&amp;copy.png:image]"></a>
+#urls escaped
+http://foo&copy=abc\u00A9.png
+#imageurls escaped
+http://foo&copy=abc\u00A9.png
+
+#data
+[http://foo&copy=abc&copy.mp3:sound]
+#parsed escaped
+httpsound [http://foo&copy=abc&copy.mp3:sound]
+ http://foo&copy=abc\u00A9.mp3
+#plaintext escaped
+http://foo&copy=abc\u00A9.mp3
+#html escaped
+<span style="vertical-align:middle;">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="220" height="25" id="mp3_3" align="middle" style="vertical-align:bottom">
+<param name="flashVars" value="mp3Url=http://foo%26copy%3Dabc\u00a9.mp3">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://g.hatena.ne.jp/tools/mp3_3.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="transparent">
+<embed src="http://g.hatena.ne.jp/tools/mp3_3.swf" flashVars="mp3Url=http://foo%26copy%3Dabc\u00a9.mp3" quality="high" wmode="transparent" bgcolor="#ffffff" width="220" height="25" name="mp3_3" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" style="vertical-align:bottom">
+</object>
+<a href="http://foo&amp;copy=abc\u00a9.mp3"><img src="http://g.hatena.ne.jp/images/podcasting.gif" title="Download" alt="Download" border="0" style="border:0px;vertical-align:bottom;"></a>
+</span>
+#touchhtml escaped
+<a href="http://foo&amp;copy=abc\u00a9.mp3">http://foo&amp;copy=abc\u00a9.mp3</a>
+#mobilehtml escaped
+<a href="http://foo&amp;copy=abc\u00a9.mp3">http://foo&amp;copy=abc\u00a9.mp3</a>
+#urls escaped
+http://foo&copy=abc\u00A9.mp3
+
+#data
+[http://foo&copy=abc&copy:barcode]
+#parsed escaped
+httpbarcode [http://foo&copy=abc&copy:barcode]
+ http://foo&copy=abc\u00A9
+#plaintext escaped
+http://foo&copy=abc\u00A9
+#html escaped
+<a href="http://foo&amp;copy=abc\u00a9"><img src="https://www.hatena.ne.jp/api/barcode?str=http%3A%2F%2Ffoo%26copy%3Dabc%C2%A9" alt="http://foo&amp;copy=abc\u00a9" title="http://foo&amp;copy=abc\u00a9"></a>
+#touchhtml escaped
+<a href="http://foo&amp;copy=abc\u00a9"><img src="https://www.hatena.ne.jp/api/barcode?str=http%3A%2F%2Ffoo%26copy%3Dabc%C2%A9" alt="http://foo&amp;copy=abc\u00a9" title="http://foo&amp;copy=abc\u00a9"></a>
+#mobilehtml escaped
+<a href="http://foo&amp;copy=abc\u00a9"><img src="https://www.hatena.ne.jp/api/barcode?str=http%3A%2F%2Ffoo%26copy%3Dabc%C2%A9" alt="http://foo&amp;copy=abc\u00a9" title="http://foo&amp;copy=abc\u00a9"></a>
+#urls escaped
+http://foo&copy=abc\u00A9
+
+#data
+[[a<b&c>c]]
+#parsed
+keyword [[a<b&c>c]]
+ a<b&c>c
+#plaintext
+a<b&c>c
+#html
+<a href="http://d.hatena.ne.jp/keyword/a%3Cb%26c%3Ec" class="keyword">a&lt;b&amp;c&gt;c</a>
+#touchhtml escaped
+<a href="http://d.hatena.ne.jp/keywordtouch/a%3Cb%26c%3Ec" class="keyword">a&lt;b&amp;c&gt;c</a>
+#mobilehtml escaped
+<a href="http://d.hatena.ne.jp/keywordmobile/a%3Cb%26c%3Ec" class="keyword">a&lt;b&amp;c&gt;c</a>
+
+#data
+[[a<b&copy=&copy>c]]
+#parsed escaped
+keyword [[a<b&copy=&copy>c]]
+ a<b\u00A9=\u00A9>c
+#plaintext escaped
+a<b\u00A9=\u00A9>c
+#html escaped
+<a href="http://d.hatena.ne.jp/keyword/a%3Cb%8F%A2%ED%3D%8F%A2%ED%3Ec" class="keyword">a&lt;b\u00a9=\u00a9&gt;c</a>
+#touchhtml escaped
+<a href="http://d.hatena.ne.jp/keywordtouch/a%3Cb%8F%A2%ED%3D%8F%A2%ED%3Ec" class="keyword">a&lt;b\u00a9=\u00a9&gt;c</a>
+#mobilehtml escaped
+<a href="http://d.hatena.ne.jp/keywordmobile/a%3Cbc%3Dc%3Ec" class="keyword">a&lt;b\u00a9=\u00a9&gt;c</a>
