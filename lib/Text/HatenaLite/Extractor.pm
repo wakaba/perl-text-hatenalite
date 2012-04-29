@@ -145,6 +145,8 @@ sub extract_geo_coords {
 sub head_by_length {
     my ($self, $n, %args) = @_;
     my $data = $self->parsed_data or die "|parsed_data| is not set";
+    my $max_objects = $args{max_objects} || 4;
+    my $objects = 0;
     
     my $new_data = [];
     for (0..$#$data) {
@@ -172,6 +174,10 @@ sub head_by_length {
                 push @$new_data, {type => 'text', values => ['...', '...']};
                 $n -= 3;
                 next;
+            }
+            if ($objects++ > $max_objects) {
+                push @$new_data, {type => 'text', values => ['...', '...']};
+                last;
             }
 
             if ($n >= length $node->{values}->[0]) {

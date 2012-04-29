@@ -3450,3 +3450,39 @@ a<b\u00A9=\u00A9>c
 <a href="http://d.hatena.ne.jp/keywordtouch/a%3Cb%8F%A2%ED%3D%8F%A2%ED%3Ec" class="keyword">a&lt;b\u00a9=\u00a9&gt;c</a>
 #mobilehtml escaped
 <a href="http://d.hatena.ne.jp/keywordmobile/a%3Cbc%3Dc%3Ec" class="keyword">a&lt;b\u00a9=\u00a9&gt;c</a>
+
+#data
+http://foo/ http://foo/ http://foo/ http://foo/ http://foo/ http://foo/
+#parsed escaped
+http http://foo/
+ http://foo/
+text \u0020
+ \u0020
+http http://foo/
+ http://foo/
+text \u0020
+ \u0020
+http http://foo/
+ http://foo/
+text \u0020
+ \u0020
+http http://foo/
+ http://foo/
+text \u0020
+ \u0020
+http http://foo/
+ http://foo/
+text \u0020
+ \u0020
+http http://foo/
+ http://foo/
+#html
+<a href="http://foo/">http://foo/</a> <a href="http://foo/">http://foo/</a> <a href="http://foo/">http://foo/</a> <a href="http://foo/">http://foo/</a> <a href="http://foo/">http://foo/</a> <a href="http://foo/">http://foo/</a>
+#urls
+http://foo/
+#head 30
+http://foo/ http://foo/ ...
+#head 100
+http://foo/ http://foo/ http://foo/ http://foo/ http://foo/ ...
+#head 1000
+http://foo/ http://foo/ http://foo/ http://foo/ http://foo/ ...

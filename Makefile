@@ -20,6 +20,7 @@ Makefile.setupenv:
 	wget -O $@ https://raw.github.com/wakaba/perl-setupenv/master/Makefile.setupenv
 
 setupenv remotedev-test remotedev-reset config/perl/libs.txt \
+perl-exec \
 carton-install carton-update: %: Makefile-setupenv always
 	make --makefile Makefile.setupenv $@ REMOTEDEV_HOST=$(REMOTEDEV_HOST)
 
