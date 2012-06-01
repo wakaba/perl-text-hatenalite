@@ -174,10 +174,6 @@ sub fotolife_notation_to_image_url {
     return $img_url;
 }
 
-sub fotolife_notation_to_url_name_for_id_call {
-    return $_[2]->[1];
-}
-
 sub fotolife_id_to_url {
     return sprintf q<http://f.hatena.ne.jp/%s/%s>, $_[1], $_[2];
 }
