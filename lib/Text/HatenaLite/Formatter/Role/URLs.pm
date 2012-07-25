@@ -229,7 +229,9 @@ sub parse_http_url {
         $parsed->{youtube_id} = $1;
     } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Yy][Oo][Uu][Tt][Uu]\.[Bb][Ee]/([A-Za-z0-9_-]+)}) {
         $parsed->{youtube_id} = $1;
-    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Ww][Ww][Ww]\.[Nn][Ii][Cc][Oo][Vv][Ii][Dd][Ee][Oo]\.[Jj][Pp]/watch/([0-9A-Za-z_]+)}) {
+    } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://(?:[Ww][Ww][Ww]|[Ss][Pp])\.[Nn][Ii][Cc][Oo][Vv][Ii][Dd][Ee][Oo]\.[Jj][Pp]/watch/([0-9A-Za-z_]+)}) {
+        # http://www.nicovideo.jp/watch/sm12345
+        # http://sp.nicovideo.jp/watch/sm12345
         $parsed->{nicovideo_id} = $1;
     } elsif ($url =~ m{^[Hh][Tt][Tt][Pp]://[Nn][Ii][Cc][Oo]\.[Mm][Ss]/([0-9A-Za-z_]+)}) {
         $parsed->{nicovideo_id} = $1;

@@ -1882,6 +1882,33 @@ http://www.nicovideo.jp/watch/sm9754737
 http://tn-skr4.smilevideo.jp/smile?i=9754737
 
 #data
+http://sp.nicovideo.jp/watch/sm9754737
+#parsed
+http http://sp.nicovideo.jp/watch/sm9754737
+ http://sp.nicovideo.jp/watch/sm9754737
+#html
+<div id="nicovideo99999"></div>
+<script type="text/javascript"><!--
+    function writenicovideo99999(player) {
+        var container = document.getElementById('nicovideo99999');
+        if (typeof player == 'string') {
+            container.innerHTML = player;
+        } else {
+            container.innerHTML = player.getHTML();
+        }
+    }
+//--></script>
+<script src="http://www.nicovideo.jp/thumb_watch/sm9754737?w=300&amp;h=238&amp;cb=writenicovideo99999&amp;eb=writenicovideo99999" charset="utf-8"></script>
+#touchhtml
+<a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://sp.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+#mobilehtml
+<a href="http://www.nicovideo.jp/watch/sm9754737"><img src="http://tn-skr4.smilevideo.jp/smile?i=9754737" alt="http://sp.nicovideo.jp/watch/sm9754737"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+#urls
+http://sp.nicovideo.jp/watch/sm9754737
+#imageurls
+http://tn-skr4.smilevideo.jp/smile?i=9754737
+
+#data
 http://www.nicovideo.jp/watch/sm9754737:movie
 #parsed
 http http://www.nicovideo.jp/watch/sm9754737:movie
