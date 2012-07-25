@@ -125,7 +125,9 @@ sub http_notation_to_url_name_for_id_call {
 }
 
 sub asin_to_icon_url {
-    return sprintf q<http://h.hatena.ne.jp/asin/%s/image.icon>, $_[1];
+    # http://h.hatena.ne.jp/asin/{asin}/icon
+    # http://h.hatena.ne.jp/asin/{asin}/thumbnail
+    return sprintf q<http://h.hatena.ne.jp/asin/%s/icon>, $_[1];
 }
 
 sub asin_to_url {
