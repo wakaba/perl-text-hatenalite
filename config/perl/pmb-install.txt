@@ -1,0 +1,17 @@
+AppConfig~1.66
+Template~2.24
+Test::Class~0.37
+Test::Exception~0.31
+Sub::Uplevel~0.24
+Regexp::Assemble~0.35
+MRO::Compat~0.11
+File::ShareDir::Install~0.04
+Path::Class~0.26
+inc::latest~0.4001
+Exporter::Lite~0.02
+Test::Builder~0.98
+Test::Differences~0.61
+Text::Diff~1.41
+Data::Dumper~2.131
+ExtUtils::ParseXS~3.15
+Algorithm::Diff~1.1902

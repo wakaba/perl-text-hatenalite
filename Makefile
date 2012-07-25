@@ -5,7 +5,7 @@ all:
 
 test: safetest
 
-test-deps: carton-install config/perl/libs.txt
+test-deps: pmb-install
 
 safetest: test-deps safetest-main
 
@@ -14,14 +14,13 @@ safetest-main:
 
 Makefile-setupenv: Makefile.setupenv
 	make --makefile Makefile.setupenv setupenv-update \
-            SETUPENV_MIN_REVISION=20120313
+            SETUPENV_MIN_REVISION=20120330
 
 Makefile.setupenv:
 	wget -O $@ https://raw.github.com/wakaba/perl-setupenv/master/Makefile.setupenv
 
 setupenv remotedev-test remotedev-reset config/perl/libs.txt \
-perl-exec \
-carton-install carton-update: %: Makefile-setupenv always
+perl-exec pmb-update pmb-install lperl lprove: %: Makefile-setupenv always
 	make --makefile Makefile.setupenv $@ REMOTEDEV_HOST=$(REMOTEDEV_HOST)
 
 always:
