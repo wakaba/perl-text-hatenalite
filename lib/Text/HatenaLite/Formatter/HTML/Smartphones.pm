@@ -11,4 +11,9 @@ push our @ISA, qw(
     Text::HatenaLite::Formatter::HTML
 );
 
+# width=320 iPhone/3DS
+# width=240 DSi
+sub default_youtube_widget_width { 200 }
+sub default_youtube_widget_height { 160 }
+
 1;

@@ -255,18 +255,23 @@ sub nicovideo_id_to_html {
     }
 }
 
+sub default_youtube_widget_width { 300 }
+sub default_youtube_widget_height { 250 }
+
 sub youtube_widget_width {
     if (@_ > 1) {
         $_[0]->{youtube_widget_width} = $_[1];
     }
-    return $_[0]->{youtube_widget_width} || 300;
+    return $_[0]->{youtube_widget_width}
+        || $_[0]->default_youtube_widget_width;
 }
 
 sub youtube_widget_height {
     if (@_ > 1) {
         $_[0]->{youtube_widget_height} = $_[1];
     }
-    return $_[0]->{youtube_widget_height} || 250;
+    return $_[0]->{youtube_widget_height}
+        || $_[0]->default_youtube_widget_height;
 }
 
 sub youtube_id_to_html {
