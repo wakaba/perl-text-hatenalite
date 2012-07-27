@@ -1555,11 +1555,9 @@ http://www.youtube.com/watch?v=aLWq7Pg1MdQ
 http http://www.youtube.com/watch?v=aLWq7Pg1MdQ
  http://www.youtube.com/watch?v=aLWq7Pg1MdQ
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/aLWq7Pg1MdQ"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/aLWq7Pg1MdQ" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/aLWq7Pg1MdQ" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=aLWq7Pg1MdQ"><img src="http://i4.ytimg.com/vi/aLWq7Pg1MdQ/default.jpg" alt="http://www.youtube.com/watch?v=aLWq7Pg1MdQ"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/aLWq7Pg1MdQ" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=aLWq7Pg1MdQ"><img src="http://i4.ytimg.com/vi/aLWq7Pg1MdQ/default.jpg" alt="http://www.youtube.com/watch?v=aLWq7Pg1MdQ"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1574,11 +1572,9 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA:movie
  http://www.youtube.com/watch?v=Hi4_LySCtbA
  movie
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA:movie"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA:movie"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1593,11 +1589,9 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA:MOVIE
  http://www.youtube.com/watch?v=Hi4_LySCtbA
  MOVIE
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA:MOVIE"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA:MOVIE"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1611,11 +1605,9 @@ http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
 http http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
  http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1629,11 +1621,9 @@ http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=featured
 http http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=featured
  http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=featured
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=featured"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=featured"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1647,11 +1637,9 @@ http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
 http http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;feature=related
  http://www.youtube.com/watch?v=Hi4_LySCtbA&feature=related
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;amp;feature=related"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;amp;feature=related"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1665,11 +1653,9 @@ http://www.youtube.com/watch?v=Hi4_LySCtbA&NR=1
 http http://www.youtube.com/watch?v=Hi4_LySCtbA&NR=1
  http://www.youtube.com/watch?v=Hi4_LySCtbA&NR=1
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;NR=1"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;NR=1"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1683,11 +1669,9 @@ http://www.youtube.com/watch?v=Hi4_LySCtbA&sns=em
 http http://www.youtube.com/watch?v=Hi4_LySCtbA&sns=em
  http://www.youtube.com/watch?v=Hi4_LySCtbA&sns=em
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;sns=em"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA&amp;sns=em"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1703,11 +1687,9 @@ http http://www.youtube.com/watch?v=Hi4_LySCtbA
 text \u4e00
  \u4e00
 #html escaped
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>\u4e00
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>\u4e00
 #touchhtml escaped
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>\u4e00
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>\u4e00
 #mobilehtml escaped
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>\u4e00
 #urls
@@ -1721,11 +1703,9 @@ http://www.youtube.com/watch?v=Hi4_LySCtbAhttp://foo/bar
 http http://www.youtube.com/watch?v=Hi4_LySCtbAhttp://foo/bar
  http://www.youtube.com/watch?v=Hi4_LySCtbAhttp://foo/bar
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbAhttp"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbAhttp" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbAhttp" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbAhttp/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp://foo/bar"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbAhttp" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbAhttp/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbAhttp://foo/bar"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1739,11 +1719,9 @@ http://youtu.be/Hi4_LySCtbA
 http http://youtu.be/Hi4_LySCtbA
  http://youtu.be/Hi4_LySCtbA
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://youtu.be/Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://youtu.be/Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1757,11 +1735,9 @@ http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded
 http http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded
  http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/gGenqKq_Q9E"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/gGenqKq_Q9E" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/gGenqKq_Q9E" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E&amp;feature=player_embedded"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/gGenqKq_Q9E" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E&amp;feature=player_embedded"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1775,11 +1751,9 @@ http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded&a=b
 http http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded&a=b
  http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded&a=b
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/gGenqKq_Q9E"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/gGenqKq_Q9E" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/gGenqKq_Q9E" frameborder=0 allowfullscreen></iframe></div>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E&amp;feature=player_embedded&amp;a=b"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/gGenqKq_Q9E" frameborder=0 allowfullscreen></iframe></div>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=gGenqKq_Q9E"><img src="http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg" alt="http://www.youtube.com/watch?v=gGenqKq_Q9E&amp;feature=player_embedded&amp;a=b"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
 #urls
@@ -1809,17 +1783,9 @@ text \u0020
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
  http://www.youtube.com/watch?v=Hi4_LySCtbA
 #html
-<div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div> <div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div> <div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div> <div class="video-body">
-<object width="300" height="250"><param name="movie" value="http://www.youtube.com/v/Hi4_LySCtbA"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/Hi4_LySCtbA" type="application/x-shockwave-flash" wmode="transparent" width="300" height="250"></object>
-</div> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
 #touchhtml
-<a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/Hi4_LySCtbA" frameborder=0 allowfullscreen></iframe></div> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
 #mobilehtml
 <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://i4.ytimg.com/vi/Hi4_LySCtbA/default.jpg" alt="http://www.youtube.com/watch?v=Hi4_LySCtbA"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a> <a href="http://www.youtube.com/watch?v=Hi4_LySCtbA">http://www.youtube.com/watch?v=Hi4_LySCtbA</a>
 #urls

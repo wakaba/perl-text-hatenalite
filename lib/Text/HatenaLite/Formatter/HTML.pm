@@ -280,6 +280,12 @@ sub youtube_id_to_html {
     } else {
         my $w = $self->youtube_widget_width;
         my $h = $self->youtube_widget_height;
+
+        # <https://developers.google.com/youtube/youtube_player_demo>
+        return sprintf q{<div class=video-body><iframe width="%d" height="%d" src="http://www.youtube.com/embed/%s" frameborder=0 allowfullscreen></iframe></div>},
+            $w, $h, htescape $vid;
+
+        # Old
         return sprintf q{<div class="video-body">
 <object width="%d" height="%d"><param name="movie" value="http://www.youtube.com/v/%s"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/%s" type="application/x-shockwave-flash" wmode="transparent" width="%d" height="%d"></object>
 </div>},

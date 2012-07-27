@@ -64,6 +64,24 @@ sub ugomemo_movie_to_thumbnail_url {
         $dsi_id, $file_name;
 }
 
+sub youtube_id_to_html {
+    my ($self, $vid, %args) = @_;
+    my $youtube_url = $self->youtube_id_to_url($vid);
+    $self->{object_count}++;
+    if ($self->{object_count} > $self->max_object_count) {
+        return sprintf '<a href="%s">%s</a>',
+            htescape($youtube_url),
+            htescape($args{alt} || $youtube_url);
+    } else {
+        my $thumbnail_url = $self->youtube_id_to_thumbnail_url($vid);
+        return sprintf q{<a href="%s"><img src="%s" alt="%s">%s</a>},
+            htescape $youtube_url,
+            htescape $thumbnail_url,
+            htescape($args{alt} || $youtube_url),
+            $self->play_video_button_image_html;
+    }
+}
+
 sub latlon_to_image_url {
     # <http://code.google.com/intl/ja/apis/maps/documentation/staticmaps/>.
     return sprintf q<http://maps.google.com/maps/api/staticmap?markers=%s,%s&sensor=false&size=140x140&maptype=mobile&zoom=13&format=gif>,

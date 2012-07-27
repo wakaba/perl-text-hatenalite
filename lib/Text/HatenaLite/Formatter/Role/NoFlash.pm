@@ -37,24 +37,6 @@ sub nicovideo_id_to_html {
         htescape($args{alt} || $nicovideo_url);
 }
 
-sub youtube_id_to_html {
-    my ($self, $vid, %args) = @_;
-    my $youtube_url = $self->youtube_id_to_url($vid);
-    $self->{object_count}++;
-    if ($self->{object_count} > $self->max_object_count) {
-        return sprintf '<a href="%s">%s</a>',
-            htescape($youtube_url),
-            htescape($args{alt} || $youtube_url);
-    } else {
-        my $thumbnail_url = $self->youtube_id_to_thumbnail_url($vid);
-        return sprintf q{<a href="%s"><img src="%s" alt="%s">%s</a>},
-            htescape $youtube_url,
-            htescape $thumbnail_url,
-            htescape($args{alt} || $youtube_url),
-            $self->play_video_button_image_html;
-    }
-}
-
 sub use_fotolife_movie_player { 0 }
 
 sub ugomemo_movie_to_html {
