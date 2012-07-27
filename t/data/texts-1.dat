@@ -1762,6 +1762,22 @@ http://www.youtube.com/watch?v=gGenqKq_Q9E&feature=player_embedded&a=b
 http://i4.ytimg.com/vi/gGenqKq_Q9E/default.jpg
 
 #data
+http://m.youtube.com/watch?gl=JP&hl=ja&client=mv-google&v=wTQpaFfxjs8
+#parsed
+http http://m.youtube.com/watch?gl=JP&hl=ja&client=mv-google&v=wTQpaFfxjs8
+ http://m.youtube.com/watch?gl=JP&hl=ja&client=mv-google&v=wTQpaFfxjs8
+#html
+<div class=video-body><iframe width="300" height="250" src="http://www.youtube.com/embed/wTQpaFfxjs8" frameborder=0 allowfullscreen></iframe></div>
+#touchhtml
+<div class=video-body><iframe width="200" height="160" src="http://www.youtube.com/embed/wTQpaFfxjs8" frameborder=0 allowfullscreen></iframe></div>
+#mobilehtml
+<a href="http://www.youtube.com/watch?v=wTQpaFfxjs8"><img src="http://i4.ytimg.com/vi/wTQpaFfxjs8/default.jpg" alt="http://m.youtube.com/watch?gl=JP&amp;hl=ja&amp;client=mv-google&amp;v=wTQpaFfxjs8"><img src="http://ugomemo.hatena.ne.jp/images/icon-views-s.gif" width=16 height=12 alt=""></a>
+#urls
+http://m.youtube.com/watch?gl=JP&hl=ja&client=mv-google&v=wTQpaFfxjs8
+#imageurls
+http://i4.ytimg.com/vi/wTQpaFfxjs8/default.jpg
+
+#data
 http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA http://www.youtube.com/watch?v=Hi4_LySCtbA
 #parsed escaped
 http http://www.youtube.com/watch?v=Hi4_LySCtbA
