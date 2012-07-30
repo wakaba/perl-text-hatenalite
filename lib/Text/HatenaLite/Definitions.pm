@@ -132,6 +132,16 @@ our $Notations = [
         allow_refs => [undef, 1],
     },
     {
+        type => 'dkeyword',
+        pattern => q<\[[Dd]:[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
+        allow_refs => [undef, 1],
+    },
+    {
+        type => 'hkeyword',
+        pattern => q<\[[Hh]:[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
+        allow_refs => [undef, 1],
+    },
+    {
         type => 'mailto',
         pattern => q<[Mm][Aa][Ii][Ll][Tt][Oo]:([0-9A-Za-z_\.-]+\@[0-9A-Za-z_][0-9A-Za-z_\.\-]*[0-9A-Za-z_])>,
     },

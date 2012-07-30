@@ -49,6 +49,22 @@ sub keyword_notation_to_html {
         htescape $values->[1];
 }
 
+sub dkeyword_notation_to_html {
+    my $values = $_[2];
+    my $link_url = $_[0]->dkeyword_to_link_url($values->[1]);
+    return sprintf q{<a href="%s" class="keyword">%s</a>},
+        htescape $link_url,
+        htescape $values->[1];
+}
+
+sub hkeyword_notation_to_html {
+    my $values = $_[2];
+    my $link_url = $_[0]->hkeyword_to_link_url($values->[1]);
+    return sprintf q{<a href="%s" class="keyword">%s</a>},
+        htescape $link_url,
+        htescape $values->[1];
+}
+
 sub mailto_notation_to_html {
     return sprintf q{<a href="mailto:%s">%s</a>},
         htescape $_[2]->[1],

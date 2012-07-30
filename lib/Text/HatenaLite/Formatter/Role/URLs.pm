@@ -37,8 +37,16 @@ sub id_notation_to_url_name_for_id_call {
 }
 
 sub keyword_to_link_url {
+    return shift->dkeyword_to_link_url(@_);
+}
+
+sub dkeyword_to_link_url {
     return q<http://d.hatena.ne.jp/keyword/> .
         percent_encode_b encode 'euc-jp', $_[1];
+}
+
+sub hkeyword_to_link_url {
+    return q<http://h.hatena.ne.jp/target?word=> . percent_encode_c $_[1];
 }
 
 sub url_to_page_title {

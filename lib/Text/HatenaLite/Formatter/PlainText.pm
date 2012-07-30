@@ -26,6 +26,14 @@ sub keyword_notation_to_plain_text {
     return $_[2]->[1];
 }
 
+sub dkeyword_notation_to_plain_text {
+    return $_[2]->[1];
+}
+
+sub hkeyword_notation_to_plain_text {
+    return $_[2]->[1];
+}
+
 sub httptitle_notation_to_plain_text {
     return $_[2]->[2] . '<' . $_[1]->{to_url}->($_[2]) . '>';
 }

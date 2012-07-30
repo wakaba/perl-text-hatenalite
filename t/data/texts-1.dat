@@ -431,6 +431,60 @@ abcd
 #head 21
 abcd
 
+#data escaped
+abc[d:keyword:xyz\u4E00]\u5000aba
+#parsed escaped
+text abc
+ abc
+dkeyword [d:keyword:xyz\u4E00]
+ xyz\u4E00
+text \u5000aba
+ \u5000aba
+#plaintext escaped
+abcxyz\u4E00\u5000aba
+#html escaped
+abc<a href="http://d.hatena.ne.jp/keyword/xyz%B0%EC" class="keyword">xyz\u4E00</a>\u5000aba
+#touchhtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordtouch/xyz%B0%EC" class="keyword">xyz\u4E00</a>\u5000aba
+#mobilehtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u4e00</a>\u5000aba
+
+#data escaped
+abc[D:keyword:xyz\u4E00]\u5000aba
+#parsed escaped
+text abc
+ abc
+dkeyword [D:keyword:xyz\u4E00]
+ xyz\u4E00
+text \u5000aba
+ \u5000aba
+#plaintext escaped
+abcxyz\u4E00\u5000aba
+#html escaped
+abc<a href="http://d.hatena.ne.jp/keyword/xyz%B0%EC" class="keyword">xyz\u4E00</a>\u5000aba
+#touchhtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordtouch/xyz%B0%EC" class="keyword">xyz\u4E00</a>\u5000aba
+#mobilehtml escaped
+abc<a href="http://d.hatena.ne.jp/keywordmobile/xyz%88%EA" class="keyword">xyz\u4e00</a>\u5000aba
+
+#data escaped
+abc[h:keyword:xyz\u4E00]\u5000aba
+#parsed escaped
+text abc
+ abc
+hkeyword [h:keyword:xyz\u4E00]
+ xyz\u4E00
+text \u5000aba
+ \u5000aba
+#plaintext escaped
+abcxyz\u4E00\u5000aba
+#html escaped
+abc<a href="http://h.hatena.ne.jp/target?word=xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+#touchhtml escaped
+abc<a href="http://h.hatena.ne.jp/touch/target?word=xyz%E4%B8%80" class="keyword">xyz\u4E00</a>\u5000aba
+#mobilehtml escaped
+abc<a href="http://h.hatena.ne.jp/mobile/target?bword=eHl65LiA" class="keyword">xyz\u4e00</a>\u5000aba
+
 #data
 0 http://hoge/
 #parsed escaped

@@ -1,3 +1,4 @@
+MIME::Base64
 Path::Class
 Regexp::Assemble
 Template
