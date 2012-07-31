@@ -35,7 +35,11 @@ sub hkeyword_notation_to_plain_text {
 }
 
 sub httptitle_notation_to_plain_text {
-    return $_[2]->[2] . '<' . $_[1]->{to_url}->($_[2]) . '>';
+    if (defined $_[2]->[2] and length $_[2]->[2]) {
+        return $_[2]->[2] . '<' . $_[1]->{to_url}->($_[2]) . '>';
+    } else {
+        return $_[1]->{to_url}->($_[2]);
+    }
 }
 
 sub httpimage_notation_to_plain_text {

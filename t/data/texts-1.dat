@@ -3400,6 +3400,47 @@ http://foo&copy=abc\u00A9
 foo\u00a9=<<http://foo&copy=abc\u00a9>
 
 #data
+[http://hoge/fuga:title]
+#parsed
+httptitle [http://hoge/fuga:title]
+ http://hoge/fuga
+#plaintext
+http://hoge/fuga
+#html
+<a href="http://hoge/fuga">http://hoge/fuga</a>
+#urls
+http://hoge/fuga
+
+#data
+[http://hoge/fuga:title=]
+#parsed
+text [
+ [
+http http://hoge/fuga:title=
+ http://hoge/fuga:title=
+text ]
+ ]
+#plaintext
+[http://hoge/fuga:title=]
+#html
+[<a href="http://hoge/fuga:title=">http://hoge/fuga:title=</a>]
+#urls
+http://hoge/fuga:title=
+
+#data
+[http://hoge/fuga:title=0]
+#parsed
+httptitle [http://hoge/fuga:title=0]
+ http://hoge/fuga
+ 0
+#plaintext
+0<http://hoge/fuga>
+#html
+<a href="http://hoge/fuga">0</a>
+#urls
+http://hoge/fuga
+
+#data
 [http://foo&copy=abc&copy.png:image]
 #parsed escaped
 httpimage [http://foo&copy=abc&copy.png:image]

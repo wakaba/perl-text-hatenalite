@@ -24,7 +24,7 @@ our $Notations = [
     },
     {
         type => 'httptitle',
-        pattern => q<\[(> . $http_pattern . q<):[Tt][Ii][Tt][Ll][Ee]=([^\]]+)\]>,
+        pattern => q<\[(> . $http_pattern . q<):[Tt][Ii][Tt][Ll][Ee](?:=([^\]]+))?\]>,
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
         allow_refs => [undef, 'attr', 1],

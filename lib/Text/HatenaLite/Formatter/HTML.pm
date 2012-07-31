@@ -121,9 +121,15 @@ sub http_notation_to_html {
 
 sub httptitle_notation_to_html {
     my $values = $_[2];
-    return sprintf q{<a href="%s">%s</a>},
-        htescape $values->[1],
-        htescape $values->[2];
+    if (defined $values->[2] and length $values->[2]) {
+        return sprintf q{<a href="%s">%s</a>},
+            htescape $values->[1],
+            htescape $values->[2];
+    } else {
+        return sprintf q{<a href="%s">%s</a>},
+            htescape $values->[1],
+            htescape $values->[1];
+    }
 }
 
 sub httpbarcode_notation_to_html {
