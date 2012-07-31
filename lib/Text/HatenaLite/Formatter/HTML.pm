@@ -126,9 +126,11 @@ sub httptitle_notation_to_html {
             htescape $values->[1],
             htescape $values->[2];
     } else {
+        my $title = $_[0]->url_to_page_title($values->[1]);
+        $title = $values->[1] if not defined $title;
         return sprintf q{<a href="%s">%s</a>},
             htescape $values->[1],
-            htescape $values->[1];
+            htescape $title;
     }
 }
 
