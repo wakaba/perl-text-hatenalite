@@ -48,7 +48,7 @@ sub ugomemo_movie_to_html {
             htescape($ugomemo_url),
             htescape($args{alt} || $ugomemo_url);
     } else {
-        my $thumbnail_url = $self->ugomemo_movie_to_thumbnail_url($dsi_id, $file_name);
+        my $thumbnail_url = $self->ugomemo_movie_to_embed_url($dsi_id, $file_name);
         return sprintf q{<a href="%s"><img src="%s" alt="%s">%s</a>},
             htescape $ugomemo_url,
             htescape $thumbnail_url,

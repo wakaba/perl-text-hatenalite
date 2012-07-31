@@ -203,6 +203,16 @@ sub ugomemo_movie_to_url {
         $dsi_id, $file_name;
 }
 
+sub ugomemo_movie_to_embed_url {
+    return shift->ugomemo_movie_to_animation_url(@_);
+}
+
+sub ugomemo_movie_to_animation_url {
+    my ($self, $dsi_id, $file_name) = @_;
+    return sprintf q<http://image.ugomemo.hatena.ne.jp/thumbnail/%s/%s_am.gif>,
+        $dsi_id, $file_name;
+}
+
 sub ugomemo_movie_to_thumbnail_url {
     my ($self, $dsi_id, $file_name) = @_;
     return sprintf q<http://image.ugomemo.hatena.ne.jp/thumbnail/%s/%s_o.gif>,
