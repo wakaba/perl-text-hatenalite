@@ -3,7 +3,7 @@ use strict;
 use warnings;
 our $VERSION = '1.0';
 use Text::HatenaLite::Formatter::Base;
-use Text::HatenaLite::Formatter::Role::URLs
+use Text::HatenaLite::Formatter::Role::URLs;
 push our @ISA, qw(
   Text::HatenaLite::Formatter::Base
   Text::HatenaLite::Formatter::Role::URLs
