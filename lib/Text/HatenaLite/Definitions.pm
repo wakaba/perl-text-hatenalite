@@ -9,6 +9,7 @@ our $Notations = [
     {
         type => 'id',
         pattern => q<[Ii][Dd]:([0-9a-zA-Z_\@-]+)(?::[Dd][Ee][Tt][Aa][Ii][Ll])?>,
+        args => [qw(urlname)],
     },
     {
         type => 'http',
@@ -18,6 +19,14 @@ our $Notations = [
                 $_[0]->[2] = $1;
             }
         },
+        args => [
+            qw(url embedformat),
+            ## In addition, following values from
+            ## Text::HatenaLite::Formatter::Role::URLs::parse_http_url
+            ## might be available in JSON representation: image_url,
+            ## youtube_id, nicovideo_id, mp3_url, ugomemo_dsi_id,
+            ## ugomemo_file_name, map_lat, map_lon.
+        ],
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
         allow_refs => [undef, 'attr', 0],
@@ -25,6 +34,7 @@ our $Notations = [
     {
         type => 'httptitle',
         pattern => q<\[(> . $http_pattern . q<):[Tt][Ii][Tt][Ll][Ee](?:=([^\]]+))?\]>,
+        args => [qw(url title)],
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
         allow_refs => [undef, 'attr', 1],
@@ -32,6 +42,7 @@ our $Notations = [
     {
         type => 'httpimage',
         pattern => q<\[(> . $http_pattern . q<(?:[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[Bb][Mm][Pp])):[Ii][Mm][Aa][Gg][Ee](?::([HhWw][0-9]+))?\]>,
+        args => [qw(url size)],
         to_url => sub { $_[0]->[1] },
         has_image => 1,
         is_skipped_object => 1,
@@ -40,6 +51,7 @@ our $Notations = [
     {
         type => 'httpsound',
         pattern => q<\[(> . $http_pattern . q<[Mm][Pp]3):[Ss][Oo][Uu][Nn][Dd](?::(?:([0-9]+)[Hh]|())(?:([0-9]+)[Mm]|())(?:([0-9]+)[Ss]|()))?\]>,
+        args => [qw(url h m s)],
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
         allow_refs => [undef, 'attr', 0, 0],
@@ -47,6 +59,7 @@ our $Notations = [
     {
         type => 'httpbarcode',
         pattern => q<\[(> . $http_pattern . q<):[Bb][Aa][Rr][Cc][Oo][Dd][Ee]\]>,
+        args => [qw(url)],
         to_url => sub { $_[0]->[1] },
         is_skipped_object => 1,
         allow_refs => [undef, 'attr'],
@@ -54,6 +67,7 @@ our $Notations = [
     {
         type => 'idea',
         pattern => q<[Ii][Dd][Ee][Aa]:([0-9]+)(?::[Tt][Ii][Tt][Ll][Ee])?>,
+        args => [qw(number)],
         to_url => sub {
             return q<http://i.hatena.ne.jp/idea/> . $_[0]->[1];
         },
@@ -61,14 +75,17 @@ our $Notations = [
     {
         type => 'isbn',
         pattern => q<[Ii][Ss][Bb][Nn]:([a-zA-Z0-9\-]+)>,
+        args => [qw(number)],
     },
     {
         type => 'asin',
         pattern => q<[Aa][Ss][Ii][Nn]:([a-zA-Z0-9\-]+)>,
+        args => [qw(number)],
     },
     {
         type => 'fotolife',
         pattern => q<[Ff]:[Ii][Dd]:([-_a-zA-Z0-9]+):([0-9]+)([PpJjGgFf])(?::([Ii][Mm][Aa][Gg][Ee]|[Mm][Oo][Vv][Ii][Ee]))?>,
+        args => [qw(urlname filename dataformat embedformat)],
         to_object_url => sub {
             my $v = $_[0];
             my $ext = 'jpg';
@@ -94,6 +111,7 @@ our $Notations = [
     {
         type => 'land',
         pattern => q<[Ll][Aa][Nn][Dd]:[Ii][Mm][Aa][Gg][Ee]:([a-fA-F0-9]{40}):([0-9A-Za-z_-]+)>,
+        args => [qw(name1 name2)],
         to_object_url => sub {
             my $v = $_[0];
             return sprintf q<http://l.hatena.ne.jp/images/%s.%s>,
@@ -105,11 +123,13 @@ our $Notations = [
     {
         type => 'map',
         pattern => q<[Mm][Aa][Pp]:([0-9+.-]+):([0-9+.-]+)>,
+        args => [qw(lat lon)],
         is_skipped_object => 1,
     },
     {
         type => 'ugomemo',
         pattern => q<([Uu][Gg][Oo][Mm][Ee][Mm][Oo]|[Ff][Ll][Ii][Pp][Nn][Oo][Tt][Ee]):([0-9A-F]{16}):([0-9A-Za-z-_]+)>,
+        args => [qw(dsiid filename)],
         to_url => sub {
             my $v = $_[0];
             return sprintf q<http://%s/%s@DSi/movie/%s>,
@@ -124,30 +144,37 @@ our $Notations = [
     {
         type => 'keyword',
         pattern => q<\[[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
+        args => [qw(keyword)],
         allow_refs => [undef, 1],
     },
     {
         type => 'keyword',
         pattern => q<\[\[([^\]]+)\]\]>,
+        args => [qw(keyword)],
         allow_refs => [undef, 1],
     },
     {
         type => 'dkeyword',
         pattern => q<\[[Dd]:[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
+        args => [qw(keyword)],
         allow_refs => [undef, 1],
     },
     {
         type => 'hkeyword',
         pattern => q<\[[Hh]:[Kk][Ee][Yy][Ww][Oo][Rr][Dd]:([^\]]+)\]>,
+        args => [qw(keyword)],
         allow_refs => [undef, 1],
     },
     {
         type => 'mailto',
         pattern => q<[Mm][Aa][Ii][Ll][Tt][Oo]:([0-9A-Za-z_\.-]+\@[0-9A-Za-z_][0-9A-Za-z_\.\-]*[0-9A-Za-z_])>,
+        args => [qw(addr)],
     },
 ];
 
-our $TextNotation = {};
+our $TextNotation = {
+    args => [qw(value)],
+};
 
 ## Following syntaxes are considered obsoleted and are not supported
 ## by this implementation:

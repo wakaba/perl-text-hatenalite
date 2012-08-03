@@ -14,9 +14,9 @@ Text::HatenaLite::Formatter::PlainText - Convert Hatena Notation Lite into plain
 
 =head1 DESCRIPTION
 
-The C<Text::HatenaLite::Formatter::PlainText> class, and its
-subclasses, format a parsed representation of text in Hatena Notation
-Lite as plain text.
+The C<Text::HatenaLite::Formatter::PlainText> class formats the parsed
+representation of text in Hatena Notation Lite as a human readable
+plain text.
 
 =head1 METHODS
 
@@ -31,7 +31,7 @@ Create a new instance of the formatter.
 Set the parsed data to the formatter.  The data must be an array
 reference as returned by L<Text::HatenaLite::Parser>.
 
-=item $html = $formatter->as_text
+=item $text = $formatter->as_text
 
 Return plain text representation of the parsed data.
 

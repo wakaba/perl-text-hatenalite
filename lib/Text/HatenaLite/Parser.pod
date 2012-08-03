@@ -37,12 +37,17 @@ L<Text::HatenaLite::Formatter::PlainText>.
 
 L<Text::HatenaLite::Formatter::HTML>.
 
+L<Text::HatenaLite::Formatter::JSON>.
+
+L<Text::HatenaLite::Extractor>.
+
 An informal documentation of Hatena Syntax Lite is available at:
 <http://h.hatena.com/help/advanced#syntax>.
 
 =head1 DEVELOPMENT
 
-Latest version of the module is available from GitHub repository:
+Latest version of the module is available from GitHub repository.  In
+addition, tests of the module is automatically run at Travis CI.
 
 =over 4
 

@@ -1,0 +1,74 @@
+=head1 NAME
+
+Text::HatenaLite::Formatter::JSON - Convert Hatena Notation Lite into JSON data
+
+=head1 SYNOPSIS
+
+  use Text::HatenaLite::Parser;
+  use Text::HatenaLite::Formatter::JSON;
+  
+  $data = Text::HatenaLite::Parser->parse_string ($text);
+  my $formatter = Text::HatenaLite::Formatter::JSON->new;
+  $formatter->parsed_data($data);
+  print $parser->as_jsonable;
+
+=head1 DESCRIPTION
+
+The C<Text::HatenaLite::Formatter::JSON> class converts the parsed
+representation of text in Hatena Notation Lite as JSON serializable
+data.
+
+=head1 METHODS
+
+=over 4
+
+=item $formatter = $CLASS->new
+
+Create a new instance of the formatter.
+
+=item $formatter->parsed_data($data)
+
+Set the parsed data to the formatter.  The data must be an array
+reference as returned by L<Text::HatenaLite::Parser>.
+
+=item $data = $formatter->as_jsonable
+
+Return a Perl data structure that can be directly serializable as
+JSON, representing the given parsed data.
+
+The return value is an array reference, which contains hash references
+representing nodes in the input document in order.  The hash
+references contain following key-value pairs: The C<type> value is the
+type of the node represented by the hash reference, e.g. C<text>,
+C<http>, or C<keyword>.  The C<values> value is a hash reference
+containing the key-value pairs representing the data of the node.  The
+C<_> value in the C<values> hash is the source text of the node
+(i.e. a text fragment written in Hatena Lite format).  Semantics and
+syntax of other key-value pairs depend on C<type> of the node.  For
+example, the C<text> node's C<values> hash contains C<value> whose
+value is the textual value represented by the node.  Another example
+is the C<url> value of the C<http> node, representing the URL pointed
+by the node.  Complete list of node types and available C<values> keys
+are available in the source code of L<Text::HatenaLite::Definitions>.
+
+Please note that the method does not return JSON, but something that
+can be converted into JSON.
+
+=back
+
+=head1 SEE ALSO
+
+L<Text::HatenaLite::Parser>.
+
+=head1 AUTHOR
+
+Wakaba (id:wakabatan) <wakabatan@hatena.ne.jp>.
+
+=head1 LICENSE
+
+Copyright 2012 Hatena <http://www.hatena.com/>.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
