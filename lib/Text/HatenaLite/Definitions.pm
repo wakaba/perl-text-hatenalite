@@ -129,7 +129,7 @@ our $Notations = [
     {
         type => 'ugomemo',
         pattern => q<([Uu][Gg][Oo][Mm][Ee][Mm][Oo]|[Ff][Ll][Ii][Pp][Nn][Oo][Tt][Ee]):([0-9A-F]{16}):([0-9A-Za-z-_]+)>,
-        args => [qw(dsiid filename)],
+        args => [qw(site dsiid filename)],
         to_url => sub {
             my $v = $_[0];
             return sprintf q<http://%s/%s@DSi/movie/%s>,

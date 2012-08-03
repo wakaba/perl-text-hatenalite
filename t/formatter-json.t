@@ -9,7 +9,7 @@ use Text::HatenaLite::Parser;
 use Text::HatenaLite::Formatter::JSON;
 use Test::Differences;
 
-sub _a : Test(8) {
+sub _a : Test(9) {
     for (
         [
             q{foo[[aa]]bar&amp;http://hoge/},
@@ -47,6 +47,10 @@ sub _a : Test(8) {
         [
             q{mailto:hoge@fug},
             [{type => 'mailto', values => {_ => 'mailto:hoge@fug', addr => q<hoge@fug>}}],
+        ],
+        [
+            q{ugomemo:0E61C75C9B5AD90B:7DD313_086631E87C8F4_000},
+            [{type => 'ugomemo', values => {_ => 'ugomemo:0E61C75C9B5AD90B:7DD313_086631E87C8F4_000', site => 'ugomemo', dsiid => '0E61C75C9B5AD90B', filename => '7DD313_086631E87C8F4_000'}}],
         ],
     ) {
         my $parsed = Text::HatenaLite::Parser->parse_string($_->[0]);
