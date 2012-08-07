@@ -370,8 +370,7 @@ sub fotolife_notation_to_html {
     my $self = $_[0];
     my $values = $_[2];
     
-    my $img_url = $_[1]->{to_object_url}->($values);
-    $img_url =~ s/\.flv$/.jpg/;
+    my $img_url = $self->fotolife_notation_to_image_url($_[1], $values);
 
     my $link_url = $self->fotolife_id_to_url($values->[1], $values->[2]);
     
