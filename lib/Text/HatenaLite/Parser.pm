@@ -64,6 +64,7 @@ sub resolve_charrefs ($;$) {
 
 sub parse_string {
     my (undef, $str) = @_;
+    $str = '' unless defined $str;
     
     my @token;
     while ((length $str) && $Regexp->match($str)) {
