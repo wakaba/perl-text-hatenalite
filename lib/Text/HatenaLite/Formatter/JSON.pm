@@ -17,7 +17,7 @@ for my $def (@$Text::HatenaLite::Definitions::Notations) {
 
 $Notations->{text} = $Text::HatenaLite::Definitions::TextNotation;
 
-sub as_jsonable {
+sub as_jsonalizable {
     my $self = shift;
     my $parsed = $self->parsed_data;
     my $result = [];
@@ -44,5 +44,6 @@ sub as_jsonable {
     }
     return $result;
 }
+*as_jsonable = \&as_jsonalizable;
 
 1;

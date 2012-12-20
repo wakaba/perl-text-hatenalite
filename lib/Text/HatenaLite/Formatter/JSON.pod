@@ -10,7 +10,7 @@ Text::HatenaLite::Formatter::JSON - Convert Hatena Notation Lite into JSON data
   $data = Text::HatenaLite::Parser->parse_string ($text);
   my $formatter = Text::HatenaLite::Formatter::JSON->new;
   $formatter->parsed_data($data);
-  print $parser->as_jsonable;
+  print $parser->as_jsonalizable;
 
 =head1 DESCRIPTION
 
@@ -31,7 +31,7 @@ Create a new instance of the formatter.
 Set the parsed data to the formatter.  The data must be an array
 reference as returned by L<Text::HatenaLite::Parser>.
 
-=item $data = $formatter->as_jsonable
+=item $data = $formatter->as_jsonalizable
 
 Return a Perl data structure that can be directly serializable as
 JSON, representing the given parsed data.
