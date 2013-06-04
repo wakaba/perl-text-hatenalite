@@ -58,7 +58,6 @@ sub extract_urls_for_trackback {
             ^https?://
             (?:
                 f\.hatena\.(?:ne\.jp|com)/[^/]+/[0-9]+ |
-                (?:ugomemo|flipnote)\.hatena\.(?:ne\.jp|com)/[^/]+/movie/[^/]+ |
                 d\.hatena\.ne\.jp/[^/]+/.+ |
                 [0-9a-z-]+\.g\.hatena\.ne\.jp/[^/]+/.+ |
                 q\.hatena\.ne\.jp/[0-9]+ |
