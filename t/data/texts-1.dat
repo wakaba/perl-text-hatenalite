@@ -687,7 +687,6 @@ http http://i.hatena.ne.jp/idea/21414511
 #urls
 http://i.hatena.ne.jp/idea/21414511
 #trackbackurls
-http://i.hatena.ne.jp/idea/21414511
 
 #data
 http://anond.hatelabo.jp/21414511
@@ -2142,7 +2141,6 @@ http://i.hatena.ne.jp/idea/0
 #urls
 http://i.hatena.ne.jp/idea/0
 #trackbackurls
-http://i.hatena.ne.jp/idea/0
 
 #data
 idea:12345
@@ -2158,7 +2156,6 @@ http://i.hatena.ne.jp/idea/12345
 #urls
 http://i.hatena.ne.jp/idea/12345
 #trackbackurls
-http://i.hatena.ne.jp/idea/12345
 
 #data
 idea:12345abc
@@ -2176,7 +2173,6 @@ http://i.hatena.ne.jp/idea/12345abc
 #urls
 http://i.hatena.ne.jp/idea/12345
 #trackbackurls
-http://i.hatena.ne.jp/idea/12345
 
 #data
 IDEA:12345abc
@@ -2194,7 +2190,6 @@ http://i.hatena.ne.jp/idea/12345abc
 #urls
 http://i.hatena.ne.jp/idea/12345
 #trackbackurls
-http://i.hatena.ne.jp/idea/12345
 
 #data
 idea:12345:title
@@ -2210,7 +2205,6 @@ http://i.hatena.ne.jp/idea/12345
 #urls
 http://i.hatena.ne.jp/idea/12345
 #trackbackurls
-http://i.hatena.ne.jp/idea/12345
 
 #data
 idea:12345:TITLE
@@ -2226,7 +2220,6 @@ http://i.hatena.ne.jp/idea/12345
 #urls
 http://i.hatena.ne.jp/idea/12345
 #trackbackurls
-http://i.hatena.ne.jp/idea/12345
 
 #data
 mailto:foo@bar

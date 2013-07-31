@@ -61,7 +61,6 @@ sub extract_urls_for_trackback {
                 d\.hatena\.ne\.jp/[^/]+/.+ |
                 [0-9a-z-]+\.g\.hatena\.ne\.jp/[^/]+/.+ |
                 q\.hatena\.ne\.jp/[0-9]+ |
-                i\.hatena\.ne\.jp/idea/[0-9]+ |
                 anond\.hatelabo\.jp/[0-9]+
             )
         }xig);
