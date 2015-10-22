@@ -1,7 +1,2 @@
 MIME::Base64
-Path::Class
 Regexp::Assemble
-Template
-Test::Class
-Test::Differences
-Test::More
