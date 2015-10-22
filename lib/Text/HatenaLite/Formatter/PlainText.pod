@@ -10,7 +10,7 @@ Text::HatenaLite::Formatter::PlainText - Convert Hatena Notation Lite into plain
   $data = Text::HatenaLite::Parser->parse_string ($text);
   my $formatter = Text::HatenaLite::Formatter::PlainText->new;
   $formatter->parsed_data($data);
-  print $parser->as_text;
+  print $formatter->as_text;
 
 =head1 DESCRIPTION
 
