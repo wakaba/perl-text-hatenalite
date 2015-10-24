@@ -5,3 +5,10 @@ local/
 config/perl/libs.txt
 config/perl/Makefile.submodules
 config/perl/submodules.txt
+/local/
+/perl
+/prove
+/plackup
+/Makefile.setupenv
+/cin
+/config/perl/libs.txt
