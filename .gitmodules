@@ -1,9 +1,12 @@
-[submodule "modules/testdataparser"]
-	path = modules/testdataparser
-	url = git://github.com/wakaba/testdataparser.git
 [submodule "modules/perl-webservice-imageurls"]
 	path = modules/perl-webservice-imageurls
 	url = git://github.com/wakaba/perl-webservice-imageurls.git
+	track = master
 [submodule "modules/perl-mono"]
 	path = modules/perl-mono
 	url = git://github.com/wakaba/perl-mono
+	track = master
+[submodule "t_deps/modules/testdataparser"]
+	path = t_deps/modules/testdataparser
+	url = git://github.com/wakaba/testdataparser
+	track = master

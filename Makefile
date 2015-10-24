@@ -1,26 +1,44 @@
-PROVE = prove
-REMOTEDEV_HOST = 
-
 all:
 
-test: safetest
+WGET = wget
+CURL = curl
+GIT = git
 
-test-deps: pmb-install
+updatenightly: local/bin/pmbp.pl
+	$(CURL) -s -S -L https://gist.githubusercontent.com/wakaba/34a71d3137a52abb562d/raw/gistfile1.txt | sh
+	$(GIT) add modules t_deps/modules
+	perl local/bin/pmbp.pl --update
+	$(GIT) add config
 
-safetest: test-deps safetest-main
+## ------ Setup ------
 
-safetest-main:
-	PERL5LIB=$(shell cat config/perl/libs.txt) $(PROVE) t/*.t
+deps: git-submodules pmbp-install
 
-Makefile-setupenv: Makefile.setupenv
-	make --makefile Makefile.setupenv setupenv-update \
-            SETUPENV_MIN_REVISION=20120330
+git-submodules:
+	$(GIT) submodule update --init
 
-Makefile.setupenv:
-	wget -O $@ https://raw.github.com/wakaba/perl-setupenv/master/Makefile.setupenv
+PMBP_OPTIONS=
 
-setupenv remotedev-test remotedev-reset config/perl/libs.txt \
-perl-exec pmb-update pmb-install lperl lprove: %: Makefile-setupenv always
-	make --makefile Makefile.setupenv $@ REMOTEDEV_HOST=$(REMOTEDEV_HOST)
+local/bin/pmbp.pl:
+	mkdir -p local/bin
+	$(CURL) -s -S -L https://raw.githubusercontent.com/wakaba/perl-setupenv/master/bin/pmbp.pl > $@
+pmbp-upgrade: local/bin/pmbp.pl
+	perl local/bin/pmbp.pl $(PMBP_OPTIONS) --update-pmbp-pl
+pmbp-update: git-submodules pmbp-upgrade
+	perl local/bin/pmbp.pl $(PMBP_OPTIONS) --update
+pmbp-install: pmbp-upgrade
+	perl local/bin/pmbp.pl $(PMBP_OPTIONS) --install \
+            --create-perl-command-shortcut @perl \
+            --create-perl-command-shortcut @prove \
+	    --write-makefile-pl Makefile.PL
 
-always:
+## ------ Tests ------
+
+PROVE = ./prove
+
+test: test-deps test-main
+
+test-deps: deps
+
+test-main:
+	$(PROVE) t/*.t
