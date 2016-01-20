@@ -4,14 +4,14 @@ Capture::Tiny~0.30
 Module::Runtime~0.014
 Test::Pod~1.51
 CPAN::Meta~2.150005
-Module::Build~0.4214
+Module::Build~0.4216
 MRO::Compat~0.12
 Algorithm::Diff~1.1903
 Perl::OSType~1.009
 ExtUtils::CBuilder~0.280224
 Try::Tiny~0.24
-Regexp::Assemble~0.36
 Parse::CPAN::Meta~1.4417
+Regexp::Assemble~0.36
 parent~0.234
 Test::Class~0.50
 Data::Dumper~2.154
@@ -19,6 +19,7 @@ ExtUtils::ParseXS~3.30
 version~0.9912
 Template~2.26
 CPAN::Meta::YAML~0.018
+TAP::Harness~3.36
 JSON::PP~2.27300
 Test::More~1.001014
 Text::Diff~1.43
