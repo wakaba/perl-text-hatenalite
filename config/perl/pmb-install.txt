@@ -1,6 +1,6 @@
 Test::LeakTrace~0.15
 Module::Metadata~1.000027
-Capture::Tiny~0.34
+Capture::Tiny~0.36
 Module::Runtime~0.014
 Test::Pod~1.51
 CPAN::Meta~2.150005
