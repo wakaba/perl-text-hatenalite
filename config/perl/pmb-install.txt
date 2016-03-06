@@ -16,7 +16,7 @@ parent~0.234
 Test::Class~0.50
 Data::Dumper~2.154
 ExtUtils::ParseXS~3.30
-version~0.9914
+version~0.9915
 Template~2.26
 CPAN::Meta::YAML~0.018
 TAP::Harness~3.36
