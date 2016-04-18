@@ -11,7 +11,7 @@ Perl::OSType~1.009
 ExtUtils::CBuilder~0.280224
 Try::Tiny~0.24
 Parse::CPAN::Meta~1.4417
-Regexp::Assemble~0.36
+Regexp::Assemble~0.37
 parent~0.234
 Test::Class~0.50
 Data::Dumper~2.154
