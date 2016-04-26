@@ -4,7 +4,7 @@ Capture::Tiny~0.36
 Module::Runtime~0.014
 Test::Pod~1.51
 CPAN::Meta~2.150005
-Module::Build~0.4216
+Module::Build~0.4218
 MRO::Compat~0.12
 Algorithm::Diff~1.1903
 Perl::OSType~1.009
