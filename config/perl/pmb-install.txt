@@ -10,7 +10,7 @@ Algorithm::Diff~1.1903
 Perl::OSType~1.010
 ExtUtils::CBuilder~0.280224
 Try::Tiny~0.24
-Parse::CPAN::Meta~1.4417
+Parse::CPAN::Meta~1.4421
 Regexp::Assemble~0.37
 parent~0.234
 Test::Class~0.50
