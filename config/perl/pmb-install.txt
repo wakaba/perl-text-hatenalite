@@ -14,7 +14,7 @@ Parse::CPAN::Meta~1.4422
 Regexp::Assemble~0.37
 parent~0.234
 Test::Class~0.50
-Data::Dumper~2.160
+Data::Dumper~2.161
 ExtUtils::ParseXS~3.30
 version~0.9917
 Template~2.26
