@@ -25,6 +25,6 @@ Test::LeakTrace~0.15
 Test::More~1.302052
 Test::Pod~1.51
 Text::Diff~1.44
-Try::Tiny~0.24
+Try::Tiny~0.27
 parent~0.234
 version~0.9917
