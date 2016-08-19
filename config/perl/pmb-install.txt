@@ -1,6 +1,6 @@
 Algorithm::Diff~1.1903
 AppConfig~1.71
-CPAN::Meta~2.150005
+CPAN::Meta~2.150010
 CPAN::Meta::Requirements~2.140
 CPAN::Meta::YAML~0.018
 Capture::Tiny~0.44
@@ -13,7 +13,6 @@ MRO::Compat~0.12
 Module::Build~0.4220
 Module::Metadata~1.000033
 Module::Runtime~0.014
-Parse::CPAN::Meta~1.4422
 Path::Class~0.37
 Perl::OSType~1.010
 Regexp::Assemble~0.37
