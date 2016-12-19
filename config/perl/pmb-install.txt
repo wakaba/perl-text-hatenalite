@@ -10,7 +10,7 @@ Template~2.26
 Test::Class~0.50
 Test::Differences~0.64
 Test::LeakTrace~0.15
-Test::More~1.302071
+Test::More~1.302073
 Test::Pod~1.51
 Text::Diff~1.44
 Try::Tiny~0.27
