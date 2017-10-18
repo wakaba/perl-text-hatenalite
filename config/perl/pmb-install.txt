@@ -3,7 +3,7 @@ AppConfig~1.71
 Capture::Tiny~0.46
 MIME::Base64~3.15
 MRO::Compat~0.13
-Module::Runtime~0.015
+Module::Runtime~0.016
 Path::Class~0.37
 Regexp::Assemble~0.38
 Template~2.27
