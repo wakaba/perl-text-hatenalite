@@ -1,6 +1,6 @@
 Algorithm::Diff~1.1903
 AppConfig~1.71
-Capture::Tiny~0.46
+Capture::Tiny~0.48
 MIME::Base64~3.15
 MRO::Compat~0.13
 Module::Runtime~0.016
