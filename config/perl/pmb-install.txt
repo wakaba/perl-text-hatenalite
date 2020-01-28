@@ -6,7 +6,7 @@ MRO::Compat~0.13
 Module::Runtime~0.016
 Path::Class~0.37
 Regexp::Assemble~0.38
-Template~3.006
+Template~3.007
 Test::Class~0.50
 Test::Differences~0.67
 Test::More~1.302171
